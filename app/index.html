@@ -18,23 +18,184 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/19c6b6ca8a.js"></script>
+    <script src="./scripts/utils/hamburger-menu.js"></script>
 </head>
 
 <body>
-    <ul>
-        <li><a href="#/home">Home</a></li>
-        <li><a href="#/register">Register</a></li>
-        <li><a href="#/login">Login</a></li>
-
-    </ul>
+    <!-- start header -->
+    <header id="header" class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-6 col-sm-5 header-top-left">
+                        <span>custom care: 0-888-23-5467</span>
+                    </div>
+                    <div class="col col-md-6 col-sm-7  header-top-right">
+                        <select class="selectpicker header-dropdown">
+                            <option>$US</option>
+                            <option>Euro</option>
+                            <option>Dollar</option>
+                        </select>
+                        <i class="fa fa-user-circle-o item" aria-hidden="true"></i>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle header-dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                My Account
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#/profile">My Account</a>
+                                <a class="dropdown-item" href="#/login">Login</a>
+                                <a class="dropdown-item" href="#/register">Ragister</a>
+                            </div>
+                        </div>
+                        <i class="fa fa-search item" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-4 col-sm-6 header-bottom-left">
+                        <h1 class="logo">
+                            <a href="./" title="">
+                                <strong class="sr">Look Shop</strong>
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="col col-md-5 header-bottom-center">
+                        <ul class="menu">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Women</a></li>
+                                <li><a href="#">Men</a></li>
+                                <li><a href="#">Clearance</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col col-md-3 col-sm-6 header-bottom-right">
+                        <div>
+                            <a href="/shopping-cart">Your cart</a>
+                        </div>
+                        <div class="shopping-items">
+                            <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                            <span>0 ITEMS | $ 0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
 
     <main id="content">
 
     </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-2">
+                        <h3>Customer Service</h3>
+                        <ul class="footer_list">
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Terms of payment</a></li>
+                            <li><a href="#">Terms of sale</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Returns and Refunds</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-2">
+                        <h3>Information</h3>
+                        <ul class="footer_list">
+                            <li><a href="#">Affiliate</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">How to Shop</a></li>
+                            <li><a href="#">About Nelly</a></li>
+                            <li><a href="#">Investor relations</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-2">
+                        <h3>Campaigns</h3>
+                        <ul class="footer_list">
+                            <li><a href="#">Evening Dresses</a></li>
+                            <li><a href="#">Makeup</a></li>
+                            <li><a href="#">Fashion forward</a></li>
+                            <li><a href="#">Training clothes</a></li>
+                            <li><a href="#">Special Occasion Dresses</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-2">
+                        <h3>Stores</h3>
+                        <ul class="footer_list">
+                            <li><a href="#">Paris</a></li>
+                            <li><a href="#">New York</a></li>
+                            <li><a href="#">London</a></li>
+                            <li><a href="#">Madrid</a></li>
+                            <li><a href="#">Tokio</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-2">
+                        <div class="col-sm-2 grid-3">
+                            <h3>Social</h3>
+                            <ul class="footer_social">
+                                <li>
+                                    <a href="#"> <i class="tw1"> </i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="db1"> </i> </a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="fb1"> </i></a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="g1"> </i></a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="thumb"> </i></a>
+                                </li>
+                                <li>
+                                    <a href="#"> <i class="vimeo"> </i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-md-2">
+                        <div class="col-sm-2">
+                            <img src="images/secure.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-10">
+                        <ul class="footer-menu">
+                            <li class="active"><a href="#">Privacy &amp; Cookies</a></li> |
+                            <li><a href="#">Terms &amp; Conditions</a></li> |
+                            <li><a href="#">Accessibility</a></li> |
+                            <li><a href="#">Store Directory</a></li> |
+                            <li><a href="#">About Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-md-10"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="./scripts/vendor/components/handlebars/handlebars.js"></script>
-    <script src="./scripts/vendor/components/sammy/lib/sammy.js"></script>
+    <script src="scripts/vendor/components/handlebars/handlebars.js"></script>
+    <script src="scripts/vendor/components/sammy/lib/sammy.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
