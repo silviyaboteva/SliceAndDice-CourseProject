@@ -1,20 +1,20 @@
 {
-  "name": "project",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "~4.0.0-alpha.6",
-    "modernizr": "~2.8.1"
-  },
-  "overrides": {
-    "bootstrap": {
-      "main": [
-        "scss/bootstrap.scss",
-        "dist/js/bootstrap.js"
-      ]
+    "name": "project",
+    "private": true,
+    "dependencies": {
+        "handlebars": "^4.0.5",
+        "sammy": "^0.7.6"
+    },
+    "overrides": {
+        "sammy": {
+            "main": "lib/sammy.js"
+        },
+        "jquery": {
+            "main": "NA"
+        }
+    },
+    "devDependencies": {
+        "chai": "^3.5.0",
+        "mocha": "^3.2.0"
     }
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^3.2.0"
-  }
 }

@@ -7,82 +7,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>LookShop</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
 
-    <!-- build:css styles/vendor.css -->
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 
-<body class="home-page">
-    <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+<body>
+    <ul>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/register">Register</a></li>
+        <li><a href="#/login">Login</a></li>
 
-    <div class="container">
+    </ul>
 
-        <!-- start header -->
-        <header id="header" class="header">
-            <h1 class="logo">
-                <a href="./" title="">
-                    <strong class="sr">Look Shop</strong>
-                </a>
-            </h1>
-            <div class="header-top">
-                <div class="container">
-                    <div class="header-top-left">
-                        <p>customer care : 0-888-23-5467</p>
-                    </div>
-                    <div class="header-top-right">
-                        <div class="lang-list">
+    <main id="content">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header-bottom"></div>
-        </header>
-        <!-- end header -->
-
-    </div>
-
-
+    </main>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/tether/dist/js/tether.js"></script>
-    <script src="../bower_components/modernizr/modernizr.js"></script>
+    <script src="./scripts/vendor/components/handlebars/handlebars.js"></script>
+    <script src="./scripts/vendor/components/sammy/lib/sammy.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap/js/dist/util.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/alert.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/button.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/carousel.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/collapse.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/dropdown.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/modal.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/tab.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/tooltip.js"></script>
-    <script src="/bower_components/bootstrap/js/dist/popover.js"></script>
-    <!-- endbuild -->
-
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="./scripts/utils/requester.js"></script>
+    <script src="./scripts/data/userData.js"></script>
+    <script src="./scripts/utils/templates.js"></script>
+    <script src="./scripts/controllers/userController.js"></script>
+
+    <script src="./scripts/main.js"></script>
     <!-- endbuild -->
 </body>
 
