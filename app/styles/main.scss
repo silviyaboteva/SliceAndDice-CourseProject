@@ -333,6 +333,9 @@ body {
     }
 }
 
+
+/* Footer */
+
 .footer {
     .footer-top {
         background-color: #EDEDED;
@@ -455,6 +458,7 @@ body {
         }
         .header-bottom-right {
             padding-top: 0;
+            padding-left: 15px;
         }
     }
 }
@@ -475,6 +479,9 @@ body {
     body::before {
         content: "Small devices (landscape phones, less than 48em)";
     }
+    .container {
+        width: 100%;
+    }
     .header-top {
         .container {
             width: 490px;
@@ -494,6 +501,7 @@ body {
         }
         .header-bottom-right {
             width: 100%;
+            padding: 0;
         }
     }
 }
