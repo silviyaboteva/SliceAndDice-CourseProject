@@ -19,7 +19,7 @@
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/19c6b6ca8a.js"></script>
-    <script src="./scripts/utils/hamburger-menu.js"></script>
+
 </head>
 
 <body>
@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col col-md-6 col-sm-5 header-top-left">
-                        <span>custom care: 0-888-23-5467</span>
+                        <span>customer care: 0-888-23-5467</span>
                     </div>
                     <div class="col col-md-6 col-sm-7  header-top-right">
                         <select class="selectpicker header-dropdown">
@@ -53,32 +53,37 @@
                 </div>
             </div>
         </div>
-        </div>
         <div class="header-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col col-md-4 col-sm-6 header-bottom-left">
+                    <div class="header-bottom-left">
                         <h1 class="logo">
                             <a href="./" title="">
                                 <strong class="sr">Look Shop</strong>
                             </a>
                         </h1>
                     </div>
-                    <div class="col col-md-5 header-bottom-center">
-                        <ul class="menu">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                        <nav>
-                            <ul>
-                                <li><a href="#">Women</a></li>
-                                <li><a href="#">Men</a></li>
-                                <li><a href="#">Clearance</a></li>
+                    <div class="header-bottom-center">
+                        <nav class="animenu">
+                            <button class="animenu__toggle">
+                                <span class="animenu__toggle__bar"></span>
+                                <span class="animenu__toggle__bar"></span>
+                                <span class="animenu__toggle__bar"></span>
+                            </button>
+                            <ul class="animenu__nav">
+                                <li>
+                                    <a href="#">Women</a>
+                                </li>
+                                <li>
+                                    <a href="#">Men</a>
+                                </li>
+                                <li>
+                                    <a href="#">Clearance</a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
-                    <div class="col col-md-3 col-sm-6 header-bottom-right">
+                    <div class="header-bottom-right">
                         <div>
                             <a href="/shopping-cart">Your cart</a>
                         </div>
@@ -101,7 +106,7 @@
         <div class="footer-top">
             <div class="container">
                 <div class="row">
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <h3>Customer Service</h3>
                         <ul class="footer_list">
                             <li><a href="contact.html">Contact</a></li>
@@ -112,7 +117,7 @@
                             <li><a href="#">Returns and Refunds</a></li>
                         </ul>
                     </div>
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <h3>Information</h3>
                         <ul class="footer_list">
                             <li><a href="#">Affiliate</a></li>
@@ -122,7 +127,7 @@
                             <li><a href="#">Investor relations</a></li>
                         </ul>
                     </div>
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <h3>Campaigns</h3>
                         <ul class="footer_list">
                             <li><a href="#">Evening Dresses</a></li>
@@ -132,7 +137,7 @@
                             <li><a href="#">Special Occasion Dresses</a></li>
                         </ul>
                     </div>
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <h3>Stores</h3>
                         <ul class="footer_list">
                             <li><a href="#">Paris</a></li>
@@ -142,7 +147,7 @@
                             <li><a href="#">Tokio</a></li>
                         </ul>
                     </div>
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <div class="col-sm-2 grid-3">
                             <h3>Social</h3>
                             <ul class="footer_social">
@@ -167,7 +172,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col col-md-2">
+                    <div class="col col-md-2 col-sm-4">
                         <div class="col-sm-2">
                             <img src="images/secure.png" alt="">
                         </div>
@@ -178,7 +183,7 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col col-md-10">
+                    <div class="col col-md-9">
                         <ul class="footer-menu">
                             <li class="active"><a href="#">Privacy &amp; Cookies</a></li> |
                             <li><a href="#">Terms &amp; Conditions</a></li> |
@@ -187,7 +192,10 @@
                             <li><a href="#">About Us</a></li>
                         </ul>
                     </div>
-                    <div class="col col-md-10"></div>
+                    <div class="col col-md-3">
+                        <p>© 2014 Lookshop.com</p>
+                        <p> All Rights Reserved </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -204,6 +212,8 @@
     <script src="./scripts/data/userData.js"></script>
     <script src="./scripts/utils/templates.js"></script>
     <script src="./scripts/controllers/userController.js"></script>
+    <script src="./scripts/utils/animenu.js"></script>
+    <script src="./scripts/utils/respond.min.js"></script>
 
     <script src="./scripts/main.js"></script>
     <!-- endbuild -->
