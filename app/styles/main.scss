@@ -1,6 +1,12 @@
-$theme-color: #FFA687;
-$grey: #EDEDED;
-$gutter: 10px; // Base gutter
+@import 'variables';
+@font-face {
+    font-family: 'Emperial', 'HelveticaNeueLTStd';
+    src: url('../fonts/EMPERIAL.ttf');
+    src: url('../fonts/HelveticaNeueLTStd-Cn.otf');
+    src: url('../fonts/HelveticaNeueLTStd-ThCn.otf');
+    src: url('../fonts/HelveticaNeueLTStd-BlkCn.otf');
+}
+
 // Latest CSS box model 
 *,
 *:after,
@@ -28,9 +34,26 @@ p {
 
 html,
 body {
-    font-family: 'Oxygen', sans-serif;
     font-size: 100%;
-    background: #fff;
+    background: $background-theme-color;
+}
+
+
+/* Helpers */
+
+.on-hover {
+    color: $theme-color;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.width-33 {
+    width: 33%;
+    display: inline-block;
+}
+
+.hidden {
+    display: hidden;
 }
 
 
@@ -48,31 +71,17 @@ body {
 }
 
 
-/* Helpers */
-
-.on-hover {
-    color: $theme-color;
-    -webkit-transition: all 200ms ease;
-    transition: all 200ms ease;
-}
-
-.width-33 {
-    width: 33%;
-    display: inline-block;
-}
-
-
 /* Header */
 
 .header-top {
-    background: #000;
+    background: $black-theme-color;
     position: relative;
     .header_top_left {
         display: inline-block;
         width: 30%;
     }
     span {
-        color: #fff;
+        color: $background-theme-color;
         font-size: 11px;
         text-transform: uppercase;
     }
@@ -81,11 +90,11 @@ body {
         width: 23%;
         .header-dropdown {
             background-color: inherit;
-            color: white;
+            color: $background-theme-color;
             border: none;
             font-size: 11px;
             overflow: hidden;
-            white-space: nowrap;
+            $background-theme-color-space: nowrap;
             text-transform: uppercase;
             &:hover {
                 color: $theme-color;
@@ -95,10 +104,10 @@ body {
             }
         }
         .fa {
-            color: white;
+            color: $background-theme-color;
         }
         .item::before {
-            border-left: 1px solid $grey;
+            border-left: 1px solid $light-grey-theme-color;
             height: 100%;
             padding: 10px;
         }
@@ -139,14 +148,14 @@ body {
             height: 50px;
             width: 100%;
             &:hover {
-                color: #fff;
+                color: $background-theme-color;
             }
         }
         .animenu__toggle__bar {
             display: block;
             width: 20px;
             height: 3px;
-            background-color: #fff;
+            background-color: $background-theme-color;
             transition: .15s cubic-bezier(0.75, -0.55, 0.25, 1.55);
             &+.animenu__toggle__bar {
                 margin-top: 4px;
@@ -187,7 +196,7 @@ body {
                 position: relative;
                 >a {
                     padding: $gutter 3 * $gutter;
-                    color: #000;
+                    color: $black-theme-color;
                 }
                 &:hover {
                     >ul {
@@ -234,7 +243,7 @@ body {
                 &:hover {
                     background-color: $theme-color;
                     border-color: $theme-color;
-                    color: #fff;
+                    color: $background-theme-color;
                 }
             }
         }
@@ -276,7 +285,7 @@ body {
                 a:hover {
                     background-color: $theme-color;
                     border-color: $theme-color;
-                    color: #000;
+                    color: $black-theme-color;
                 }
             }
             .animenu__nav__child {
@@ -301,7 +310,7 @@ body {
             }
             li {
                 a:hover {
-                    color: #fff;
+                    color: $background-theme-color;
                 }
             }
         }
@@ -311,7 +320,7 @@ body {
         display: inline-block;
         padding-top: 35px;
         div {
-            border: 1px solid $grey;
+            border: 1px solid $light-grey-theme-color;
             a,
             span {
                 color: #9D9D9D;
@@ -338,7 +347,7 @@ body {
 
 .footer {
     .footer-top {
-        background-color: #EDEDED;
+        background-color: $light-grey-theme-color;
         padding: 50px 0;
         h3 {
             color: #414141;
@@ -368,7 +377,7 @@ body {
         }
     }
     .footer-bottom {
-        background-color: #000;
+        background-color: $black-theme-color;
         color: #999;
         font-size: 12px;
         .footer-menu {
@@ -408,7 +417,7 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        color: white;
+        color: $background-theme-color;
         z-index: 10000;
     }
     .header-top {

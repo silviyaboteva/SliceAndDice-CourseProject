@@ -44,9 +44,11 @@
                                 My Account
                             </button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#/profile">My Account</a>
-                                <a class="dropdown-item" href="#/login">Login</a>
-                                <a class="dropdown-item" href="#/register">Register</a>
+                                <a class="dropdown-item item-user-account" href="#/profile">My Account</a>
+                                <a class="dropdown-item item-admin-account hidden" href="#/admin">Admin Account</a>
+                                <a class="dropdown-item item-user-control" href="#/login">Login</a>
+                                <a class="dropdown-item item-user-control" href="#/register">Register</a>
+                                <a id="logout" class="dropdown-item hidden" href="#/logout ">Logout</a>
                             </div>
                         </div>
                         <i class="fa fa-search item" aria-hidden="true"></i>
@@ -194,7 +196,7 @@
                         </ul>
                     </div>
                     <div class="col col-md-3">
-                        <p>© 2014 Lookshop.com</p>
+                        <p>© 2017 Silviya Boteva</p>
                         <p> All Rights Reserved </p>
                     </div>
                 </div>
@@ -210,11 +212,14 @@
 
     <!-- build:js scripts/main.js -->
     <script src="./scripts/utils/requester.js"></script>
-    <script src="./scripts/data/userData.js"></script>
     <script src="./scripts/utils/templates.js"></script>
-    <script src="./scripts/controllers/userController.js"></script>
+    <script src="./scripts/utils/user-role.js"></script>
     <script src="./scripts/utils/animenu.js"></script>
     <script src="./scripts/utils/respond.min.js"></script>
+
+    <script src="./scripts/controllers/user-controller.js"></script>
+
+    <script src="./scripts/data/user-data.js"></script>
 
     <script src="./scripts/main.js"></script>
     <!-- endbuild -->
