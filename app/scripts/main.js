@@ -7,8 +7,11 @@ var router = Sammy('#content', function() {
     let template = new HandlebarsTemplate();
 
     let userData = new UserData(requester);
+    let adminData = new AdminData(requester);
 
     let userController = new UserController(userData, template);
+    let adminController = new AdminController(adminData, template);
+
 
     this.get('/', function(context) {
         context.redirect('#/home');
@@ -16,6 +19,10 @@ var router = Sammy('#content', function() {
 
     this.get('#/home', function(context) {
         $content.html('<h1>Welcome home</h1>');
+    });
+
+    this.get('#/admin', function(context) {
+        adminController.loadAdminTemplate($content, context);
     });
 
     this.get('#/register', function(context) {
@@ -32,16 +39,7 @@ var router = Sammy('#content', function() {
 });
 
 
-// $('#logout').submit(function () {
-//   let requester = new Requester();
-//   requester
-//     .postJSON('http://localhost:1337/api/auth/logout', { username: 'kur za tebe' })
-//     .then((rez) => {
-//       console.log(rez);
+$('#logout').click(function() {
 
-//       requester.getJSON('http://localhost:1337/api/auth/getLoggedUser')
-//         .then(console.log);
-//     });
-//   return false;
-// });
+});
 router.run('#/');

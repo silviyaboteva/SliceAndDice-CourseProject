@@ -71,7 +71,21 @@ body {
 }
 
 
-/* Header */
+/* Social icons */
+
+$si: si;
+$image-url:'../images/VectorSmartObject';
+@for $i from 1 through 6 {
+    .#{$si}#{$i} {
+        width: 35px;
+        height: 34px;
+        display: inline-block;
+        background-image: url(#{$image-url}#{$i}#{'.png'});
+    }
+}
+
+
+/* -- Start Header -- */
 
 .header-top {
     background: $black-theme-color;
@@ -112,8 +126,14 @@ body {
             padding: 10px;
         }
         .dropdown-menu {
+            background-color: $theme-color;
+            border-radius: 0;
             a {
                 background-color: $theme-color;
+                &:hover {
+                    background-color: $background-theme-color;
+                    @extend .on-hover;
+                }
             }
         }
     }
@@ -343,7 +363,10 @@ body {
 }
 
 
-/* Footer */
+/* -- End Header -- */
+
+
+/* -- Start Footer -- */
 
 .footer {
     .footer-top {
@@ -373,6 +396,7 @@ body {
         }
         .footer_social {
             padding: 0;
+            width: 100px;
             list-style: none;
         }
     }
@@ -398,6 +422,102 @@ body {
 }
 
 
+/* -- End Footer -- */
+
+
+/* -- Start Login and Register template --*/
+
+.btn-theme-default {
+    background-color: $theme-color;
+    border-radius: 0;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    &:hover {
+        background-color: #000;
+        -webkit-transition: all 350ms ease;
+        transition: all 350ms ease;
+    }
+}
+
+.input-theme-default {
+    border-radius: 0;
+    &:focus {
+        border: 1px solid $theme-color;
+    }
+}
+
+.breadcumb-custom {
+    background-color: inherit;
+    border-top: 1px solid $light-grey-theme-color;
+    border-bottom: 1px solid $light-grey-theme-color;
+    margin: 5px 0;
+    li {
+        font-size: 12px;
+        &.active {
+            color: $theme-color;
+        }
+        a {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+                color: $theme-color;
+                -webkit-transition: all 200ms ease;
+                transition: all 200ms ease;
+            }
+        }
+        .fa {
+            color: #79706D;
+        }
+    }
+}
+
+h3 {
+    color: $theme-color;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+p,
+label {
+    color: #555;
+    display: block;
+    font-size: 12px;
+}
+
+label {
+    text-transform: uppercase;
+    margin: 10px 0 0 0;
+}
+
+.contact {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .form-user-control {
+        padding-top: 30px;
+    }
+    .display-left {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+    }
+    .display-right {
+        width: 49%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+    }
+}
+
+
+/* -- End Login and Register template --*/
+
+
 /*-- Responsive --*/
 
 
@@ -420,6 +540,7 @@ body {
         color: $background-theme-color;
         z-index: 10000;
     }
+    /* -- START HOME PAGE RESPONSIVE -- */
     .header-top {
         .container {
             width: 1004px;
@@ -433,6 +554,7 @@ body {
             width: 33%;
         }
     }
+    /* -- END HOME PAGE RESPONSIVE -- */
 }
 
 
@@ -442,6 +564,7 @@ body {
     body::before {
         content: "Medium devices (tablets, less than 62em)";
     }
+    /* -- START HOME PAGE RESPONSIVE -- */
     .header-top {
         .container {
             width: 758px;
@@ -470,15 +593,18 @@ body {
             padding-left: 15px;
         }
     }
+    /* -- END HOME PAGE RESPONSIVE -- */
 }
 
 @media (max-width: 580px) {
+    /* -- START HOME PAGE RESPONSIVE -- */
     .header-top-left {
         display: none;
     }
     .header-top-right {
         width: 100%;
     }
+    /* -- END HOME PAGE RESPONSIVE -- */
 }
 
 
@@ -488,6 +614,7 @@ body {
     body::before {
         content: "Small devices (landscape phones, less than 48em)";
     }
+    /* -- START HOME PAGE RESPONSIVE -- */
     .container {
         width: 100%;
     }
@@ -513,6 +640,17 @@ body {
             padding: 0;
         }
     }
+    /* -- END HOME PAGE RESPONSIVE -- */
+    /* -- START Login and Register template RESPONSIVE -- */
+    .display-left {
+        display: block;
+        width: 100%;
+    }
+    .display-right {
+        display: block;
+        width: 100%;
+    }
+    /* -- END Login and Register template RESPONSIVE -- */
 }
 
 
@@ -522,6 +660,7 @@ body {
     body::before {
         content: "Extra small devices (portrait phones, less than 34em)";
     }
+    /* -- START HOME PAGE RESPONSIVE -- */
     .header-top {
         .container {
             width: 310px;
@@ -539,4 +678,5 @@ body {
             width: 100%;
         }
     }
+    /* -- END HOME PAGE RESPONSIVE -- */
 }

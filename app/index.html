@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/login-and-register.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
@@ -147,37 +146,37 @@
                             <li><a href="#">New York</a></li>
                             <li><a href="#">London</a></li>
                             <li><a href="#">Madrid</a></li>
-                            <li><a href="#">Tokio</a></li>
+                            <li><a href="#">Tokyo</a></li>
                         </ul>
                     </div>
                     <div class="col col-md-2 col-sm-4">
                         <div class="col-sm-2 grid-3">
                             <h3>Social</h3>
-                            <ul class="footer_social">
-                                <li>
-                                    <a href="#"> <i class="tw1"> </i> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="db1"> </i> </a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="fb1"> </i></a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="g1"> </i></a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="thumb"> </i></a>
-                                </li>
-                                <li>
-                                    <a href="#"> <i class="vimeo"> </i></a>
-                                </li>
-                            </ul>
+                            <div class="footer_social row">
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si1"> </i> </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si2"> </i> </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si3"> </i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si4"> </i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si5"> </i></a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="#"> <i class="si6"> </i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col col-md-2 col-sm-4">
                         <div class="col-sm-2">
-                            <img src="images/secure.png" alt="">
+                            <!--<img src="images/secure.png" alt="">-->
                         </div>
                     </div>
                 </div>
@@ -213,13 +212,22 @@
     <!-- build:js scripts/main.js -->
     <script src="./scripts/utils/requester.js"></script>
     <script src="./scripts/utils/templates.js"></script>
-    <script src="./scripts/utils/user-role.js"></script>
+    <script src="./scripts/utils/userRole.js"></script>
     <script src="./scripts/utils/animenu.js"></script>
     <script src="./scripts/utils/respond.min.js"></script>
 
-    <script src="./scripts/controllers/user-controller.js"></script>
+    <script src="./scripts/data/homeData.js"></script>
+    <script src="./scripts/data/userData.js"></script>
+    <script src="./scripts/data/adminData.js"></script>
+    <script src="./scripts/data/productData.js"></script>
+    <script src="./scripts/data/productsData.js"></script>
 
-    <script src="./scripts/data/user-data.js"></script>
+    <script src="./scripts/controllers/homeController.js"></script>
+    <script src="./scripts/controllers/userController.js"></script>
+    <script src="./scripts/controllers/adminController.js"></script>
+    <script src="./scripts/controllers/productController.js"></script>
+    <script src="./scripts/controllers/productsController.js"></script>
+
 
     <script src="./scripts/main.js"></script>
     <!-- endbuild -->

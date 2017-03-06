@@ -1,10 +1,10 @@
 'use strict';
-const REQUEST_URL = 'http://localhost:1337';
 
 class UserController {
-    constructor(userData, template) {
+    constructor(userData, template, utils) {
         this.userData = userData;
         this.template = template;
+        this.utils = utils;
     }
 
     loadRegisterTemplate(content, context) {
@@ -23,9 +23,9 @@ class UserController {
                     // TODO add validation
                     _this.userData.register(formData)
                         .then((result) => {
-                            console.log(result);
-
-                            context.redirect('#/home');
+                            if (result.success) {
+                                context.redirect('#/login');
+                            }
                         });
 
                     return false;
@@ -52,7 +52,7 @@ class UserController {
                     // TODO add validation
                     _this.userData.login(data)
                         .then((result) => {
-
+                            console.log(result);
                             if (result.success) {
                                 localStorage.setItem('jwt-token', result.token);
                                 context.redirect('#/home');
