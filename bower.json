@@ -1,20 +1,21 @@
 {
-    "name": "project",
-    "private": true,
-    "dependencies": {
-        "handlebars": "^4.0.5",
-        "sammy": "^0.7.6"
+  "name": "project",
+  "private": true,
+  "dependencies": {
+    "handlebars": "^4.0.5",
+    "sammy": "^0.7.6",
+    "toastr": "^2.1.3"
+  },
+  "overrides": {
+    "sammy": {
+      "main": "lib/sammy.js"
     },
-    "overrides": {
-        "sammy": {
-            "main": "lib/sammy.js"
-        },
-        "jquery": {
-            "main": "NA"
-        }
-    },
-    "devDependencies": {
-        "chai": "^3.5.0",
-        "mocha": "^3.2.0"
+    "jquery": {
+      "main": "NA"
     }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
 }

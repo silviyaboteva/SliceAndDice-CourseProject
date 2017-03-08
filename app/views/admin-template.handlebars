@@ -11,13 +11,16 @@
           <h3>Admin settings</h3>
           <p>You can add new products or remove old ones.</p>
          <form id="create-product-form" class="form-user-control">
-            <label for="name">Name</label><input type="text" name="name" id="name">
-            <label for="price">Price</label><input type="text" name="price" id="price">
-            <label for="description">Description</label><textarea name="description" id="description" cols="40" rows="4"> </textarea>
-            <input type="file" name="image">
-
-            <input type="submit" value="Create">
-            
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" class="form-control input-theme-default">
+            <label for="price">Price</label>
+            <input type="text" name="price" id="price" class="form-control input-theme-default">
+            <label for="category">Category</label>
+            <input type="text" name="category" id="category" class="form-control input-theme-default">
+            <label for="description">Description</label>
+            <textarea name="description" id="description" cols="40" rows="4" class="form-control input-theme-default"> </textarea>
+            <input type="file" name="image" class="form-control input-theme-default btn-theme-default">
+            <button class="btn btn-theme-default" type="submit">Submit</button>  
          </form>
       </div>
 

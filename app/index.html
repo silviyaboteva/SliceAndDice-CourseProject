@@ -11,15 +11,15 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/19c6b6ca8a.js"></script>
 
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                                 <a class="dropdown-item item-admin-account hidden" href="#/admin">Admin Account</a>
                                 <a class="dropdown-item item-user-control" href="#/login">Login</a>
                                 <a class="dropdown-item item-user-control" href="#/register">Register</a>
-                                <a id="logout" class="dropdown-item hidden" href="#/logout ">Logout</a>
+                                <a id="logout" class="dropdown-item hidden" href="# ">Logout</a>
                             </div>
                         </div>
                         <i class="fa fa-search item" aria-hidden="true"></i>
@@ -80,7 +80,7 @@
                                     <a href="#">Men</a>
                                 </li>
                                 <li>
-                                    <a href="#">Clearance</a>
+                                    <a href="#">Accessories</a>
                                 </li>
                             </ul>
                         </nav>
@@ -206,13 +206,14 @@
     <!-- bower:js -->
     <script src="scripts/vendor/components/handlebars/handlebars.js"></script>
     <script src="scripts/vendor/components/sammy/lib/sammy.js"></script>
+    <script src="scripts/vendor/components/toastr/toastr.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
+    <script src="./scripts/utils/userRole.js"></script>
     <script src="./scripts/utils/requester.js"></script>
     <script src="./scripts/utils/templates.js"></script>
-    <script src="./scripts/utils/userRole.js"></script>
     <script src="./scripts/utils/animenu.js"></script>
     <script src="./scripts/utils/respond.min.js"></script>
 
@@ -220,13 +221,11 @@
     <script src="./scripts/data/userData.js"></script>
     <script src="./scripts/data/adminData.js"></script>
     <script src="./scripts/data/productData.js"></script>
-    <script src="./scripts/data/productsData.js"></script>
 
     <script src="./scripts/controllers/homeController.js"></script>
     <script src="./scripts/controllers/userController.js"></script>
     <script src="./scripts/controllers/adminController.js"></script>
     <script src="./scripts/controllers/productController.js"></script>
-    <script src="./scripts/controllers/productsController.js"></script>
 
 
     <script src="./scripts/main.js"></script>

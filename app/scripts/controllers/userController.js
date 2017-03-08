@@ -63,4 +63,11 @@ class UserController {
                 });
             });
     }
+
+    loadProfileTemplate(content, context) {
+        var $content = content;
+        var _this = this;
+
+        this.template.getTemplate('profile-template');
+    }
 }

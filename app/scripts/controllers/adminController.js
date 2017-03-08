@@ -25,6 +25,9 @@ class AdminController {
                             if (result.success) {
                                 $('#create-product-form')[0].reset();
                             }
+                        })
+                        .catch((err) => {
+                            console.log(err);
                         });
 
                     return false;

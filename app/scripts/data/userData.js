@@ -1,7 +1,5 @@
 'use strict';
 
-const REQUEST_URL = 'http://localhost:1337';
-
 class UserData {
     constructor(requester) {
         this.requester = requester;
@@ -15,7 +13,7 @@ class UserData {
         return this.requester.postJSON(REQUEST_URL + '/api/auth/login', data);
     }
 
-    updateSettings(data) {
-        return this.requester.putWithFile(REQUEST_URL + '/api/users/updateSettings', data);
+    profile(data) {
+        return this.requester.get(REQUEST_URL + '/api/users/profile/:id', data);
     }
 }
