@@ -12,7 +12,7 @@ class HandlebarsTemplate {
             if (cache[name]) {
                 resolve(cache[name]);
             } else {
-                $.get(`./views/${name}.handlebars`, function(templateHtml) {
+                $.get(`/views/${name}.handlebars`, function(templateHtml) {
                     var template = handlebars.compile(templateHtml);
                     cache[name] = template;
                     resolve(template);

@@ -92,6 +92,13 @@ gulp.task('extras', () => {
     }).pipe(gulp.dest('dist'));
 });
 
+gulp.task('handlebars', () => {
+    return gulp.src([
+            'app/views/*.handlebars'
+        ])
+        .pipe(gulp.dest('dist/views'));
+});
+
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
 gulp.task('serve', () => {
@@ -110,7 +117,8 @@ gulp.task('serve', () => {
         gulp.watch([
             'app/*.html',
             'app/images/**/*',
-            '.tmp/fonts/**/*'
+            '.tmp/fonts/**/*',
+            '.tmp/views/**'
         ]).on('change', reload);
 
         gulp.watch('app/styles/**/*.scss', ['styles']);
@@ -166,7 +174,7 @@ gulp.task('wiredep', () => {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'handlebars'], () => {
     return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 

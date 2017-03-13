@@ -5,11 +5,11 @@ class ProductData {
         this.requester = requester;
     }
 
-    getProductId() {
-        return this.requester.getJSON(REQUEST_URL + '/api/products/:id');
+    getProductId(id) {
+        return this.requester.getJSON(REQUEST_URL + `/api/products/${id}`);
     }
 
-    getProductImage() {
-        return this.requester.getJSON(REQUEST_URL + 'api/products/image/:id');
+    getProductImage(id) {
+        return this.requester.getJSON(REQUEST_URL + `api/products/image/${id}`);
     }
 }
