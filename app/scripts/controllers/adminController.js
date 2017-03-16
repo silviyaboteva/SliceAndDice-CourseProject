@@ -1,9 +1,10 @@
 'use strict';
 
 class AdminController {
-    constructor(adminData, template) {
+    constructor(adminData, template, utils) {
         this.adminData = adminData;
         this.template = template;
+        this.utils = utils;
     }
 
     loadAdminTemplate(content, context) {

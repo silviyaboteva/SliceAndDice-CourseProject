@@ -1,9 +1,10 @@
 'use strict';
 
 class HomeController {
-    constructor(homeData, template) {
+    constructor(homeData, template, utils) {
         this.homeData = homeData;
         this.template = template;
+        this.utils = utils;
     }
 
     loadHomeTemplate(content, context) {

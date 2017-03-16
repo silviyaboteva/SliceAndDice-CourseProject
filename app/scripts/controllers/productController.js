@@ -1,9 +1,10 @@
 'use strict';
 
 class ProductController {
-    consructor(productData, template) {
+    consructor(productData, template, utils) {
         this.productData = productData;
         this.temlate = template;
+        this.utils = utils;
     }
 
     loadProductTemplate(content, context) {

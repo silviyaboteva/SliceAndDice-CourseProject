@@ -5,16 +5,16 @@ var router = Sammy('#content', function() {
 
     let requester = new Requester();
     let template = new HandlebarsTemplate();
-    let userRole = new UserRole(requester);
+    let utils = new Utils(requester);
 
     let homeData = new HomeData(requester);
     let userData = new UserData(requester);
     let adminData = new AdminData(requester);
     //let productData = new ProductData(requester);
 
-    let homeController = new HomeController(homeData, template);
-    let userController = new UserController(userData, template);
-    let adminController = new AdminController(adminData, template);
+    let homeController = new HomeController(homeData, template, utils);
+    let userController = new UserController(userData, template, utils);
+    let adminController = new AdminController(adminData, template, utils);
     //let productController = new ProductController(productData, template);
 
 
@@ -55,11 +55,11 @@ var router = Sammy('#content', function() {
 
 
     /* -- Show/Hide li from navigation -- */
-    userRole.toggleUserControlElements();
+    utils.toggleUserControlElements();
 
     $('#logout').on('click', function() {
         localStorage.removeItem('jwt-token');
-        userRole.toggleUserControlElements();
+        utils.toggleUserControlElements();
     });
 
 });

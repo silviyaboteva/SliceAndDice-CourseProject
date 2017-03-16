@@ -20,7 +20,6 @@ class UserController {
 
                     var formData = new FormData($(this)[0]);
 
-                    // TODO add validation
                     _this.userData.register(formData)
                         .then((result) => {
                             if (result.success) {
@@ -49,7 +48,6 @@ class UserController {
                         password: $('#password').val()
                     };
 
-                    // TODO add validation
                     _this.userData.login(data)
                         .then((result) => {
                             console.log(result);
