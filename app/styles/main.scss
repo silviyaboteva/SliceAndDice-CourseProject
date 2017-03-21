@@ -45,6 +45,7 @@ body {
     color: $theme-color;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
+    border-bottom: 0;
 }
 
 .width-33 {
@@ -70,8 +71,10 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     font-size: 14px;
+    border-bottom: 5px solid $theme-color-border;
     &:hover {
         background-color: #000;
+        border-bottom: 0;
         -webkit-transition: all 350ms ease;
         transition: all 350ms ease;
     }
@@ -434,6 +437,9 @@ $image-url:'../images/VectorSmartObject';
             width: 100px;
             list-style: none;
         }
+        .img-centered {
+            padding: 30px 0;
+        }
     }
     .footer-bottom {
         background-color: $black-theme-color;
@@ -498,6 +504,7 @@ $image-url:'../images/VectorSmartObject';
     }
     input {
         margin: 10px 0 10px 10px;
+        height: 35px;
     }
     a {
         display: inline-block;
@@ -507,6 +514,7 @@ $image-url:'../images/VectorSmartObject';
             background-color: lightgray;
             -webkit-transition: all 350ms ease;
             transition: all 350ms ease;
+            border-bottom: none;
         }
         .fa {
             padding: 15px;
@@ -515,25 +523,59 @@ $image-url:'../images/VectorSmartObject';
     }
     button {
         vertical-align: inherit;
+        border-bottom: 5px solid $theme-color-border;
+        .fa {
+            font-size: 16px;
+            color: $background-theme-color;
+        }
     }
 }
 
 .category-section {
-    .row {
-        .col {
-            padding: 0;
-            margin: 0;
-            .img-category {
-                display: block;
-                width: 100%;
-                height: 100%;
-            }
-        }
+    .no-margin {
+        margin: 0;
+        padding: 0;
     }
-    div {
-        .img-category {
-            position: absolute;
-        }
+    .img-category {
+        width: 100%;
+        height: auto;
+    }
+    .img-category-main {
+        height: 100%;
+    }
+    .img-title1 {
+        position: absolute;
+        width: 60%;
+        left: 35%;
+        top: 10%;
+        height: auto;
+    }
+    .img-title2 {
+        position: absolute;
+        width: 30%;
+        left: 5%;
+        top: 10%;
+        height: auto;
+    }
+    .img-title3 {
+        position: absolute;
+        width: 95%;
+        top: 65%;
+        height: auto;
+    }
+    .img-title4 {
+        position: absolute;
+        width: 65%;
+        left: 5%;
+        top: 20%;
+        height: auto;
+    }
+    .btn-title3 {
+        position: absolute;
+        width: 50%;
+        left: 10%;
+        top: 70%;
+        height: auto;
     }
 }
 
@@ -757,12 +799,20 @@ label {
     }
     .search-social-section {
         background-color: $background-theme-color;
+        .container {
+            padding: 0;
+        }
         p {
             display: none;
         }
         input {
-            width: 80%;
+            width: 85%;
+            height: 40px;
+            background-color: $light-grey-theme-color;
         }
+    }
+    .category-section {
+        display: none;
     }
     /* -- END HOME PAGE RESPONSIVE -- */
     /* -- START Login and Register template RESPONSIVE -- */

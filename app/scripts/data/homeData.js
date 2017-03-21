@@ -12,7 +12,7 @@ class HomeData {
     }
 
     getProductsByCategory(category) {
-        return this.requester.getJSON(REQUEST_URL + `api/products/${category}`);
+        return this.requester.getJSON(REQUEST_URL + `api/products/category/?category=${category}`);
     }
 
     getProductsByPrice(price) {

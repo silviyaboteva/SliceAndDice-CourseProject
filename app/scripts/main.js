@@ -48,10 +48,10 @@ var router = Sammy('#content', function() {
         //userController.loadUserProfileTemplate($content, context);
     });
 
-    // this.get('#/product', function(context) {
-    //     $content.html('<h1>Welcome product</h1>');
-    //     //productController.loadProductTemplate($content, context);
-    // });
+    this.get('#/product', function(context) {
+        $content.html('<h1>Welcome product</h1>');
+        //productController.loadProductTemplate($content, context);
+    });
 
 
     /* -- Show/Hide li from navigation -- */

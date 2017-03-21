@@ -43,7 +43,9 @@
       <div class="col col-md-8 col-sm-12 col-12">
         <p>Stay updated</p>
         <input type="text" class="input-theme-default" placeholder="Your email address">
-        <button class="btn btn-theme-default" type="submit">+</button>   
+        <button class="btn btn-theme-default" type="submit">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>   
       </div>
       <div class="col col-md-4 col-sm-12 col-12">
         <div class="display-left">
@@ -60,33 +62,25 @@
 <section class="category-section">
   <div class="container">
     <div class="row">
-      <div class="col col-md-6">
-          <img src="../images/category-section1.png" class="img-category">
-          <div>
-            <img src="../images/img-title1.png" class="img-title img-title1"></a>
-          </div>
+      <div class="col col-md-6 no-margin">
+          <img src="../images/category-section1.png" class="img-category img-category-main">
+          <img src="../images/img-title1.png" class="img-title1"></a>
       </div>
-      <div class="col col-md-6">
+      <div class="col col-md-6 no-margin">
         <div class="row">
-          <div class="col col-12">
+          <div class="col col-12 no-margin">
               <img src="../images/category-section2.png" class="img-category">
-              <div>
-                <img src="" class="img-title img-title2"></a>
-              </div>
+              <img src="../images/img-title2.png" class="img-title2">
           </div>
         </div>
         <div class="row">
-           <div class="col col-md-6">
+           <div class="col col-md-6 no-margin">
               <img src="../images/category-section3.png" class="img-category">
-              <div>
-                <img src="" class="img-title img-title3"></a>
-              </div>
+              <img src="../images/img-title3.png" class="img-title3">
            </div>
-            <div class="col col-md-6">
+            <div class="col col-md-6 no-margin">
                 <img src="../images/category-section4.png" class="img-category">
-                <div>
-                  <img src="" class="img-title img-title3">
-                </div>
+                <img src="../images/img-title4.png" class="img-title4">
                 <button class="btn btn-info btn-title3">Shop now</button>
             </div>
         </div>
@@ -96,8 +90,8 @@
 </section>
 
 <section class="products-section">
-  <div>
-      <nav class="animenu">
+      <div class="row">
+        <nav class="animenu">
           <button class="animenu__toggle">
               <span class="animenu__toggle__bar"></span>
               <span class="animenu__toggle__bar"></span>
@@ -105,22 +99,62 @@
           </button>
           <ul class="animenu__nav">
               <li>
-                  <a href="#">What's hot</a>
+                  <a id="popular" href="#" class="hidden">What's hot</a>
+                  <div>
+                    {{#each products}}
+                    <div class="col col-md-3">
+                        <img src="http://localhost:1337/api/products/image/{{image}}">
+                        <div>{{name}}</div>
+                        <div>{{price}}</div>
+                        <button class="btn btn-theme-default">Add to cart</button>
+                    </div>
+                    {{/each}}
+                  </div>
               </li>
               <li>
-                  <a href="#">Women</a>
+                  <a id="women" href="#">Women</a>
+                  <div id="women" class="hidden">
+                    {{#each products}}
+                    <div class="col col-md-3">
+                        <img src="http://localhost:1337/api/products/image/{{image}}">
+                        <div>{{name}}</div>
+                        <div>{{price}}</div>
+                        <button class="btn btn-theme-default">Add to cart</button>
+                    </div>
+                    {{/each}}
+                  </div>
+                  
               </li>
               <li>
                   <a href="#">Men</a>
+                  <div id="men" class="hidden">
+                    {{#each products}}
+                    <div class="col col-md-3">
+                        <img src="http://localhost:1337/api/products/image/{{image}}">
+                        <div>{{name}}</div>
+                        <div>{{price}}</div>
+                        <button class="btn btn-theme-default">Add to cart</button>
+                    </div>
+                    {{/each}}
+                  </div>
               </li>
               <li>
                   <a href="#">Clearance</a>
+                  <div id="clearance" class="hidden">
+                    {{#each products}}
+                    <div class="col col-md-3">
+                        <img src="http://localhost:1337/api/products/image/{{image}}">
+                        <div>{{name}}</div>
+                        <div>{{price}}</div>
+                        <button class="btn btn-theme-default">Add to cart</button>
+                    </div>
+                    {{/each}}
+                  </div>
               </li>
           </ul>
-      </nav>
+      </nav> 
+      </div>
 
-
-  </div>
 </section>
 
 <section class="about-us-section">
