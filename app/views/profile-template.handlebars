@@ -1,0 +1,38 @@
+<div class="container">   
+    <ol class="breadcrumb breadcumb-custom">
+      <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+      <li class="breadcrumb-item"><a href="#/profile">Profile</a></li>
+      <li class="breadcrumb-item">{{result.user.username}}</li>
+    </ol>
+
+
+	<section class="profile-info-section"> 
+		<div class="row">
+			<div class="col col-md-4 col-sm-5 col-12">
+				<a href="#/profile/{{result.user._id}}">
+					<img class="img-profile" src="http://localhost:1337/api/users/user/image/{{result.user.avatar}}">
+				</a>
+			</div>
+			<div class="col col-md-8 col-sm-7 col-12">
+				<h3 class="profile-header">User profile</h3>
+        		<p>You can see your profile information or look into your cart with products.</p>
+				<hr/>
+				<p class="profile-info"><span>Username:</span> {{result.user.username}}</p>
+				<p class="profile-info"><span>E-mail:</span> {{result.user.email}}</p>
+				<hr/>
+				<h3>Inspirational Quotes...</h3>
+				<p>Life is too short to wear boring clothes!</p>
+				<p>Style is the way to say who you are without speaking!</p>
+				<p>Good clothes open all doors!</p>
+			</div>
+		</div>
+	</section>
+
+	<hr/>
+
+	<section class="profile-cart-section">
+		<div id="contentProducts"></div>
+	</section>
+
+</div>

@@ -13,7 +13,7 @@ class UserData {
         return this.requester.postJSON(REQUEST_URL + '/api/auth/login', data);
     }
 
-    profile(data) {
-        return this.requester.get(REQUEST_URL + '/api/users/profile/:id', data);
+    getProfile(username) {
+        return this.requester.get(REQUEST_URL + `/api/users/user/${username}`);
     }
 }

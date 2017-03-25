@@ -45,7 +45,6 @@ body {
     color: $theme-color;
     -webkit-transition: all 200ms ease;
     transition: all 200ms ease;
-    border-bottom: 0;
 }
 
 .width-33 {
@@ -71,10 +70,9 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     font-size: 14px;
-    border-bottom: 5px solid $theme-color-border;
+    box-shadow: 0 5px 0 0 $theme-color-border;
     &:hover {
         background-color: #000;
-        border-bottom: 0;
         -webkit-transition: all 350ms ease;
         transition: all 350ms ease;
     }
@@ -82,6 +80,11 @@ body {
 
 .fa {
     color: #79706D;
+}
+
+.responsive-image {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -514,7 +517,6 @@ $image-url:'../images/VectorSmartObject';
             background-color: lightgray;
             -webkit-transition: all 350ms ease;
             transition: all 350ms ease;
-            border-bottom: none;
         }
         .fa {
             padding: 15px;
@@ -523,7 +525,7 @@ $image-url:'../images/VectorSmartObject';
     }
     button {
         vertical-align: inherit;
-        border-bottom: 5px solid $theme-color-border;
+        box-shadow: 0 5px 0 0 $theme-color-border;
         .fa {
             font-size: 16px;
             color: $background-theme-color;
@@ -580,7 +582,52 @@ $image-url:'../images/VectorSmartObject';
 }
 
 .products-section {
+    .navigation-categories {
+        list-style-type: none;
+    }
+    .item-categories {
+        display: inline-block;
+        padding: 20px;
+        span {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $black-theme-color;
+            font-size: 1.2rem;
+        }
+        &:first-child {
+            background-color: $theme-color;
+            a {
+                color: $background-theme-color;
+            }
+        }
+        &:hover {
+            background-color: $theme-color;
+            a {
+                color: $background-theme-color;
+            }
+        }
+    }
     margin: 50px 0;
+}
+
+.content-products {
+    background-color: $theme-color;
+}
+
+.product-item {
+    background-color: $items-background;
+}
+
+.info-item {
+    padding-bottom: 10px;
+    text-align: center;
+    &-name {
+        font-size: 1rem;
+    }
+    &-price {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
 }
 
 .about-us-section {
@@ -670,6 +717,30 @@ label {
 
 
 /* -- End Login and Register template --*/
+
+.profile-info-section {
+    margin: 30px 0;
+}
+
+.img-profile {
+    width: 100%;
+    max-width: 300px;
+}
+
+.profile-info {
+    font-size: 1rem;
+}
+
+span {
+    font-style: italic;
+    color: $theme-color;
+}
+
+
+/* -- Start Profile template -- */
+
+
+/* -- End Profile template -- */
 
 
 /*-- Responsive --*/
@@ -863,4 +934,7 @@ label {
         }
     }
     /* -- END HOME PAGE RESPONSIVE -- */
+    .profile-header {
+        margin-top: 20px;
+    }
 }

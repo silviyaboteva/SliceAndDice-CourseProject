@@ -9,21 +9,21 @@
       <img class="d-block img-responsive img-carousel" src="../images/carousel-1.jpg" alt="First slide">
       <div class="carousel-effects">
         <img class="img-responsive carousel-item-title" src="../images/carousel-title.png">
-        <button class="btn btn-theme-default" type="submit">Shop Now</button> 
+        <a href="#/all" class="btn btn-theme-default" type="submit">Shop Now</a> 
       </div>
     </div>
     <div class="carousel-item">
       <img class="d-block img-responsive img-carousel" src="../images/carousel-2.jpg" alt="Second slide">
       <div class="carousel-effects">
       <img class="img-responsive carousel-item-title" src="../images/carousel-title.png">
-      <button class="btn btn-theme-default" type="submit">Shop Now</button> 
+      <a href="#/all" class="btn btn-theme-default" type="submit">Shop Now</a> 
     </div>
     </div>
     <div class="carousel-item">
       <img class="d-block img-responsive img-carousel" src="../images/carousel-3.jpg" alt="Third slide">
       <div class="carousel-effects">
       <img class="img-responsive carousel-item-title" src="../images/carousel-title.png">
-      <button class="btn btn-theme-default" type="submit">Shop Now</button> 
+      <a href="#/all" class="btn btn-theme-default" type="submit">Shop Now</a> 
     </div>
     </div>
   </div>
@@ -90,70 +90,14 @@
 </section>
 
 <section class="products-section">
-      <div class="row">
-        <nav class="animenu">
-          <button class="animenu__toggle">
-              <span class="animenu__toggle__bar"></span>
-              <span class="animenu__toggle__bar"></span>
-              <span class="animenu__toggle__bar"></span>
-          </button>
-          <ul class="animenu__nav">
-              <li>
-                  <a id="popular" href="#" class="hidden">What's hot</a>
-                  <div>
-                    {{#each products}}
-                    <div class="col col-md-3">
-                        <img src="http://localhost:1337/api/products/image/{{image}}">
-                        <div>{{name}}</div>
-                        <div>{{price}}</div>
-                        <button class="btn btn-theme-default">Add to cart</button>
-                    </div>
-                    {{/each}}
-                  </div>
-              </li>
-              <li>
-                  <a id="women" href="#">Women</a>
-                  <div id="women" class="hidden">
-                    {{#each products}}
-                    <div class="col col-md-3">
-                        <img src="http://localhost:1337/api/products/image/{{image}}">
-                        <div>{{name}}</div>
-                        <div>{{price}}</div>
-                        <button class="btn btn-theme-default">Add to cart</button>
-                    </div>
-                    {{/each}}
-                  </div>
-                  
-              </li>
-              <li>
-                  <a href="#">Men</a>
-                  <div id="men" class="hidden">
-                    {{#each products}}
-                    <div class="col col-md-3">
-                        <img src="http://localhost:1337/api/products/image/{{image}}">
-                        <div>{{name}}</div>
-                        <div>{{price}}</div>
-                        <button class="btn btn-theme-default">Add to cart</button>
-                    </div>
-                    {{/each}}
-                  </div>
-              </li>
-              <li>
-                  <a href="#">Clearance</a>
-                  <div id="clearance" class="hidden">
-                    {{#each products}}
-                    <div class="col col-md-3">
-                        <img src="http://localhost:1337/api/products/image/{{image}}">
-                        <div>{{name}}</div>
-                        <div>{{price}}</div>
-                        <button class="btn btn-theme-default">Add to cart</button>
-                    </div>
-                    {{/each}}
-                  </div>
-              </li>
-          </ul>
-      </nav> 
-      </div>
+  <div id="container" class="container">
+    <ul class="navigation-categories">
+      <li class="item-categories"><span>Women</span></li>
+      <li class="item-categories"><span>Men</span></li>
+      <li class="item-categories"><span>Accessories</span></li>
+    </ul>
+        <div id="contentProducts" class="content-products"></div>
+  </div>
 
 </section>
 

@@ -10,30 +10,14 @@ var router = Sammy('#content', function() {
     let homeData = new HomeData(requester);
     let userData = new UserData(requester);
     let adminData = new AdminData(requester);
-    //let productData = new ProductData(requester);
+    let productData = new ProductData(requester);
 
     let homeController = new HomeController(homeData, template, utils);
     let userController = new UserController(userData, template, utils);
     let adminController = new AdminController(adminData, template, utils);
-    //let productController = new ProductController(productData, template);
+    let productController = new ProductController(productData, template, utils);
 
-
-    this.get('/', function(context) {
-        context.redirect('#/home');
-    });
-
-    this.get('#/home', function(context) {
-        homeController.loadHomeTemplate($content, context);
-    });
-
-    this.get('#/profile/:id', function(context) {
-        userController.loadProfilTemplate($content, context);
-    })
-
-    this.get('#/admin', function(context) {
-        adminController.loadAdminTemplate($content, context);
-    });
-
+    // User handling routes
     this.get('#/register', function(context) {
         userController.loadRegisterTemplate($content, context);
     });
@@ -42,15 +26,35 @@ var router = Sammy('#content', function() {
         userController.loadLoginTemplate($content, context);
     });
 
-
     this.get('#/profile', function(context) {
-        $content.html('<h1>Welcome profile</h1>');
-        //userController.loadUserProfileTemplate($content, context);
+        userController.loadProfileTemplate($content, context);
     });
 
-    this.get('#/product', function(context) {
-        $content.html('<h1>Welcome product</h1>');
-        //productController.loadProductTemplate($content, context);
+    this.get('#/admin', function(context) {
+        adminController.loadAdminTemplate($content, context);
+    });
+
+    //Home routes
+    this.get('/', function(context) {
+        context.redirect('#/home');
+    });
+
+    this.get('#/home', function(context) {
+        homeController.loadHomeTemplate($content, context);
+    });
+
+    //Products routes
+    this.get('#/all', function(context) {
+        productController.loadAllProductsTemplate($content, context);
+    });
+
+    this.get('#/products/product/?:id', function(context) {
+        let id = this.params.id;
+        productController.loadProductTemplate($content, context, id);
+    });
+
+    this.get('#/.*/', function() {
+        //TODO redirect to 404.handlebars
     });
 
 

@@ -12,42 +12,41 @@ class HomeController {
         var _this = this;
         var products;
         var category;
+        var productsByCategory;
 
         this.homeData.getAllProducts()
             .then((foundProducts) => {
                 products = foundProducts.result.products;
-                var category = foundProducts.result.products.category;
-
                 return this.template.getTemplate('home-template');
             })
             .then((resultTemplate) => {
-                $content.html(resultTemplate({ products }))
+
+                $content.html(resultTemplate({
+                    products
+                }));
+
+                _this.homeData.getProductsByCategory('women')
+                    .then((result) => {
+
+                        _this.template.getTemplate('products-category-template')
+                            .then((resultTemplate) => {
+                                $('#contentProducts').html(resultTemplate(result));
+                            });
+                    });
+
+                $('#container .item-categories').on('click', function() {
+                    category = $(this).text();
+                    _this.homeData.getProductsByCategory(category)
+                        .then((result) => {
+                            productsByCategory = result;
+                        })
+                        .then(() => {
+                            _this.template.getTemplate('products-category-template')
+                                .then((resultTemplate) => {
+                                    $('#contentProducts').html(resultTemplate(productsByCategory));
+                                });
+                        })
+                });
             });
-
-        //     this.homeData.getProductsByCategory(category)
-        //         .then((foundProducts) => {
-        //             products = foundProducts.result.products;
-        //             category = foundProducts.result.products.category;
-        //             console.log(products);
-        //             console.log(category);
-
-        //             return this.template.getTemplate('home-template');
-        //         })
-        //         .then((resultTemplate) => {
-        //             $content.html(resultTemplate({ products }))
-        //         });
     }
-
-    // showProducts(id) {
-    //     return new Promise(productData.getProductId(id))
-    //         .then(function([homeTemplate, data]) {
-    //             let template = this.template.getTemplate('home-template');
-    //             let dataWithProductId = {
-    //                 data: data,
-    //                 id: id
-    //             };
-    //             localStorage.setItem('threadData', JSON.stringify(dataWithProductId));
-    //             template.html(htmlTemplate(dataWithProductId));
-    //         })
-    // }
 }

@@ -53,6 +53,7 @@ class UserController {
                             console.log(result);
                             if (result.success) {
                                 localStorage.setItem('jwt-token', result.token);
+                                localStorage.setItem('username', result.username);
                                 context.redirect('#/home');
                             }
                         });
@@ -65,7 +66,19 @@ class UserController {
     loadProfileTemplate(content, context) {
         var $content = content;
         var _this = this;
+        var user;
+        var username = localStorage.getItem('username');
 
-        this.template.getTemplate('profile-template');
-    }
+        this.userData.getProfile(username)
+            .then((foundUser) => {
+                user = foundUser;
+                console.log(user);
+                return this.template.getTemplate('profile-template');
+            })
+            .then((template)=>{
+                $content.html(template(user));
+            });
+        }
+
+
 }
