@@ -1,9 +1,9 @@
 define( [
-	"./core",
-	"./var/document",
-	"./var/documentElement",
-	"./var/hasOwn",
-	"./var/indexOf"
+	'./core',
+	'./var/document',
+	'./var/documentElement',
+	'./var/hasOwn',
+	'./var/indexOf'
 ], function( jQuery, document, documentElement, hasOwn, indexOf ) {
 
 /*
@@ -32,7 +32,7 @@ define( [
  */
 
 var hasDuplicate, sortInput,
-	sortStable = jQuery.expando.split( "" ).sort( sortOrder ).join( "" ) === jQuery.expando,
+	sortStable = jQuery.expando.split( '' ).sort( sortOrder ).join( '' ) === jQuery.expando,
 	matches = documentElement.matches ||
 		documentElement.webkitMatchesSelector ||
 		documentElement.mozMatchesSelector ||
@@ -119,7 +119,7 @@ jQuery.extend( {
 		context = context || document;
 
 		// Same basic safeguard as Sizzle
-		if ( !selector || typeof selector !== "string" ) {
+		if ( !selector || typeof selector !== 'string' ) {
 			return results;
 		}
 
@@ -144,7 +144,7 @@ jQuery.extend( {
 	unique: uniqueSort,
 	text: function( elem ) {
 		var node,
-			ret = "",
+			ret = '',
 			i = 0,
 			nodeType = elem.nodeType;
 
@@ -178,13 +178,13 @@ jQuery.extend( {
 		// documentElement is verified for cases where it doesn't yet exist
 		// (such as loading iframes in IE - #4833)
 		var documentElement = elem && ( elem.ownerDocument || elem ).documentElement;
-		return documentElement ? documentElement.nodeName !== "HTML" : false;
+		return documentElement ? documentElement.nodeName !== 'HTML' : false;
 	},
 	expr: {
 		attrHandle: {},
 		match: {
-			bool: new RegExp( "^(?:checked|selected|async|autofocus|autoplay|controls|defer" +
-				"|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$", "i" ),
+			bool: new RegExp( '^(?:checked|selected|async|autofocus|autoplay|controls|defer' +
+				'|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped)$', 'i' ),
 			needsContext: /^[\x20\t\r\n\f]*[>+~]/
 		}
 	}

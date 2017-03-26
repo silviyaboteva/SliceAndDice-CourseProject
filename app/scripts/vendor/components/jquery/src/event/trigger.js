@@ -1,11 +1,11 @@
 define( [
-	"../core",
-	"../var/document",
-	"../data/var/dataPriv",
-	"../data/var/acceptData",
-	"../var/hasOwn",
+	'../core',
+	'../var/document',
+	'../data/var/dataPriv',
+	'../data/var/acceptData',
+	'../var/hasOwn',
 
-	"../event"
+	'../event'
 ], function( jQuery, document, dataPriv, acceptData, hasOwn ) {
 
 var rfocusMorph = /^(?:focusinfocus|focusoutblur)$/;
@@ -16,8 +16,8 @@ jQuery.extend( jQuery.event, {
 
 		var i, cur, tmp, bubbleType, ontype, handle, special,
 			eventPath = [ elem || document ],
-			type = hasOwn.call( event, "type" ) ? event.type : event,
-			namespaces = hasOwn.call( event, "namespace" ) ? event.namespace.split( "." ) : [];
+			type = hasOwn.call( event, 'type' ) ? event.type : event,
+			namespaces = hasOwn.call( event, 'namespace' ) ? event.namespace.split( '.' ) : [];
 
 		cur = tmp = elem = elem || document;
 
@@ -31,25 +31,25 @@ jQuery.extend( jQuery.event, {
 			return;
 		}
 
-		if ( type.indexOf( "." ) > -1 ) {
+		if ( type.indexOf( '.' ) > -1 ) {
 
 			// Namespaced trigger; create a regexp to match event type in handle()
-			namespaces = type.split( "." );
+			namespaces = type.split( '.' );
 			type = namespaces.shift();
 			namespaces.sort();
 		}
-		ontype = type.indexOf( ":" ) < 0 && "on" + type;
+		ontype = type.indexOf( ':' ) < 0 && 'on' + type;
 
 		// Caller can pass in a jQuery.Event object, Object, or just an event type string
 		event = event[ jQuery.expando ] ?
 			event :
-			new jQuery.Event( type, typeof event === "object" && event );
+			new jQuery.Event( type, typeof event === 'object' && event );
 
 		// Trigger bitmask: & 1 for native handlers; & 2 for jQuery (always true)
 		event.isTrigger = onlyHandlers ? 2 : 3;
-		event.namespace = namespaces.join( "." );
+		event.namespace = namespaces.join( '.' );
 		event.rnamespace = event.namespace ?
-			new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" ) :
+			new RegExp( '(^|\\.)' + namespaces.join( '\\.(?:.*\\.|)' ) + '(\\.|$)' ) :
 			null;
 
 		// Clean up the event in case it is being reused
@@ -97,8 +97,8 @@ jQuery.extend( jQuery.event, {
 				special.bindType || type;
 
 			// jQuery handler
-			handle = ( dataPriv.get( cur, "events" ) || {} )[ event.type ] &&
-				dataPriv.get( cur, "handle" );
+			handle = ( dataPriv.get( cur, 'events' ) || {} )[ event.type ] &&
+				dataPriv.get( cur, 'handle' );
 			if ( handle ) {
 				handle.apply( cur, data );
 			}

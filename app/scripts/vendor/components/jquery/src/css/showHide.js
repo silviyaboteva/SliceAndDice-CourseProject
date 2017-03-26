@@ -1,5 +1,5 @@
 define( [
-	"../data/var/dataPriv"
+	'../data/var/dataPriv'
 ], function( dataPriv ) {
 
 function showHide( elements, show ) {
@@ -17,17 +17,17 @@ function showHide( elements, show ) {
 
 		display = elem.style.display;
 		if ( show ) {
-			if ( display === "none" ) {
+			if ( display === 'none' ) {
 
 				// Restore a pre-hide() value if we have one
-				values[ index ] = dataPriv.get( elem, "display" ) || "";
+				values[ index ] = dataPriv.get( elem, 'display' ) || '';
 			}
 		} else {
-			if ( display !== "none" ) {
-				values[ index ] = "none";
+			if ( display !== 'none' ) {
+				values[ index ] = 'none';
 
 				// Remember the value we're replacing
-				dataPriv.set( elem, "display", display );
+				dataPriv.set( elem, 'display', display );
 			}
 		}
 	}

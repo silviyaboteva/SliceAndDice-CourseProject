@@ -30,9 +30,9 @@ THE SOFTWARE.
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["Handlebars"] = factory();
+		exports['Handlebars'] = factory();
 	else
-		root["Handlebars"] = factory();
+		root['Handlebars'] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -70,7 +70,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = '';
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -147,9 +147,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	exports["default"] = function (obj) {
+	exports['default'] = function (obj) {
 	  if (obj && obj.__esModule) {
 	    return obj;
 	  } else {
@@ -161,7 +161,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 
-	    newObj["default"] = obj;
+	    newObj['default'] = obj;
 	    return newObj;
 	  }
 	};
@@ -172,11 +172,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
-	exports["default"] = function (obj) {
+	exports['default'] = function (obj) {
 	  return obj && obj.__esModule ? obj : {
-	    "default": obj
+	    'default': obj
 	  };
 	};
 
@@ -308,7 +308,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  '<': '&lt;',
 	  '>': '&gt;',
 	  '"': '&quot;',
-	  "'": '&#x27;',
+	  '\'': '&#x27;',
 	  '`': '&#x60;',
 	  '=': '&#x3D;'
 	};

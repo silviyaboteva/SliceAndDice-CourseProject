@@ -1,8 +1,8 @@
 define( [
-	"../core",
-	"../var/indexOf",
-	"./var/rneedsContext",
-	"../selector"
+	'../core',
+	'../var/indexOf',
+	'./var/rneedsContext',
+	'../selector'
 ], function( jQuery, indexOf, rneedsContext ) {
 
 var risSimple = /^.[^:#\[\.,]*$/;
@@ -24,7 +24,7 @@ function winnow( elements, qualifier, not ) {
 
 	}
 
-	if ( typeof qualifier === "string" ) {
+	if ( typeof qualifier === 'string' ) {
 		if ( risSimple.test( qualifier ) ) {
 			return jQuery.filter( qualifier, elements, not );
 		}
@@ -41,7 +41,7 @@ jQuery.filter = function( expr, elems, not ) {
 	var elem = elems[ 0 ];
 
 	if ( not ) {
-		expr = ":not(" + expr + ")";
+		expr = ':not(' + expr + ')';
 	}
 
 	return elems.length === 1 && elem.nodeType === 1 ?
@@ -58,7 +58,7 @@ jQuery.fn.extend( {
 			ret = [],
 			self = this;
 
-		if ( typeof selector !== "string" ) {
+		if ( typeof selector !== 'string' ) {
 			return this.pushStack( jQuery( selector ).filter( function() {
 				for ( i = 0; i < len; i++ ) {
 					if ( jQuery.contains( self[ i ], this ) ) {
@@ -74,7 +74,7 @@ jQuery.fn.extend( {
 
 		// Needed because $( selector, context ) becomes $( context ).find( selector )
 		ret = this.pushStack( len > 1 ? jQuery.unique( ret ) : ret );
-		ret.selector = this.selector ? this.selector + " " + selector : selector;
+		ret.selector = this.selector ? this.selector + ' ' + selector : selector;
 		return ret;
 	},
 	filter: function( selector ) {
@@ -89,7 +89,7 @@ jQuery.fn.extend( {
 
 			// If this is a positional/relative selector, check membership in the returned set
 			// so $("p:first").is("p:last") won't return true for a doc with two "p".
-			typeof selector === "string" && rneedsContext.test( selector ) ?
+			typeof selector === 'string' && rneedsContext.test( selector ) ?
 				jQuery( selector ) :
 				selector || [],
 			false

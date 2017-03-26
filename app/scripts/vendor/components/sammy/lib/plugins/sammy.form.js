@@ -16,25 +16,25 @@
   }
 
   function simple_element(tag, attributes, content) {
-    var html = "<";
+    var html = '<';
     html += tag;
     if (typeof attributes != 'undefined') {
       $.each(attributes, function(key, value) {
         if (value !== null) {
-          html += " " + key + "='";
-          html += getStringContent(attributes, value).replace(/\'/g, "\'");
-          html += "'";
+          html += ' ' + key + '=\'';
+          html += getStringContent(attributes, value).replace(/\'/g, '\'');
+          html += '\'';
         }
       });
     }
     if (content === false) {
-      html += ">";
+      html += '>';
     } else if (typeof content != 'undefined') {
-      html += ">";
+      html += '>';
       html += getStringContent(this, content);
-      html += "</" + tag + ">";
+      html += '</' + tag + '>';
     } else {
-      html += " />";
+      html += ' />';
     }
     return html;
   }
@@ -136,7 +136,7 @@
     //
     //
     select: function(keypath, options, attributes) {
-      var option_html = "", selected;
+      var option_html = '', selected;
       attributes = $.extend(this._attributesForKeyPath(keypath), attributes);
       selected = attributes.value;
       delete attributes['value'];
@@ -185,7 +185,7 @@
     // the creation of the hidden element by setting the `hidden_element` attribute
     // to `false`
     checkbox: function(keypath, value, attributes) {
-      var content = "";
+      var content = '';
       if (!attributes) { attributes = {}; }
       if (attributes.hidden_element !== false) {
         content += this.hidden(keypath, {'value': !value});
@@ -215,8 +215,8 @@
         } else {
           value = value[key];
         }
-        name += "[" + key + "]";
-        class_name += "-" + key;
+        name += '[' + key + ']';
+        class_name += '-' + key;
       });
       return {'name': name,
               'value': getStringContent(builder.object, value),

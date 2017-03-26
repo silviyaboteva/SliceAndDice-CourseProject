@@ -1,8 +1,8 @@
 define( [
-	"./core",
-	"./core/access",
-	"./data/var/dataPriv",
-	"./data/var/dataUser"
+	'./core',
+	'./core/access',
+	'./data/var/dataPriv',
+	'./data/var/dataUser'
 ], function( jQuery, access, dataPriv, dataUser ) {
 
 //	Implementation Summary
@@ -24,17 +24,17 @@ function dataAttr( elem, key, data ) {
 	// If nothing was found internally, try to fetch any
 	// data from the HTML5 data-* attribute
 	if ( data === undefined && elem.nodeType === 1 ) {
-		name = "data-" + key.replace( rmultiDash, "-$&" ).toLowerCase();
+		name = 'data-' + key.replace( rmultiDash, '-$&' ).toLowerCase();
 		data = elem.getAttribute( name );
 
-		if ( typeof data === "string" ) {
+		if ( typeof data === 'string' ) {
 			try {
-				data = data === "true" ? true :
-					data === "false" ? false :
-					data === "null" ? null :
+				data = data === 'true' ? true :
+					data === 'false' ? false :
+					data === 'null' ? null :
 
 					// Only convert to a number if it doesn't change the string
-					+data + "" === data ? +data :
+					+data + '' === data ? +data :
 					rbrace.test( data ) ? jQuery.parseJSON( data ) :
 					data;
 			} catch ( e ) {}
@@ -83,7 +83,7 @@ jQuery.fn.extend( {
 			if ( this.length ) {
 				data = dataUser.get( elem );
 
-				if ( elem.nodeType === 1 && !dataPriv.get( elem, "hasDataAttrs" ) ) {
+				if ( elem.nodeType === 1 && !dataPriv.get( elem, 'hasDataAttrs' ) ) {
 					i = attrs.length;
 					while ( i-- ) {
 
@@ -91,13 +91,13 @@ jQuery.fn.extend( {
 						// The attrs elements can be null (#14894)
 						if ( attrs[ i ] ) {
 							name = attrs[ i ].name;
-							if ( name.indexOf( "data-" ) === 0 ) {
+							if ( name.indexOf( 'data-' ) === 0 ) {
 								name = jQuery.camelCase( name.slice( 5 ) );
 								dataAttr( elem, name, data[ name ] );
 							}
 						}
 					}
-					dataPriv.set( elem, "hasDataAttrs", true );
+					dataPriv.set( elem, 'hasDataAttrs', true );
 				}
 			}
 
@@ -105,7 +105,7 @@ jQuery.fn.extend( {
 		}
 
 		// Sets multiple values
-		if ( typeof key === "object" ) {
+		if ( typeof key === 'object' ) {
 			return this.each( function() {
 				dataUser.set( this, key );
 			} );
@@ -127,7 +127,7 @@ jQuery.fn.extend( {
 
 					// Try to find dashed key if it exists (gh-2779)
 					// This is for 2.2.x only
-					dataUser.get( elem, key.replace( rmultiDash, "-$&" ).toLowerCase() );
+					dataUser.get( elem, key.replace( rmultiDash, '-$&' ).toLowerCase() );
 
 				if ( data !== undefined ) {
 					return data;
@@ -169,7 +169,7 @@ jQuery.fn.extend( {
 				// *... In the case of properties that might _actually_
 				// have dashes, we need to also store a copy of that
 				// unchanged property.
-				if ( key.indexOf( "-" ) > -1 && data !== undefined ) {
+				if ( key.indexOf( '-' ) > -1 && data !== undefined ) {
 					dataUser.set( this, key, value );
 				}
 			} );

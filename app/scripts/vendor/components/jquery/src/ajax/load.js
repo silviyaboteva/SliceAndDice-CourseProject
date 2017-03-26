@@ -1,13 +1,13 @@
 define( [
-	"../core",
-	"../core/parseHTML",
-	"../ajax",
-	"../traversing",
-	"../manipulation",
-	"../selector",
+	'../core',
+	'../core/parseHTML',
+	'../ajax',
+	'../traversing',
+	'../manipulation',
+	'../selector',
 
 	// Optional event/alias dependency
-	"../event/alias"
+	'../event/alias'
 ], function( jQuery ) {
 
 // Keep a copy of the old load method
@@ -17,13 +17,13 @@ var _load = jQuery.fn.load;
  * Load a url into a page
  */
 jQuery.fn.load = function( url, params, callback ) {
-	if ( typeof url !== "string" && _load ) {
+	if ( typeof url !== 'string' && _load ) {
 		return _load.apply( this, arguments );
 	}
 
 	var selector, type, response,
 		self = this,
-		off = url.indexOf( " " );
+		off = url.indexOf( ' ' );
 
 	if ( off > -1 ) {
 		selector = jQuery.trim( url.slice( off ) );
@@ -38,8 +38,8 @@ jQuery.fn.load = function( url, params, callback ) {
 		params = undefined;
 
 	// Otherwise, build a param string
-	} else if ( params && typeof params === "object" ) {
-		type = "POST";
+	} else if ( params && typeof params === 'object' ) {
+		type = 'POST';
 	}
 
 	// If we have elements to modify, make the request
@@ -50,8 +50,8 @@ jQuery.fn.load = function( url, params, callback ) {
 			// If "type" variable is undefined, then "GET" method will be used.
 			// Make value of this field explicit since
 			// user can override it through ajaxSetup method
-			type: type || "GET",
-			dataType: "html",
+			type: type || 'GET',
+			dataType: 'html',
 			data: params
 		} ).done( function( responseText ) {
 
@@ -62,7 +62,7 @@ jQuery.fn.load = function( url, params, callback ) {
 
 				// If a selector was specified, locate the right elements in a dummy div
 				// Exclude scripts to avoid IE 'Permission Denied' errors
-				jQuery( "<div>" ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
+				jQuery( '<div>' ).append( jQuery.parseHTML( responseText ) ).find( selector ) :
 
 				// Otherwise use the full result
 				responseText );

@@ -1,12 +1,12 @@
 define( [
-	"./core",
-	"./var/document",
-	"./var/rnotwhite",
-	"./var/slice",
-	"./data/var/dataPriv",
+	'./core',
+	'./var/document',
+	'./var/rnotwhite',
+	'./var/slice',
+	'./data/var/dataPriv',
 
-	"./core/init",
-	"./selector"
+	'./core/init',
+	'./selector'
 ], function( jQuery, document, rnotwhite, slice, dataPriv ) {
 
 var
@@ -34,10 +34,10 @@ function on( elem, types, selector, data, fn, one ) {
 	var origFn, type;
 
 	// Types can be a map of types/handlers
-	if ( typeof types === "object" ) {
+	if ( typeof types === 'object' ) {
 
 		// ( types-Object, selector, data )
-		if ( typeof selector !== "string" ) {
+		if ( typeof selector !== 'string' ) {
 
 			// ( types-Object, data )
 			data = data || selector;
@@ -55,7 +55,7 @@ function on( elem, types, selector, data, fn, one ) {
 		fn = selector;
 		data = selector = undefined;
 	} else if ( fn == null ) {
-		if ( typeof selector === "string" ) {
+		if ( typeof selector === 'string' ) {
 
 			// ( types, selector, fn )
 			fn = data;
@@ -132,18 +132,18 @@ jQuery.event = {
 
 				// Discard the second event of a jQuery.event.trigger() and
 				// when an event is called after a page has unloaded
-				return typeof jQuery !== "undefined" && jQuery.event.triggered !== e.type ?
+				return typeof jQuery !== 'undefined' && jQuery.event.triggered !== e.type ?
 					jQuery.event.dispatch.apply( elem, arguments ) : undefined;
 			};
 		}
 
 		// Handle multiple events separated by a space
-		types = ( types || "" ).match( rnotwhite ) || [ "" ];
+		types = ( types || '' ).match( rnotwhite ) || [ '' ];
 		t = types.length;
 		while ( t-- ) {
 			tmp = rtypenamespace.exec( types[ t ] ) || [];
 			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
+			namespaces = ( tmp[ 2 ] || '' ).split( '.' ).sort();
 
 			// There *must* be a type, no attaching namespace-only handlers
 			if ( !type ) {
@@ -168,7 +168,7 @@ jQuery.event = {
 				guid: handler.guid,
 				selector: selector,
 				needsContext: selector && jQuery.expr.match.needsContext.test( selector ),
-				namespace: namespaces.join( "." )
+				namespace: namespaces.join( '.' )
 			}, handleObjIn );
 
 			// Init the event handler queue if we're the first
@@ -220,12 +220,12 @@ jQuery.event = {
 		}
 
 		// Once for each type.namespace in types; type may be omitted
-		types = ( types || "" ).match( rnotwhite ) || [ "" ];
+		types = ( types || '' ).match( rnotwhite ) || [ '' ];
 		t = types.length;
 		while ( t-- ) {
 			tmp = rtypenamespace.exec( types[ t ] ) || [];
 			type = origType = tmp[ 1 ];
-			namespaces = ( tmp[ 2 ] || "" ).split( "." ).sort();
+			namespaces = ( tmp[ 2 ] || '' ).split( '.' ).sort();
 
 			// Unbind all events (on this namespace, if provided) for the element
 			if ( !type ) {
@@ -239,7 +239,7 @@ jQuery.event = {
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 			handlers = events[ type ] || [];
 			tmp = tmp[ 2 ] &&
-				new RegExp( "(^|\\.)" + namespaces.join( "\\.(?:.*\\.|)" ) + "(\\.|$)" );
+				new RegExp( '(^|\\.)' + namespaces.join( '\\.(?:.*\\.|)' ) + '(\\.|$)' );
 
 			// Remove matching events
 			origCount = j = handlers.length;
@@ -250,7 +250,7 @@ jQuery.event = {
 					( !handler || handler.guid === handleObj.guid ) &&
 					( !tmp || tmp.test( handleObj.namespace ) ) &&
 					( !selector || selector === handleObj.selector ||
-						selector === "**" && handleObj.selector ) ) {
+						selector === '**' && handleObj.selector ) ) {
 					handlers.splice( j, 1 );
 
 					if ( handleObj.selector ) {
@@ -277,7 +277,7 @@ jQuery.event = {
 
 		// Remove data and the expando if it's no longer used
 		if ( jQuery.isEmptyObject( events ) ) {
-			dataPriv.remove( elem, "handle events" );
+			dataPriv.remove( elem, 'handle events' );
 		}
 	},
 
@@ -289,7 +289,7 @@ jQuery.event = {
 		var i, j, ret, matched, handleObj,
 			handlerQueue = [],
 			args = slice.call( arguments ),
-			handlers = ( dataPriv.get( this, "events" ) || {} )[ event.type ] || [],
+			handlers = ( dataPriv.get( this, 'events' ) || {} )[ event.type ] || [],
 			special = jQuery.event.special[ event.type ] || {};
 
 		// Use the fix-ed jQuery.Event rather than the (read-only) native event
@@ -354,19 +354,19 @@ jQuery.event = {
 		// Support: Firefox<=42+
 		// Avoid non-left-click in FF but don't block IE radio events (#3861, gh-2343)
 		if ( delegateCount && cur.nodeType &&
-			( event.type !== "click" || isNaN( event.button ) || event.button < 1 ) ) {
+			( event.type !== 'click' || isNaN( event.button ) || event.button < 1 ) ) {
 
 			for ( ; cur !== this; cur = cur.parentNode || this ) {
 
 				// Don't check non-elements (#13208)
 				// Don't process clicks on disabled elements (#6911, #8165, #11382, #11764)
-				if ( cur.nodeType === 1 && ( cur.disabled !== true || event.type !== "click" ) ) {
+				if ( cur.nodeType === 1 && ( cur.disabled !== true || event.type !== 'click' ) ) {
 					matches = [];
 					for ( i = 0; i < delegateCount; i++ ) {
 						handleObj = handlers[ i ];
 
 						// Don't conflict with Object.prototype properties (#13203)
-						sel = handleObj.selector + " ";
+						sel = handleObj.selector + ' ';
 
 						if ( matches[ sel ] === undefined ) {
 							matches[ sel ] = handleObj.needsContext ?
@@ -393,13 +393,13 @@ jQuery.event = {
 	},
 
 	// Includes some event props shared by KeyEvent and MouseEvent
-	props: ( "altKey bubbles cancelable ctrlKey currentTarget detail eventPhase " +
-		"metaKey relatedTarget shiftKey target timeStamp view which" ).split( " " ),
+	props: ( 'altKey bubbles cancelable ctrlKey currentTarget detail eventPhase ' +
+		'metaKey relatedTarget shiftKey target timeStamp view which' ).split( ' ' ),
 
 	fixHooks: {},
 
 	keyHooks: {
-		props: "char charCode key keyCode".split( " " ),
+		props: 'char charCode key keyCode'.split( ' ' ),
 		filter: function( event, original ) {
 
 			// Add which for key events
@@ -412,8 +412,8 @@ jQuery.event = {
 	},
 
 	mouseHooks: {
-		props: ( "button buttons clientX clientY offsetX offsetY pageX pageY " +
-			"screenX screenY toElement" ).split( " " ),
+		props: ( 'button buttons clientX clientY offsetX offsetY pageX pageY ' +
+			'screenX screenY toElement' ).split( ' ' ),
 		filter: function( event, original ) {
 			var eventDoc, doc, body,
 				button = original.button;
@@ -499,7 +499,7 @@ jQuery.event = {
 					return false;
 				}
 			},
-			delegateType: "focusin"
+			delegateType: 'focusin'
 		},
 		blur: {
 			trigger: function() {
@@ -508,13 +508,13 @@ jQuery.event = {
 					return false;
 				}
 			},
-			delegateType: "focusout"
+			delegateType: 'focusout'
 		},
 		click: {
 
 			// For checkbox, fire native event so checked state will be right
 			trigger: function() {
-				if ( this.type === "checkbox" && this.click && jQuery.nodeName( this, "input" ) ) {
+				if ( this.type === 'checkbox' && this.click && jQuery.nodeName( this, 'input' ) ) {
 					this.click();
 					return false;
 				}
@@ -522,7 +522,7 @@ jQuery.event = {
 
 			// For cross-browser consistency, don't fire native .click() on links
 			_default: function( event ) {
-				return jQuery.nodeName( event.target, "a" );
+				return jQuery.nodeName( event.target, 'a' );
 			}
 		},
 
@@ -635,10 +635,10 @@ jQuery.Event.prototype = {
 // https://code.google.com/p/chromium/issues/detail?id=470258
 // for the description of the bug (it existed in older Chrome versions as well).
 jQuery.each( {
-	mouseenter: "mouseover",
-	mouseleave: "mouseout",
-	pointerenter: "pointerover",
-	pointerleave: "pointerout"
+	mouseenter: 'mouseover',
+	mouseleave: 'mouseout',
+	pointerenter: 'pointerover',
+	pointerleave: 'pointerout'
 }, function( orig, fix ) {
 	jQuery.event.special[ orig ] = {
 		delegateType: fix,
@@ -677,14 +677,14 @@ jQuery.fn.extend( {
 			handleObj = types.handleObj;
 			jQuery( types.delegateTarget ).off(
 				handleObj.namespace ?
-					handleObj.origType + "." + handleObj.namespace :
+					handleObj.origType + '.' + handleObj.namespace :
 					handleObj.origType,
 				handleObj.selector,
 				handleObj.handler
 			);
 			return this;
 		}
-		if ( typeof types === "object" ) {
+		if ( typeof types === 'object' ) {
 
 			// ( types-object [, selector] )
 			for ( type in types ) {
@@ -692,7 +692,7 @@ jQuery.fn.extend( {
 			}
 			return this;
 		}
-		if ( selector === false || typeof selector === "function" ) {
+		if ( selector === false || typeof selector === 'function' ) {
 
 			// ( types [, fn] )
 			fn = selector;

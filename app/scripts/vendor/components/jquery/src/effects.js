@@ -1,20 +1,20 @@
 define( [
-	"./core",
-	"./var/document",
-	"./var/rcssNum",
-	"./css/var/cssExpand",
-	"./var/rnotwhite",
-	"./css/var/isHidden",
-	"./css/adjustCSS",
-	"./css/defaultDisplay",
-	"./data/var/dataPriv",
+	'./core',
+	'./var/document',
+	'./var/rcssNum',
+	'./css/var/cssExpand',
+	'./var/rnotwhite',
+	'./css/var/isHidden',
+	'./css/adjustCSS',
+	'./css/defaultDisplay',
+	'./data/var/dataPriv',
 
-	"./core/init",
-	"./effects/Tween",
-	"./queue",
-	"./css",
-	"./deferred",
-	"./traversing"
+	'./core/init',
+	'./effects/Tween',
+	'./queue',
+	'./css',
+	'./deferred',
+	'./traversing'
 ], function( jQuery, document, rcssNum, cssExpand, rnotwhite,
 	isHidden, adjustCSS, defaultDisplay, dataPriv ) {
 
@@ -42,7 +42,7 @@ function genFx( type, includeWidth ) {
 	includeWidth = includeWidth ? 1 : 0;
 	for ( ; i < 4 ; i += 2 - includeWidth ) {
 		which = cssExpand[ i ];
-		attrs[ "margin" + which ] = attrs[ "padding" + which ] = type;
+		attrs[ 'margin' + which ] = attrs[ 'padding' + which ] = type;
 	}
 
 	if ( includeWidth ) {
@@ -54,7 +54,7 @@ function genFx( type, includeWidth ) {
 
 function createTween( value, prop, animation ) {
 	var tween,
-		collection = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ "*" ] ),
+		collection = ( Animation.tweeners[ prop ] || [] ).concat( Animation.tweeners[ '*' ] ),
 		index = 0,
 		length = collection.length;
 	for ( ; index < length; index++ ) {
@@ -73,11 +73,11 @@ function defaultPrefilter( elem, props, opts ) {
 		orig = {},
 		style = elem.style,
 		hidden = elem.nodeType && isHidden( elem ),
-		dataShow = dataPriv.get( elem, "fxshow" );
+		dataShow = dataPriv.get( elem, 'fxshow' );
 
 	// Handle queue: false promises
 	if ( !opts.queue ) {
-		hooks = jQuery._queueHooks( elem, "fx" );
+		hooks = jQuery._queueHooks( elem, 'fx' );
 		if ( hooks.unqueued == null ) {
 			hooks.unqueued = 0;
 			oldfire = hooks.empty.fire;
@@ -94,7 +94,7 @@ function defaultPrefilter( elem, props, opts ) {
 			// Ensure the complete handler is called before this completes
 			anim.always( function() {
 				hooks.unqueued--;
-				if ( !jQuery.queue( elem, "fx" ).length ) {
+				if ( !jQuery.queue( elem, 'fx' ).length ) {
 					hooks.empty.fire();
 				}
 			} );
@@ -102,7 +102,7 @@ function defaultPrefilter( elem, props, opts ) {
 	}
 
 	// Height/width overflow pass
-	if ( elem.nodeType === 1 && ( "height" in props || "width" in props ) ) {
+	if ( elem.nodeType === 1 && ( 'height' in props || 'width' in props ) ) {
 
 		// Make sure that nothing sneaks out
 		// Record all 3 overflow attributes because IE9-10 do not
@@ -112,19 +112,19 @@ function defaultPrefilter( elem, props, opts ) {
 
 		// Set display property to inline-block for height/width
 		// animations on inline elements that are having width/height animated
-		display = jQuery.css( elem, "display" );
+		display = jQuery.css( elem, 'display' );
 
 		// Test default display if display is currently "none"
-		checkDisplay = display === "none" ?
-			dataPriv.get( elem, "olddisplay" ) || defaultDisplay( elem.nodeName ) : display;
+		checkDisplay = display === 'none' ?
+			dataPriv.get( elem, 'olddisplay' ) || defaultDisplay( elem.nodeName ) : display;
 
-		if ( checkDisplay === "inline" && jQuery.css( elem, "float" ) === "none" ) {
-			style.display = "inline-block";
+		if ( checkDisplay === 'inline' && jQuery.css( elem, 'float' ) === 'none' ) {
+			style.display = 'inline-block';
 		}
 	}
 
 	if ( opts.overflow ) {
-		style.overflow = "hidden";
+		style.overflow = 'hidden';
 		anim.always( function() {
 			style.overflow = opts.overflow[ 0 ];
 			style.overflowX = opts.overflow[ 1 ];
@@ -137,12 +137,12 @@ function defaultPrefilter( elem, props, opts ) {
 		value = props[ prop ];
 		if ( rfxtypes.exec( value ) ) {
 			delete props[ prop ];
-			toggle = toggle || value === "toggle";
-			if ( value === ( hidden ? "hide" : "show" ) ) {
+			toggle = toggle || value === 'toggle';
+			if ( value === ( hidden ? 'hide' : 'show' ) ) {
 
 				// If there is dataShow left over from a stopped hide or show
 				// and we are going to proceed with show, we should pretend to be hidden
-				if ( value === "show" && dataShow && dataShow[ prop ] !== undefined ) {
+				if ( value === 'show' && dataShow && dataShow[ prop ] !== undefined ) {
 					hidden = true;
 				} else {
 					continue;
@@ -158,11 +158,11 @@ function defaultPrefilter( elem, props, opts ) {
 
 	if ( !jQuery.isEmptyObject( orig ) ) {
 		if ( dataShow ) {
-			if ( "hidden" in dataShow ) {
+			if ( 'hidden' in dataShow ) {
 				hidden = dataShow.hidden;
 			}
 		} else {
-			dataShow = dataPriv.access( elem, "fxshow", {} );
+			dataShow = dataPriv.access( elem, 'fxshow', {} );
 		}
 
 		// Store state if its toggle - enables .stop().toggle() to "reverse"
@@ -179,7 +179,7 @@ function defaultPrefilter( elem, props, opts ) {
 		anim.done( function() {
 			var prop;
 
-			dataPriv.remove( elem, "fxshow" );
+			dataPriv.remove( elem, 'fxshow' );
 			for ( prop in orig ) {
 				jQuery.style( elem, prop, orig[ prop ] );
 			}
@@ -191,13 +191,13 @@ function defaultPrefilter( elem, props, opts ) {
 				dataShow[ prop ] = tween.start;
 				if ( hidden ) {
 					tween.end = tween.start;
-					tween.start = prop === "width" || prop === "height" ? 1 : 0;
+					tween.start = prop === 'width' || prop === 'height' ? 1 : 0;
 				}
 			}
 		}
 
 	// If this is a noop like .hide().hide(), restore an overwritten display value
-	} else if ( ( display === "none" ? defaultDisplay( elem.nodeName ) : display ) === "inline" ) {
+	} else if ( ( display === 'none' ? defaultDisplay( elem.nodeName ) : display ) === 'inline' ) {
 		style.display = display;
 	}
 }
@@ -221,7 +221,7 @@ function propFilter( props, specialEasing ) {
 		}
 
 		hooks = jQuery.cssHooks[ name ];
-		if ( hooks && "expand" in hooks ) {
+		if ( hooks && 'expand' in hooks ) {
 			value = hooks.expand( value );
 			delete props[ name ];
 
@@ -356,7 +356,7 @@ function Animation( elem, properties, options ) {
 
 jQuery.Animation = jQuery.extend( Animation, {
 	tweeners: {
-		"*": [ function( prop, value ) {
+		'*': [ function( prop, value ) {
 			var tween = this.createTween( prop, value );
 			adjustCSS( tween.elem, prop, rcssNum.exec( value ), tween );
 			return tween;
@@ -366,7 +366,7 @@ jQuery.Animation = jQuery.extend( Animation, {
 	tweener: function( props, callback ) {
 		if ( jQuery.isFunction( props ) ) {
 			callback = props;
-			props = [ "*" ];
+			props = [ '*' ];
 		} else {
 			props = props.match( rnotwhite );
 		}
@@ -394,20 +394,20 @@ jQuery.Animation = jQuery.extend( Animation, {
 } );
 
 jQuery.speed = function( speed, easing, fn ) {
-	var opt = speed && typeof speed === "object" ? jQuery.extend( {}, speed ) : {
+	var opt = speed && typeof speed === 'object' ? jQuery.extend( {}, speed ) : {
 		complete: fn || !fn && easing ||
 			jQuery.isFunction( speed ) && speed,
 		duration: speed,
 		easing: fn && easing || easing && !jQuery.isFunction( easing ) && easing
 	};
 
-	opt.duration = jQuery.fx.off ? 0 : typeof opt.duration === "number" ?
+	opt.duration = jQuery.fx.off ? 0 : typeof opt.duration === 'number' ?
 		opt.duration : opt.duration in jQuery.fx.speeds ?
 			jQuery.fx.speeds[ opt.duration ] : jQuery.fx.speeds._default;
 
 	// Normalize opt.queue - true/undefined/null -> "fx"
 	if ( opt.queue == null || opt.queue === true ) {
-		opt.queue = "fx";
+		opt.queue = 'fx';
 	}
 
 	// Queueing
@@ -430,7 +430,7 @@ jQuery.fn.extend( {
 	fadeTo: function( speed, to, easing, callback ) {
 
 		// Show any hidden elements after setting opacity to 0
-		return this.filter( isHidden ).css( "opacity", 0 ).show()
+		return this.filter( isHidden ).css( 'opacity', 0 ).show()
 
 			// Animate to the value specified
 			.end().animate( { opacity: to }, speed, easing, callback );
@@ -444,7 +444,7 @@ jQuery.fn.extend( {
 				var anim = Animation( this, jQuery.extend( {}, prop ), optall );
 
 				// Empty animations, or finishing resolves immediately
-				if ( empty || dataPriv.get( this, "finish" ) ) {
+				if ( empty || dataPriv.get( this, 'finish' ) ) {
 					anim.stop( true );
 				}
 			};
@@ -461,18 +461,18 @@ jQuery.fn.extend( {
 			stop( gotoEnd );
 		};
 
-		if ( typeof type !== "string" ) {
+		if ( typeof type !== 'string' ) {
 			gotoEnd = clearQueue;
 			clearQueue = type;
 			type = undefined;
 		}
 		if ( clearQueue && type !== false ) {
-			this.queue( type || "fx", [] );
+			this.queue( type || 'fx', [] );
 		}
 
 		return this.each( function() {
 			var dequeue = true,
-				index = type != null && type + "queueHooks",
+				index = type != null && type + 'queueHooks',
 				timers = jQuery.timers,
 				data = dataPriv.get( this );
 
@@ -508,13 +508,13 @@ jQuery.fn.extend( {
 	},
 	finish: function( type ) {
 		if ( type !== false ) {
-			type = type || "fx";
+			type = type || 'fx';
 		}
 		return this.each( function() {
 			var index,
 				data = dataPriv.get( this ),
-				queue = data[ type + "queue" ],
-				hooks = data[ type + "queueHooks" ],
+				queue = data[ type + 'queue' ],
+				hooks = data[ type + 'queueHooks' ],
 				timers = jQuery.timers,
 				length = queue ? queue.length : 0;
 
@@ -549,10 +549,10 @@ jQuery.fn.extend( {
 	}
 } );
 
-jQuery.each( [ "toggle", "show", "hide" ], function( i, name ) {
+jQuery.each( [ 'toggle', 'show', 'hide' ], function( i, name ) {
 	var cssFn = jQuery.fn[ name ];
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
-		return speed == null || typeof speed === "boolean" ?
+		return speed == null || typeof speed === 'boolean' ?
 			cssFn.apply( this, arguments ) :
 			this.animate( genFx( name, true ), speed, easing, callback );
 	};
@@ -560,12 +560,12 @@ jQuery.each( [ "toggle", "show", "hide" ], function( i, name ) {
 
 // Generate shortcuts for custom animations
 jQuery.each( {
-	slideDown: genFx( "show" ),
-	slideUp: genFx( "hide" ),
-	slideToggle: genFx( "toggle" ),
-	fadeIn: { opacity: "show" },
-	fadeOut: { opacity: "hide" },
-	fadeToggle: { opacity: "toggle" }
+	slideDown: genFx( 'show' ),
+	slideUp: genFx( 'hide' ),
+	slideToggle: genFx( 'toggle' ),
+	fadeIn: { opacity: 'show' },
+	fadeOut: { opacity: 'hide' },
+	fadeToggle: { opacity: 'toggle' }
 }, function( name, props ) {
 	jQuery.fn[ name ] = function( speed, easing, callback ) {
 		return this.animate( props, speed, easing, callback );

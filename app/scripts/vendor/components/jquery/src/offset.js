@@ -1,16 +1,16 @@
 define( [
-	"./core",
-	"./core/access",
-	"./var/document",
-	"./var/documentElement",
-	"./css/var/rnumnonpx",
-	"./css/curCSS",
-	"./css/addGetHookIf",
-	"./css/support",
+	'./core',
+	'./core/access',
+	'./var/document',
+	'./var/documentElement',
+	'./css/var/rnumnonpx',
+	'./css/curCSS',
+	'./css/addGetHookIf',
+	'./css/support',
 
-	"./core/init",
-	"./css",
-	"./selector" // contains
+	'./core/init',
+	'./css',
+	'./selector' // contains
 ], function( jQuery, access, document, documentElement, rnumnonpx, curCSS, addGetHookIf, support ) {
 
 /**
@@ -23,20 +23,20 @@ function getWindow( elem ) {
 jQuery.offset = {
 	setOffset: function( elem, options, i ) {
 		var curPosition, curLeft, curCSSTop, curTop, curOffset, curCSSLeft, calculatePosition,
-			position = jQuery.css( elem, "position" ),
+			position = jQuery.css( elem, 'position' ),
 			curElem = jQuery( elem ),
 			props = {};
 
 		// Set position first, in-case top/left are set even on static elem
-		if ( position === "static" ) {
-			elem.style.position = "relative";
+		if ( position === 'static' ) {
+			elem.style.position = 'relative';
 		}
 
 		curOffset = curElem.offset();
-		curCSSTop = jQuery.css( elem, "top" );
-		curCSSLeft = jQuery.css( elem, "left" );
-		calculatePosition = ( position === "absolute" || position === "fixed" ) &&
-			( curCSSTop + curCSSLeft ).indexOf( "auto" ) > -1;
+		curCSSTop = jQuery.css( elem, 'top' );
+		curCSSLeft = jQuery.css( elem, 'left' );
+		calculatePosition = ( position === 'absolute' || position === 'fixed' ) &&
+			( curCSSTop + curCSSLeft ).indexOf( 'auto' ) > -1;
 
 		// Need to be able to calculate position if either
 		// top or left is auto and position is either absolute or fixed
@@ -63,7 +63,7 @@ jQuery.offset = {
 			props.left = ( options.left - curOffset.left ) + curLeft;
 		}
 
-		if ( "using" in options ) {
+		if ( 'using' in options ) {
 			options.using.call( elem, props );
 
 		} else {
@@ -117,7 +117,7 @@ jQuery.fn.extend( {
 
 		// Fixed elements are offset from window (parentOffset = {top:0, left: 0},
 		// because it is its only offset parent
-		if ( jQuery.css( elem, "position" ) === "fixed" ) {
+		if ( jQuery.css( elem, 'position' ) === 'fixed' ) {
 
 			// Assume getBoundingClientRect is there when computed position is fixed
 			offset = elem.getBoundingClientRect();
@@ -129,19 +129,19 @@ jQuery.fn.extend( {
 
 			// Get correct offsets
 			offset = this.offset();
-			if ( !jQuery.nodeName( offsetParent[ 0 ], "html" ) ) {
+			if ( !jQuery.nodeName( offsetParent[ 0 ], 'html' ) ) {
 				parentOffset = offsetParent.offset();
 			}
 
 			// Add offsetParent borders
-			parentOffset.top += jQuery.css( offsetParent[ 0 ], "borderTopWidth", true );
-			parentOffset.left += jQuery.css( offsetParent[ 0 ], "borderLeftWidth", true );
+			parentOffset.top += jQuery.css( offsetParent[ 0 ], 'borderTopWidth', true );
+			parentOffset.left += jQuery.css( offsetParent[ 0 ], 'borderLeftWidth', true );
 		}
 
 		// Subtract parent offsets and element margins
 		return {
-			top: offset.top - parentOffset.top - jQuery.css( elem, "marginTop", true ),
-			left: offset.left - parentOffset.left - jQuery.css( elem, "marginLeft", true )
+			top: offset.top - parentOffset.top - jQuery.css( elem, 'marginTop', true ),
+			left: offset.left - parentOffset.left - jQuery.css( elem, 'marginLeft', true )
 		};
 	},
 
@@ -159,7 +159,7 @@ jQuery.fn.extend( {
 		return this.map( function() {
 			var offsetParent = this.offsetParent;
 
-			while ( offsetParent && jQuery.css( offsetParent, "position" ) === "static" ) {
+			while ( offsetParent && jQuery.css( offsetParent, 'position' ) === 'static' ) {
 				offsetParent = offsetParent.offsetParent;
 			}
 
@@ -169,8 +169,8 @@ jQuery.fn.extend( {
 } );
 
 // Create scrollLeft and scrollTop methods
-jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( method, prop ) {
-	var top = "pageYOffset" === prop;
+jQuery.each( { scrollLeft: 'pageXOffset', scrollTop: 'pageYOffset' }, function( method, prop ) {
+	var top = 'pageYOffset' === prop;
 
 	jQuery.fn[ method ] = function( val ) {
 		return access( this, function( elem, method, val ) {
@@ -199,7 +199,7 @@ jQuery.each( { scrollLeft: "pageXOffset", scrollTop: "pageYOffset" }, function( 
 // Blink bug: https://code.google.com/p/chromium/issues/detail?id=229280
 // getComputedStyle returns percent when specified for top/left/bottom/right;
 // rather than make the css module depend on the offset module, just check for it here
-jQuery.each( [ "top", "left" ], function( i, prop ) {
+jQuery.each( [ 'top', 'left' ], function( i, prop ) {
 	jQuery.cssHooks[ prop ] = addGetHookIf( support.pixelPosition,
 		function( elem, computed ) {
 			if ( computed ) {
@@ -207,7 +207,7 @@ jQuery.each( [ "top", "left" ], function( i, prop ) {
 
 				// If curCSS returns percentage, fallback to offset
 				return rnumnonpx.test( computed ) ?
-					jQuery( elem ).position()[ prop ] + "px" :
+					jQuery( elem ).position()[ prop ] + 'px' :
 					computed;
 			}
 		}

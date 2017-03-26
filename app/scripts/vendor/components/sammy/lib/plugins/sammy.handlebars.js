@@ -120,7 +120,7 @@
           data     = $.extend({}, this, data);
           partials = $.extend({}, data.partials, partials);
 
-          return fn(data, {"partials":partials});
+          return fn(data, {'partials':partials});
       };
 
       // set the default method name/extension

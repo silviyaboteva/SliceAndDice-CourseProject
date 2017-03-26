@@ -54,25 +54,25 @@
   //
   Sammy.OAuth2 = function(app) {
     app.use('JSON');
-    this.authorize = "/oauth/authorize";
+    this.authorize = '/oauth/authorize';
 
     // Use this on request that require OAuth token. You can use this in a
     // filter: it will redirect and return false if the access token is missing.
     // You can use it in a route, it will redirect to get the access token, or
     // call the callback function if it has an access token.
-    this.helper("requireOAuth", function(cb) {
+    this.helper('requireOAuth', function(cb) {
       if (this.app.getAccessToken()) {
         if (cb) {
           cb.apply(this);
         }
       } else {
-        this.redirect(this.app.authorize + "?state=" + escape(this.path));
+        this.redirect(this.app.authorize + '?state=' + escape(this.path));
         return false;
       }
     });
 
     // Use this to sign out.
-    this.helper("loseAccessToken", function() {
+    this.helper('loseAccessToken', function() {
       this.app.loseAccessToken();
     });
 
@@ -86,36 +86,36 @@
 
     // Returns the access token. Uses Sammy.Session to store the token.
     this.getAccessToken = function() {
-      return this.session("oauth.token");
+      return this.session('oauth.token');
     }
     // Stores the access token in the session.
     this.setAccessToken = function(token) {
-      this.session("oauth.token", token);
-      this.trigger("oauth.connected");
+      this.session('oauth.token', token);
+      this.trigger('oauth.connected');
     }
     // Lose access token: use this to sign out.
     this.loseAccessToken = function() {
-      this.session("oauth.token", null);
-      this.trigger("oauth.disconnected");
+      this.session('oauth.token', null);
+      this.trigger('oauth.disconnected');
     }
 
     // Add OAuth 2.0 access token to all XHR requests.
     $(document).ajaxSend(function(evt, xhr) {
       var token = app.getAccessToken();
       if (token) {
-        xhr.setRequestHeader("Authorization", "OAuth " + token);
+        xhr.setRequestHeader('Authorization', 'OAuth ' + token);
       }
     });
 
     // Converts query string parameters in fragment identifier to object.
     function parseParams(path) {
       var hash = path.match(/#(.*)$/)[1];
-      var pairs = hash.split("&"), params = {};
+      var pairs = hash.split('&'), params = {};
       var i, len = pairs.length;
 
       for (i = 0; i < len; i += 1) {
-        var splat = pairs[i].split("=");
-        params[splat[0]] = splat[1].replace(/\+/g, " ");
+        var splat = pairs[i].split('=');
+        params[splat[0]] = splat[1].replace(/\+/g, ' ');
       }
       return params;
     }
@@ -123,10 +123,10 @@
     var start_url;
     // Capture the application's start URL, we'll need that later on for
     // redirection.
-    this.bind("run", function(evt, params) {
-      start_url = params.start_url || "#";
+    this.bind('run', function(evt, params) {
+      start_url = params.start_url || '#';
       if (this.app.getAccessToken()) {
-        this.trigger("oauth.connected");
+        this.trigger('oauth.connected');
       }
     });
 
@@ -146,8 +146,8 @@
     // denied).
     this.before(/#(error=|[^\\].*\&error=)/, function(context) {
       var params = parseParams(context.path);
-      var message = params.error_description || "Access denined";
-      context.trigger("oauth.denied", { code: params.error, message: message });
+      var message = params.error_description || 'Access denined';
+      context.trigger('oauth.denied', { code: params.error, message: message });
       return false;
     }).get(/#(error=|[^\\].*\&error=)/, function(context) { });
 

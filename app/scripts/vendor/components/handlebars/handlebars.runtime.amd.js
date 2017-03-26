@@ -40,7 +40,7 @@ define('handlebars/utils',['exports'], function (exports) {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#x27;',
+    '\'': '&#x27;',
     '`': '&#x60;',
     '=': '&#x3D;'
   };

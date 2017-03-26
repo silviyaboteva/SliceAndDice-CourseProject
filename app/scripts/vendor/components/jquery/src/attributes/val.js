@@ -1,7 +1,7 @@
 define( [
-	"../core",
-	"./support",
-	"../core/init"
+	'../core',
+	'./support',
+	'../core/init'
 ], function( jQuery, support ) {
 
 var rreturn = /\r/g,
@@ -18,21 +18,21 @@ jQuery.fn.extend( {
 					jQuery.valHooks[ elem.nodeName.toLowerCase() ];
 
 				if ( hooks &&
-					"get" in hooks &&
-					( ret = hooks.get( elem, "value" ) ) !== undefined
+					'get' in hooks &&
+					( ret = hooks.get( elem, 'value' ) ) !== undefined
 				) {
 					return ret;
 				}
 
 				ret = elem.value;
 
-				return typeof ret === "string" ?
+				return typeof ret === 'string' ?
 
 					// Handle most common string cases
-					ret.replace( rreturn, "" ) :
+					ret.replace( rreturn, '' ) :
 
 					// Handle cases where value is null/undef or number
-					ret == null ? "" : ret;
+					ret == null ? '' : ret;
 			}
 
 			return;
@@ -55,21 +55,21 @@ jQuery.fn.extend( {
 
 			// Treat null/undefined as ""; convert numbers to string
 			if ( val == null ) {
-				val = "";
+				val = '';
 
-			} else if ( typeof val === "number" ) {
-				val += "";
+			} else if ( typeof val === 'number' ) {
+				val += '';
 
 			} else if ( jQuery.isArray( val ) ) {
 				val = jQuery.map( val, function( value ) {
-					return value == null ? "" : value + "";
+					return value == null ? '' : value + '';
 				} );
 			}
 
 			hooks = jQuery.valHooks[ this.type ] || jQuery.valHooks[ this.nodeName.toLowerCase() ];
 
 			// If set returns undefined, fall back to normal setting
-			if ( !hooks || !( "set" in hooks ) || hooks.set( this, val, "value" ) === undefined ) {
+			if ( !hooks || !( 'set' in hooks ) || hooks.set( this, val, 'value' ) === undefined ) {
 				this.value = val;
 			}
 		} );
@@ -81,7 +81,7 @@ jQuery.extend( {
 		option: {
 			get: function( elem ) {
 
-				var val = jQuery.find.attr( elem, "value" );
+				var val = jQuery.find.attr( elem, 'value' );
 				return val != null ?
 					val :
 
@@ -89,7 +89,7 @@ jQuery.extend( {
 					// option.text throws exceptions (#14686, #14858)
 					// Strip and collapse whitespace
 					// https://html.spec.whatwg.org/#strip-and-collapse-whitespace
-					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, " " );
+					jQuery.trim( jQuery.text( elem ) ).replace( rspaces, ' ' );
 			}
 		},
 		select: {
@@ -97,7 +97,7 @@ jQuery.extend( {
 				var value, option,
 					options = elem.options,
 					index = elem.selectedIndex,
-					one = elem.type === "select-one" || index < 0,
+					one = elem.type === 'select-one' || index < 0,
 					values = one ? null : [],
 					max = one ? index + 1 : options.length,
 					i = index < 0 ?
@@ -113,9 +113,9 @@ jQuery.extend( {
 
 							// Don't return options that are disabled or in a disabled optgroup
 							( support.optDisabled ?
-								!option.disabled : option.getAttribute( "disabled" ) === null ) &&
+								!option.disabled : option.getAttribute( 'disabled' ) === null ) &&
 							( !option.parentNode.disabled ||
-								!jQuery.nodeName( option.parentNode, "optgroup" ) ) ) {
+								!jQuery.nodeName( option.parentNode, 'optgroup' ) ) ) {
 
 						// Get the specific value for the option
 						value = jQuery( option ).val();
@@ -159,7 +159,7 @@ jQuery.extend( {
 } );
 
 // Radios and checkboxes getter/setter
-jQuery.each( [ "radio", "checkbox" ], function() {
+jQuery.each( [ 'radio', 'checkbox' ], function() {
 	jQuery.valHooks[ this ] = {
 		set: function( elem, value ) {
 			if ( jQuery.isArray( value ) ) {
@@ -169,7 +169,7 @@ jQuery.each( [ "radio", "checkbox" ], function() {
 	};
 	if ( !support.checkOn ) {
 		jQuery.valHooks[ this ].get = function( elem ) {
-			return elem.getAttribute( "value" ) === null ? "on" : elem.value;
+			return elem.getAttribute( 'value' ) === null ? 'on' : elem.value;
 		};
 	}
 } );

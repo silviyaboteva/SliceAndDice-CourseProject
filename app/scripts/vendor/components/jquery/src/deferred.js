@@ -1,7 +1,7 @@
 define( [
-	"./core",
-	"./var/slice",
-	"./callbacks"
+	'./core',
+	'./var/slice',
+	'./callbacks'
 ], function( jQuery, slice ) {
 
 jQuery.extend( {
@@ -10,11 +10,11 @@ jQuery.extend( {
 		var tuples = [
 
 				// action, add listener, listener list, final state
-				[ "resolve", "done", jQuery.Callbacks( "once memory" ), "resolved" ],
-				[ "reject", "fail", jQuery.Callbacks( "once memory" ), "rejected" ],
-				[ "notify", "progress", jQuery.Callbacks( "memory" ) ]
+				[ 'resolve', 'done', jQuery.Callbacks( 'once memory' ), 'resolved' ],
+				[ 'reject', 'fail', jQuery.Callbacks( 'once memory' ), 'rejected' ],
+				[ 'notify', 'progress', jQuery.Callbacks( 'memory' ) ]
 			],
-			state = "pending",
+			state = 'pending',
 			promise = {
 				state: function() {
 					return state;
@@ -38,7 +38,7 @@ jQuery.extend( {
 										.done( newDefer.resolve )
 										.fail( newDefer.reject );
 								} else {
-									newDefer[ tuple[ 0 ] + "With" ](
+									newDefer[ tuple[ 0 ] + 'With' ](
 										this === promise ? newDefer.promise() : this,
 										fn ? [ returned ] : arguments
 									);
@@ -81,10 +81,10 @@ jQuery.extend( {
 
 			// deferred[ resolve | reject | notify ]
 			deferred[ tuple[ 0 ] ] = function() {
-				deferred[ tuple[ 0 ] + "With" ]( this === deferred ? promise : this, arguments );
+				deferred[ tuple[ 0 ] + 'With' ]( this === deferred ? promise : this, arguments );
 				return this;
 			};
-			deferred[ tuple[ 0 ] + "With" ] = list.fireWith;
+			deferred[ tuple[ 0 ] + 'With' ] = list.fireWith;
 		} );
 
 		// Make the deferred a promise

@@ -1,8 +1,8 @@
 define( [
-	"../core",
-	"../var/document",
-	"./var/rsingleTag",
-	"../manipulation/buildFragment"
+	'../core',
+	'../var/document',
+	'./var/rsingleTag',
+	'../manipulation/buildFragment'
 ], function( jQuery, document, rsingleTag, buildFragment ) {
 
 // Argument "data" should be string of html
@@ -10,10 +10,10 @@ define( [
 // defaults to document
 // keepScripts (optional): If true, will include scripts passed in the html string
 jQuery.parseHTML = function( data, context, keepScripts ) {
-	if ( !data || typeof data !== "string" ) {
+	if ( !data || typeof data !== 'string' ) {
 		return null;
 	}
-	if ( typeof context === "boolean" ) {
+	if ( typeof context === 'boolean' ) {
 		keepScripts = context;
 		context = false;
 	}

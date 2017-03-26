@@ -1,5 +1,5 @@
 define( [
-	"../ajax"
+	'../ajax'
 ], function( jQuery ) {
 
 jQuery._evalUrl = function( url ) {
@@ -7,11 +7,11 @@ jQuery._evalUrl = function( url ) {
 		url: url,
 
 		// Make this explicit, since user can override this through ajaxSetup (#11264)
-		type: "GET",
-		dataType: "script",
+		type: 'GET',
+		dataType: 'script',
 		async: false,
 		global: false,
-		"throws": true
+		'throws': true
 	} );
 };
 

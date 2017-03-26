@@ -1,4 +1,4 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=='function'&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error('Cannot find module \''+o+'\'');throw f.code='MODULE_NOT_FOUND',f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=='function'&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (process,global){
 'use strict';
 
@@ -188,8 +188,8 @@ global.mocha = mocha;
 // browser context (assuming browserification).  should fix #880
 module.exports = global;
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/mocha":14,"_process":67,"browser-stdout":41}],2:[function(require,module,exports){
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'./lib/mocha':14,'_process':67,'browser-stdout':41}],2:[function(require,module,exports){
 'use strict';
 
 function noop () {}
@@ -532,7 +532,7 @@ exports.getWindowSize = function getWindowSize () {
   return [640, 480];
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
 },{}],6:[function(require,module,exports){
 'use strict';
 
@@ -647,7 +647,7 @@ Context.prototype.inspect = function () {
   }, 2);
 };
 
-},{"json3":54}],7:[function(require,module,exports){
+},{'json3':54}],7:[function(require,module,exports){
 'use strict';
 
 /**
@@ -697,7 +697,7 @@ Hook.prototype.error = function (err) {
   this._error = err;
 };
 
-},{"./runnable":33,"./utils":38}],8:[function(require,module,exports){
+},{'./runnable':33,'./utils':38}],8:[function(require,module,exports){
 'use strict';
 
 /**
@@ -814,7 +814,7 @@ module.exports = function (suite) {
   });
 };
 
-},{"../test":36,"./common":9}],9:[function(require,module,exports){
+},{'../test':36,'./common':9}],9:[function(require,module,exports){
 'use strict';
 
 var Suite = require('../suite');
@@ -974,7 +974,7 @@ module.exports = function (suites, context, mocha) {
   };
 };
 
-},{"../suite":35}],10:[function(require,module,exports){
+},{'../suite':35}],10:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1039,7 +1039,7 @@ module.exports = function (suite) {
   }
 };
 
-},{"../suite":35,"../test":36}],11:[function(require,module,exports){
+},{'../suite':35,'../test':36}],11:[function(require,module,exports){
 'use strict';
 
 exports.bdd = require('./bdd');
@@ -1047,7 +1047,7 @@ exports.tdd = require('./tdd');
 exports.qunit = require('./qunit');
 exports.exports = require('./exports');
 
-},{"./bdd":8,"./exports":10,"./qunit":12,"./tdd":13}],12:[function(require,module,exports){
+},{'./bdd':8,'./exports':10,'./qunit':12,'./tdd':13}],12:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1148,7 +1148,7 @@ module.exports = function (suite) {
   });
 };
 
-},{"../test":36,"./common":9}],13:[function(require,module,exports){
+},{'../test':36,'./common':9}],13:[function(require,module,exports){
 'use strict';
 
 /**
@@ -1256,7 +1256,7 @@ module.exports = function (suite) {
   });
 };
 
-},{"../test":36,"./common":9}],14:[function(require,module,exports){
+},{'../test':36,'./common':9}],14:[function(require,module,exports){
 (function (process,global,__dirname){
 'use strict';
 
@@ -1781,8 +1781,8 @@ Mocha.prototype.run = function (fn) {
   return runner.run(done);
 };
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},"/lib")
-},{"./context":6,"./hook":7,"./interfaces":11,"./reporters":21,"./runnable":33,"./runner":34,"./suite":35,"./test":36,"./utils":38,"_process":67,"escape-string-regexp":47,"growl":49,"path":42}],15:[function(require,module,exports){
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {},'/lib')
+},{'./context':6,'./hook':7,'./interfaces':11,'./reporters':21,'./runnable':33,'./runner':34,'./suite':35,'./test':36,'./utils':38,'_process':67,'escape-string-regexp':47,'growl':49,'path':42}],15:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2426,8 +2426,8 @@ function sameType (a, b) {
   return objToString.call(a) === objToString.call(b);
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../ms":15,"../utils":38,"_process":67,"diff":46,"supports-color":42,"tty":5}],18:[function(require,module,exports){
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'../ms':15,'../utils':38,'_process':67,'diff':46,'supports-color':42,'tty':5}],18:[function(require,module,exports){
 'use strict';
 
 /**
@@ -2493,7 +2493,7 @@ function Doc (runner) {
   });
 }
 
-},{"../utils":38,"./base":17}],19:[function(require,module,exports){
+},{'../utils':38,'./base':17}],19:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -2565,7 +2565,7 @@ function Dot (runner) {
 inherits(Dot, Base);
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],20:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],20:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -2914,8 +2914,8 @@ function on (el, event, fn) {
   }
 }
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../browser/progress":4,"../utils":38,"./base":17,"escape-string-regexp":47}],21:[function(require,module,exports){
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'../browser/progress':4,'../utils':38,'./base':17,'escape-string-regexp':47}],21:[function(require,module,exports){
 'use strict';
 
 // Alias exports to a their normalized format Mocha#reporter to prevent a need
@@ -2936,7 +2936,7 @@ exports.Progress = exports.progress = require('./progress');
 exports.Landing = exports.landing = require('./landing');
 exports.JSONStream = exports['json-stream'] = require('./json-stream');
 
-},{"./base":17,"./doc":18,"./dot":19,"./html":20,"./json":23,"./json-stream":22,"./landing":24,"./list":25,"./markdown":26,"./min":27,"./nyan":28,"./progress":29,"./spec":30,"./tap":31,"./xunit":32}],22:[function(require,module,exports){
+},{'./base':17,'./doc':18,'./dot':19,'./html':20,'./json':23,'./json-stream':22,'./landing':24,'./list':25,'./markdown':26,'./min':27,'./nyan':28,'./progress':29,'./spec':30,'./tap':31,'./xunit':32}],22:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3003,7 +3003,7 @@ function clean (test) {
 }
 
 }).call(this,require('_process'))
-},{"./base":17,"_process":67,"json3":54}],23:[function(require,module,exports){
+},{'./base':17,'_process':67,'json3':54}],23:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3099,7 +3099,7 @@ function errorJSON (err) {
 }
 
 }).call(this,require('_process'))
-},{"./base":17,"_process":67}],24:[function(require,module,exports){
+},{'./base':17,'_process':67}],24:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3197,7 +3197,7 @@ function Landing (runner) {
 inherits(Landing, Base);
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],25:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],25:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3264,7 +3264,7 @@ function List (runner) {
 inherits(List, Base);
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],26:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],26:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3367,7 +3367,7 @@ function Markdown (runner) {
 }
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],27:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],27:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3409,7 +3409,7 @@ function Min (runner) {
 inherits(Min, Base);
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],28:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],28:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3676,7 +3676,7 @@ function write (string) {
 }
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],29:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],29:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -3771,7 +3771,7 @@ function Progress (runner, options) {
 inherits(Progress, Base);
 
 }).call(this,require('_process'))
-},{"../utils":38,"./base":17,"_process":67}],30:[function(require,module,exports){
+},{'../utils':38,'./base':17,'_process':67}],30:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3854,7 +3854,7 @@ function Spec (runner) {
  */
 inherits(Spec, Base);
 
-},{"../utils":38,"./base":17}],31:[function(require,module,exports){
+},{'../utils':38,'./base':17}],31:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3926,7 +3926,7 @@ function title (test) {
   return test.fullTitle().replace(/#/g, '');
 }
 
-},{"./base":17}],32:[function(require,module,exports){
+},{'./base':17}],32:[function(require,module,exports){
 (function (process,global){
 'use strict';
 
@@ -4097,8 +4097,8 @@ function tag (name, attrs, close, content) {
   return tag;
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"../utils":38,"./base":17,"_process":67,"fs":42,"mkdirp":64,"path":42}],33:[function(require,module,exports){
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'../utils':38,'./base':17,'_process':67,'fs':42,'mkdirp':64,'path':42}],33:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -4487,8 +4487,8 @@ Runnable.prototype.run = function (fn) {
   }
 };
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./ms":15,"./pending":16,"./utils":38,"debug":2,"events":3,"json3":54,"lodash.create":60}],34:[function(require,module,exports){
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'./ms':15,'./pending':16,'./utils':38,'debug':2,'events':3,'json3':54,'lodash.create':60}],34:[function(require,module,exports){
 (function (process,global){
 'use strict';
 
@@ -5454,8 +5454,8 @@ function extraGlobals () {
   return [];
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./pending":16,"./runnable":33,"./utils":38,"_process":67,"debug":2,"events":3}],35:[function(require,module,exports){
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'./pending':16,'./runnable':33,'./utils':38,'_process':67,'debug':2,'events':3}],35:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5859,7 +5859,7 @@ Suite.prototype.run = function run () {
   }
 };
 
-},{"./hook":7,"./ms":15,"./utils":38,"debug":2,"events":3}],36:[function(require,module,exports){
+},{'./hook':7,'./ms':15,'./utils':38,'debug':2,'events':3}],36:[function(require,module,exports){
 'use strict';
 
 /**
@@ -5913,7 +5913,7 @@ Test.prototype.clone = function () {
   return test;
 };
 
-},{"./runnable":33,"./utils":38,"lodash.create":60}],37:[function(require,module,exports){
+},{'./runnable':33,'./utils':38,'lodash.create':60}],37:[function(require,module,exports){
 'use strict';
 
 /**
@@ -6620,7 +6620,7 @@ exports.lookupFiles = function lookupFiles (path, extensions, recursive) {
     } else {
       files = glob.sync(path);
       if (!files.length) {
-        throw new Error("cannot resolve path (or pattern) '" + path + "'");
+        throw new Error('cannot resolve path (or pattern) \'' + path + '\'');
       }
       return files;
     }
@@ -6758,8 +6758,8 @@ exports.isPromise = function isPromise (value) {
  */
 exports.noop = function () {};
 
-}).call(this,require('_process'),require("buffer").Buffer)
-},{"./to-iso-string":37,"_process":67,"buffer":44,"debug":2,"fs":42,"glob":42,"json3":54,"path":42,"util":84}],39:[function(require,module,exports){
+}).call(this,require('_process'),require('buffer').Buffer)
+},{'./to-iso-string':37,'_process':67,'buffer':44,'debug':2,'fs':42,'glob':42,'json3':54,'path':42,'util':84}],39:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -6906,9 +6906,9 @@ BrowserStdout.prototype._write = function(chunks, encoding, cb) {
 }
 
 }).call(this,require('_process'))
-},{"_process":67,"stream":79,"util":84}],42:[function(require,module,exports){
+},{'_process':67,'stream':79,'util':84}],42:[function(require,module,exports){
 arguments[4][40][0].apply(exports,arguments)
-},{"dup":40}],43:[function(require,module,exports){
+},{'dup':40}],43:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -7019,8 +7019,8 @@ exports.allocUnsafeSlow = function allocUnsafeSlow(size) {
   return new SlowBuffer(size);
 }
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"buffer":44}],44:[function(require,module,exports){
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'buffer':44}],44:[function(require,module,exports){
 (function (global){
 /*!
  * The buffer module from node.js, for the browser.
@@ -8812,8 +8812,8 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"base64-js":39,"ieee754":50,"isarray":53}],45:[function(require,module,exports){
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'base64-js':39,'ieee754':50,'isarray':53}],45:[function(require,module,exports){
 (function (Buffer){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -8923,8 +8923,8 @@ function objectToString(o) {
   return Object.prototype.toString.call(o);
 }
 
-}).call(this,{"isBuffer":require("../../is-buffer/index.js")})
-},{"../../is-buffer/index.js":52}],46:[function(require,module,exports){
+}).call(this,{'isBuffer':require('../../is-buffer/index.js')})
+},{'../../is-buffer/index.js':52}],46:[function(require,module,exports){
 /* See LICENSE file for terms of use */
 
 /*
@@ -9892,8 +9892,8 @@ switch(os.type()) {
   case 'Darwin':
     if (which('terminal-notifier')) {
       cmd = {
-          type: "Darwin-NotificationCenter"
-        , pkg: "terminal-notifier"
+          type: 'Darwin-NotificationCenter'
+        , pkg: 'terminal-notifier'
         , msg: '-message'
         , title: '-title'
         , subtitle: '-subtitle'
@@ -9907,8 +9907,8 @@ switch(os.type()) {
       };
     } else {
       cmd = {
-          type: "Darwin-Growl"
-        , pkg: "growlnotify"
+          type: 'Darwin-Growl'
+        , pkg: 'growlnotify'
         , msg: '-m'
         , sticky: '--sticky'
         , priority: {
@@ -9919,11 +9919,11 @@ switch(os.type()) {
               , 0
               , 1
               , 2
-              , "Very Low"
-              , "Moderate"
-              , "Normal"
-              , "High"
-              , "Emergency"
+              , 'Very Low'
+              , 'Moderate'
+              , 'Normal'
+              , 'High'
+              , 'Emergency'
             ]
           }
       };
@@ -9932,8 +9932,8 @@ switch(os.type()) {
   case 'Linux':
     if (which('growl')) {
       cmd = {
-          type: "Linux-Growl"
-        , pkg: "growl"
+          type: 'Linux-Growl'
+        , pkg: 'growl'
         , msg: '-m'
         , title: '-title'
         , subtitle: '-subtitle'
@@ -9944,17 +9944,17 @@ switch(os.type()) {
       };
     } else {
       cmd = {
-          type: "Linux"
-        , pkg: "notify-send"
+          type: 'Linux'
+        , pkg: 'notify-send'
         , msg: ''
         , sticky: '-t 0'
         , icon: '-i'
         , priority: {
             cmd: '-u'
           , range: [
-              "low"
-            , "normal"
-            , "critical"
+              'low'
+            , 'normal'
+            , 'critical'
           ]
         }
       };
@@ -9962,8 +9962,8 @@ switch(os.type()) {
     break;
   case 'Windows_NT':
     cmd = {
-        type: "Windows"
-      , pkg: "growlnotify"
+        type: 'Windows'
+      , pkg: 'growlnotify'
       , msg: ''
       , sticky: '/s:true'
       , title: '/t:'
@@ -10035,7 +10035,7 @@ function growl(msg, options, fn) {
 
   if (options.exec) {
     cmd = {
-        type: "Custom"
+        type: 'Custom'
       , pkg: options.exec
       , range: []
     };
@@ -10089,7 +10089,7 @@ function growl(msg, options, fn) {
   }
 
   // name
-  if (options.name && cmd.type === "Darwin-Growl") {
+  if (options.name && cmd.type === 'Darwin-Growl') {
     args.push('--name', options.name);
   }
 
@@ -10156,7 +10156,7 @@ function growl(msg, options, fn) {
 };
 
 }).call(this,require('_process'))
-},{"_process":67,"child_process":42,"fs":42,"os":65,"path":42}],50:[function(require,module,exports){
+},{'_process':67,'child_process':42,'fs':42,'os':65,'path':42}],50:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -10307,8 +10307,8 @@ module.exports = Array.isArray || function (arr) {
 
   // A set of types used to distinguish objects from primitives.
   var objectTypes = {
-    "function": true,
-    "object": true
+    'function': true,
+    'object': true
   };
 
   // Detect the `exports` object exposed by CommonJS implementations.
@@ -10319,30 +10319,30 @@ module.exports = Array.isArray || function (arr) {
   // and the `window` object in browsers. Rhino exports a `global` function
   // instead.
   var root = objectTypes[typeof window] && window || this,
-      freeGlobal = freeExports && objectTypes[typeof module] && module && !module.nodeType && typeof global == "object" && global;
+      freeGlobal = freeExports && objectTypes[typeof module] && module && !module.nodeType && typeof global == 'object' && global;
 
-  if (freeGlobal && (freeGlobal["global"] === freeGlobal || freeGlobal["window"] === freeGlobal || freeGlobal["self"] === freeGlobal)) {
+  if (freeGlobal && (freeGlobal['global'] === freeGlobal || freeGlobal['window'] === freeGlobal || freeGlobal['self'] === freeGlobal)) {
     root = freeGlobal;
   }
 
   // Public: Initializes JSON 3 using the given `context` object, attaching the
   // `stringify` and `parse` functions to the specified `exports` object.
   function runInContext(context, exports) {
-    context || (context = root["Object"]());
-    exports || (exports = root["Object"]());
+    context || (context = root['Object']());
+    exports || (exports = root['Object']());
 
     // Native constructor aliases.
-    var Number = context["Number"] || root["Number"],
-        String = context["String"] || root["String"],
-        Object = context["Object"] || root["Object"],
-        Date = context["Date"] || root["Date"],
-        SyntaxError = context["SyntaxError"] || root["SyntaxError"],
-        TypeError = context["TypeError"] || root["TypeError"],
-        Math = context["Math"] || root["Math"],
-        nativeJSON = context["JSON"] || root["JSON"];
+    var Number = context['Number'] || root['Number'],
+        String = context['String'] || root['String'],
+        Object = context['Object'] || root['Object'],
+        Date = context['Date'] || root['Date'],
+        SyntaxError = context['SyntaxError'] || root['SyntaxError'],
+        TypeError = context['TypeError'] || root['TypeError'],
+        Math = context['Math'] || root['Math'],
+        nativeJSON = context['JSON'] || root['JSON'];
 
     // Delegate to the native `stringify` and `parse` implementations.
-    if (typeof nativeJSON == "object" && nativeJSON) {
+    if (typeof nativeJSON == 'object' && nativeJSON) {
       exports.stringify = nativeJSON.stringify;
       exports.parse = nativeJSON.parse;
     }
@@ -10372,19 +10372,19 @@ module.exports = Array.isArray || function (arr) {
         return has[name];
       }
       var isSupported;
-      if (name == "bug-string-char-index") {
+      if (name == 'bug-string-char-index') {
         // IE <= 7 doesn't support accessing string characters using square
         // bracket notation. IE 8 only supports this for primitives.
-        isSupported = "a"[0] != "a";
-      } else if (name == "json") {
+        isSupported = 'a'[0] != 'a';
+      } else if (name == 'json') {
         // Indicates whether both `JSON.stringify` and `JSON.parse` are
         // supported.
-        isSupported = has("json-stringify") && has("json-parse");
+        isSupported = has('json-stringify') && has('json-parse');
       } else {
         var value, serialized = '{"a":[1,true,false,null,"\\u0000\\b\\n\\f\\r\\t"]}';
         // Test `JSON.stringify`.
-        if (name == "json-stringify") {
-          var stringify = exports.stringify, stringifySupported = typeof stringify == "function" && isExtended;
+        if (name == 'json-stringify') {
+          var stringify = exports.stringify, stringifySupported = typeof stringify == 'function' && isExtended;
           if (stringifySupported) {
             // A test function object with a custom `toJSON` method.
             (value = function () {
@@ -10394,10 +10394,10 @@ module.exports = Array.isArray || function (arr) {
               stringifySupported =
                 // Firefox 3.1b1 and b2 serialize string, number, and boolean
                 // primitives as object literals.
-                stringify(0) === "0" &&
+                stringify(0) === '0' &&
                 // FF 3.1b1, b2, and JSON 2 serialize wrapped primitives as object
                 // literals.
-                stringify(new Number()) === "0" &&
+                stringify(new Number()) === '0' &&
                 stringify(new String()) == '""' &&
                 // FF 3.1b1, 2 throw an error if the value is `null`, `undefined`, or
                 // does not define a canonical JSON representation (this applies to
@@ -10415,24 +10415,24 @@ module.exports = Array.isArray || function (arr) {
                 // objects with custom `toJSON` methods as well, unless they are nested
                 // inside object or array literals. YUI 3.0.0b1 ignores custom `toJSON`
                 // methods entirely.
-                stringify(value) === "1" &&
-                stringify([value]) == "[1]" &&
+                stringify(value) === '1' &&
+                stringify([value]) == '[1]' &&
                 // Prototype <= 1.6.1 serializes `[undefined]` as `"[]"` instead of
                 // `"[null]"`.
-                stringify([undef]) == "[null]" &&
+                stringify([undef]) == '[null]' &&
                 // YUI 3.0.0b1 fails to serialize `null` literals.
-                stringify(null) == "null" &&
+                stringify(null) == 'null' &&
                 // FF 3.1b1, 2 halts serialization if an array contains a function:
                 // `[1, true, getClass, 1]` serializes as "[1,true,],". FF 3.1b3
                 // elides non-JSON values from objects and arrays, unless they
                 // define custom `toJSON` methods.
-                stringify([undef, getClass, null]) == "[null,null,null]" &&
+                stringify([undef, getClass, null]) == '[null,null,null]' &&
                 // Simple serialization test. FF 3.1b1 uses Unicode escape sequences
                 // where character escape codes are expected (e.g., `\b` => `\u0008`).
-                stringify({ "a": [value, true, false, null, "\x00\b\n\f\r\t"] }) == serialized &&
+                stringify({ 'a': [value, true, false, null, '\x00\b\n\f\r\t'] }) == serialized &&
                 // FF 3.1b1 and b2 ignore the `filter` and `width` arguments.
-                stringify(null, value) === "1" &&
-                stringify([1, 2], null, 1) == "[\n 1,\n 2\n]" &&
+                stringify(null, value) === '1' &&
+                stringify([1, 2], null, 1) == '[\n 1,\n 2\n]' &&
                 // JSON 2, Prototype <= 1.7, and older WebKit builds incorrectly
                 // serialize extended years.
                 stringify(new Date(-8.64e15)) == '"-271821-04-20T00:00:00.000Z"' &&
@@ -10451,17 +10451,17 @@ module.exports = Array.isArray || function (arr) {
           isSupported = stringifySupported;
         }
         // Test `JSON.parse`.
-        if (name == "json-parse") {
+        if (name == 'json-parse') {
           var parse = exports.parse;
-          if (typeof parse == "function") {
+          if (typeof parse == 'function') {
             try {
               // FF 3.1b1, b2 will throw an exception if a bare literal is provided.
               // Conforming implementations should also coerce the initial argument to
               // a string prior to parsing.
-              if (parse("0") === 0 && !parse(false)) {
+              if (parse('0') === 0 && !parse(false)) {
                 // Simple parsing test.
                 value = parse(serialized);
-                var parseSupported = value["a"].length == 5 && value["a"][0] === 1;
+                var parseSupported = value['a'].length == 5 && value['a'][0] === 1;
                 if (parseSupported) {
                   try {
                     // Safari <= 5.1.2 and FF 3.1b1 allow unescaped tabs in strings.
@@ -10472,7 +10472,7 @@ module.exports = Array.isArray || function (arr) {
                       // FF 4.0 and 4.0.1 allow leading `+` signs and leading
                       // decimal points. FF 4.0, 4.0.1, and IE 9-10 also allow
                       // certain octal literals.
-                      parseSupported = parse("01") !== 1;
+                      parseSupported = parse('01') !== 1;
                     } catch (exception) {}
                   }
                   if (parseSupported) {
@@ -10480,7 +10480,7 @@ module.exports = Array.isArray || function (arr) {
                       // FF 4.0, 4.0.1, and Rhino 1.7R3-R4 allow trailing decimal
                       // points. These environments, along with FF 3.1b1 and 2,
                       // also allow trailing commas in JSON objects and arrays.
-                      parseSupported = parse("1.") !== 1;
+                      parseSupported = parse('1.') !== 1;
                     } catch (exception) {}
                   }
                 }
@@ -10495,17 +10495,17 @@ module.exports = Array.isArray || function (arr) {
       return has[name] = !!isSupported;
     }
 
-    if (!has("json")) {
+    if (!has('json')) {
       // Common `[[Class]]` name aliases.
-      var functionClass = "[object Function]",
-          dateClass = "[object Date]",
-          numberClass = "[object Number]",
-          stringClass = "[object String]",
-          arrayClass = "[object Array]",
-          booleanClass = "[object Boolean]";
+      var functionClass = '[object Function]',
+          dateClass = '[object Date]',
+          numberClass = '[object Number]',
+          stringClass = '[object String]',
+          arrayClass = '[object Array]',
+          booleanClass = '[object Boolean]';
 
       // Detect incomplete support for accessing string characters by index.
-      var charIndexBuggy = has("bug-string-char-index");
+      var charIndexBuggy = has('bug-string-char-index');
 
       // Define additional utility methods if the `Date` methods are buggy.
       if (!isExtended) {
@@ -10528,7 +10528,7 @@ module.exports = Array.isArray || function (arr) {
           if ((members.__proto__ = null, members.__proto__ = {
             // The *proto* property cannot be set multiple times in recent
             // versions of Firefox and SeaMonkey.
-            "toString": 1
+            'toString': 1
           }, members).toString != getClass) {
             // Safari <= 2.0.3 doesn't implement `Object#hasOwnProperty`, but
             // supports the mutable *proto* property.
@@ -10581,16 +10581,16 @@ module.exports = Array.isArray || function (arr) {
         // Normalize the iteration algorithm.
         if (!size) {
           // A list of non-enumerable properties inherited from `Object.prototype`.
-          members = ["valueOf", "toString", "toLocaleString", "propertyIsEnumerable", "isPrototypeOf", "hasOwnProperty", "constructor"];
+          members = ['valueOf', 'toString', 'toLocaleString', 'propertyIsEnumerable', 'isPrototypeOf', 'hasOwnProperty', 'constructor'];
           // IE <= 8, Mozilla 1.0, and Netscape 6.2 ignore shadowed non-enumerable
           // properties.
           forEach = function (object, callback) {
             var isFunction = getClass.call(object) == functionClass, property, length;
-            var hasProperty = !isFunction && typeof object.constructor != "function" && objectTypes[typeof object.hasOwnProperty] && object.hasOwnProperty || isProperty;
+            var hasProperty = !isFunction && typeof object.constructor != 'function' && objectTypes[typeof object.hasOwnProperty] && object.hasOwnProperty || isProperty;
             for (property in object) {
               // Gecko <= 1.0 enumerates the `prototype` property of functions under
               // certain conditions; IE does not.
-              if (!(isFunction && property == "prototype") && hasProperty.call(object, property)) {
+              if (!(isFunction && property == 'prototype') && hasProperty.call(object, property)) {
                 callback(property);
               }
             }
@@ -10606,7 +10606,7 @@ module.exports = Array.isArray || function (arr) {
               // Store each property name to prevent double enumeration. The
               // `prototype` property of functions is not enumerated due to cross-
               // environment inconsistencies.
-              if (!(isFunction && property == "prototype") && !isProperty.call(members, property) && (members[property] = 1) && isProperty.call(object, property)) {
+              if (!(isFunction && property == 'prototype') && !isProperty.call(members, property) && (members[property] = 1) && isProperty.call(object, property)) {
                 callback(property);
               }
             }
@@ -10616,13 +10616,13 @@ module.exports = Array.isArray || function (arr) {
           forEach = function (object, callback) {
             var isFunction = getClass.call(object) == functionClass, property, isConstructor;
             for (property in object) {
-              if (!(isFunction && property == "prototype") && isProperty.call(object, property) && !(isConstructor = property === "constructor")) {
+              if (!(isFunction && property == 'prototype') && isProperty.call(object, property) && !(isConstructor = property === 'constructor')) {
                 callback(property);
               }
             }
             // Manually invoke the callback for the `constructor` property due to
             // cross-environment inconsistencies.
-            if (isConstructor || isProperty.call(object, (property = "constructor"))) {
+            if (isConstructor || isProperty.call(object, (property = 'constructor'))) {
               callback(property);
             }
           };
@@ -10636,21 +10636,21 @@ module.exports = Array.isArray || function (arr) {
       // indicates which properties should be serialized. The optional `width`
       // argument may be either a string or number that specifies the indentation
       // level of the output.
-      if (!has("json-stringify")) {
+      if (!has('json-stringify')) {
         // Internal: A map of control characters and their escaped equivalents.
         var Escapes = {
-          92: "\\\\",
+          92: '\\\\',
           34: '\\"',
-          8: "\\b",
-          12: "\\f",
-          10: "\\n",
-          13: "\\r",
-          9: "\\t"
+          8: '\\b',
+          12: '\\f',
+          10: '\\n',
+          13: '\\r',
+          9: '\\t'
         };
 
         // Internal: Converts `value` into a zero-padded string such that its
         // length is at least equal to `width`. The `width` must be <= 6.
-        var leadingZeroes = "000000";
+        var leadingZeroes = '000000';
         var toPaddedString = function (width, value) {
           // The `|| 0` expression is necessary to work around a bug in
           // Opera <= 7.54u2 where `0 == -0`, but `String(-0) !== "0"`.
@@ -10661,10 +10661,10 @@ module.exports = Array.isArray || function (arr) {
         // characters (characters with code unit values between 0 and 31) with
         // their escaped equivalents. This is an implementation of the
         // `Quote(value)` operation defined in ES 5.1 section 15.12.3.
-        var unicodePrefix = "\\u00";
+        var unicodePrefix = '\\u00';
         var quote = function (value) {
           var result = '"', index = 0, length = value.length, useCharIndex = !charIndexBuggy || length > 10;
-          var symbols = useCharIndex && (charIndexBuggy ? value.split("") : value);
+          var symbols = useCharIndex && (charIndexBuggy ? value.split('') : value);
           for (; index < length; index++) {
             var charCode = value.charCodeAt(index);
             // If the character is a control character, append its Unicode or
@@ -10692,9 +10692,9 @@ module.exports = Array.isArray || function (arr) {
             // Necessary for host object support.
             value = object[property];
           } catch (exception) {}
-          if (typeof value == "object" && value) {
+          if (typeof value == 'object' && value) {
             className = getClass.call(value);
-            if (className == dateClass && !isProperty.call(value, "toJSON")) {
+            if (className == dateClass && !isProperty.call(value, 'toJSON')) {
               if (value > -1 / 0 && value < 1 / 0) {
                 // Dates are serialized according to the `Date#toJSON` method
                 // specified in ES 5.1 section 15.9.5.44. See section 15.9.1.15
@@ -10728,17 +10728,17 @@ module.exports = Array.isArray || function (arr) {
                   milliseconds = value.getUTCMilliseconds();
                 }
                 // Serialize extended years correctly.
-                value = (year <= 0 || year >= 1e4 ? (year < 0 ? "-" : "+") + toPaddedString(6, year < 0 ? -year : year) : toPaddedString(4, year)) +
-                  "-" + toPaddedString(2, month + 1) + "-" + toPaddedString(2, date) +
+                value = (year <= 0 || year >= 1e4 ? (year < 0 ? '-' : '+') + toPaddedString(6, year < 0 ? -year : year) : toPaddedString(4, year)) +
+                  '-' + toPaddedString(2, month + 1) + '-' + toPaddedString(2, date) +
                   // Months, dates, hours, minutes, and seconds should have two
                   // digits; milliseconds should have three.
-                  "T" + toPaddedString(2, hours) + ":" + toPaddedString(2, minutes) + ":" + toPaddedString(2, seconds) +
+                  'T' + toPaddedString(2, hours) + ':' + toPaddedString(2, minutes) + ':' + toPaddedString(2, seconds) +
                   // Milliseconds are optional in ES 5.0, but required in 5.1.
-                  "." + toPaddedString(3, milliseconds) + "Z";
+                  '.' + toPaddedString(3, milliseconds) + 'Z';
               } else {
                 value = null;
               }
-            } else if (typeof value.toJSON == "function" && ((className != numberClass && className != stringClass && className != arrayClass) || isProperty.call(value, "toJSON"))) {
+            } else if (typeof value.toJSON == 'function' && ((className != numberClass && className != stringClass && className != arrayClass) || isProperty.call(value, 'toJSON'))) {
               // Prototype <= 1.6.1 adds non-standard `toJSON` methods to the
               // `Number`, `String`, `Date`, and `Array` prototypes. JSON 3
               // ignores all `toJSON` methods on these objects unless they are
@@ -10752,22 +10752,22 @@ module.exports = Array.isArray || function (arr) {
             value = callback.call(object, property, value);
           }
           if (value === null) {
-            return "null";
+            return 'null';
           }
           className = getClass.call(value);
           if (className == booleanClass) {
             // Booleans are represented literally.
-            return "" + value;
+            return '' + value;
           } else if (className == numberClass) {
             // JSON numbers must be finite. `Infinity` and `NaN` are serialized as
             // `"null"`.
-            return value > -1 / 0 && value < 1 / 0 ? "" + value : "null";
+            return value > -1 / 0 && value < 1 / 0 ? '' + value : 'null';
           } else if (className == stringClass) {
             // Strings are double-quoted and escaped.
-            return quote("" + value);
+            return quote('' + value);
           }
           // Recursively serialize objects and arrays.
-          if (typeof value == "object") {
+          if (typeof value == 'object') {
             // Check for cyclic structures. This is a linear search; performance
             // is inversely proportional to the number of unique nested objects.
             for (length = stack.length; length--;) {
@@ -10786,9 +10786,9 @@ module.exports = Array.isArray || function (arr) {
               // Recursively serialize array elements.
               for (index = 0, length = value.length; index < length; index++) {
                 element = serialize(index, value, callback, properties, whitespace, indentation, stack);
-                results.push(element === undef ? "null" : element);
+                results.push(element === undef ? 'null' : element);
               }
-              result = results.length ? (whitespace ? "[\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "]" : ("[" + results.join(",") + "]")) : "[]";
+              result = results.length ? (whitespace ? '[\n' + indentation + results.join(',\n' + indentation) + '\n' + prefix + ']' : ('[' + results.join(',') + ']')) : '[]';
             } else {
               // Recursively serialize object members. Members are selected from
               // either a user-specified list of property names, or the object
@@ -10802,10 +10802,10 @@ module.exports = Array.isArray || function (arr) {
                   // The "`space` character" refers to the literal space
                   // character, not the `space` {width} argument provided to
                   // `JSON.stringify`.
-                  results.push(quote(property) + ":" + (whitespace ? " " : "") + element);
+                  results.push(quote(property) + ':' + (whitespace ? ' ' : '') + element);
                 }
               });
-              result = results.length ? (whitespace ? "{\n" + indentation + results.join(",\n" + indentation) + "\n" + prefix + "}" : ("{" + results.join(",") + "}")) : "{}";
+              result = results.length ? (whitespace ? '{\n' + indentation + results.join(',\n' + indentation) + '\n' + prefix + '}' : ('{' + results.join(',') + '}')) : '{}';
             }
             // Remove the object from the traversed object stack.
             stack.pop();
@@ -10830,7 +10830,7 @@ module.exports = Array.isArray || function (arr) {
               // Convert the `width` to an integer and create a string containing
               // `width` number of space characters.
               if ((width -= width % 1) > 0) {
-                for (whitespace = "", width > 10 && (width = 10); whitespace.length < width; whitespace += " ");
+                for (whitespace = '', width > 10 && (width = 10); whitespace.length < width; whitespace += ' ');
               }
             } else if (className == stringClass) {
               whitespace = width.length <= 10 ? width : width.slice(0, 10);
@@ -10839,25 +10839,25 @@ module.exports = Array.isArray || function (arr) {
           // Opera <= 7.54u2 discards the values associated with empty string keys
           // (`""`) only if they are used directly within an object member list
           // (e.g., `!("" in { "": 1})`).
-          return serialize("", (value = {}, value[""] = source, value), callback, properties, whitespace, "", []);
+          return serialize('', (value = {}, value[''] = source, value), callback, properties, whitespace, '', []);
         };
       }
 
       // Public: Parses a JSON source string.
-      if (!has("json-parse")) {
+      if (!has('json-parse')) {
         var fromCharCode = String.fromCharCode;
 
         // Internal: A map of escaped control characters and their unescaped
         // equivalents.
         var Unescapes = {
-          92: "\\",
+          92: '\\',
           34: '"',
-          47: "/",
-          98: "\b",
-          116: "\t",
-          110: "\n",
-          102: "\f",
-          114: "\r"
+          47: '/',
+          98: '\b',
+          116: '\t',
+          110: '\n',
+          102: '\f',
+          114: '\r'
         };
 
         // Internal: Stores the parser state.
@@ -10893,7 +10893,7 @@ module.exports = Array.isArray || function (arr) {
                 // begin parsing the string. String tokens are prefixed with the
                 // sentinel `@` character to distinguish them from punctuators and
                 // end-of-string tokens.
-                for (value = "@", Index++; Index < length;) {
+                for (value = '@', Index++; Index < length;) {
                   charCode = source.charCodeAt(Index);
                   if (charCode < 32) {
                     // Unescaped ASCII control characters (those with a code unit
@@ -10925,7 +10925,7 @@ module.exports = Array.isArray || function (arr) {
                           }
                         }
                         // Revive the escaped character.
-                        value += fromCharCode("0x" + source.slice(begin, Index));
+                        value += fromCharCode('0x' + source.slice(begin, Index));
                         break;
                       default:
                         // Invalid escape sequence.
@@ -11010,13 +11010,13 @@ module.exports = Array.isArray || function (arr) {
                   abort();
                 }
                 // `true`, `false`, and `null` literals.
-                if (source.slice(Index, Index + 4) == "true") {
+                if (source.slice(Index, Index + 4) == 'true') {
                   Index += 4;
                   return true;
-                } else if (source.slice(Index, Index + 5) == "false") {
+                } else if (source.slice(Index, Index + 5) == 'false') {
                   Index += 5;
                   return false;
-                } else if (source.slice(Index, Index + 4) == "null") {
+                } else if (source.slice(Index, Index + 4) == 'null') {
                   Index += 4;
                   return null;
                 }
@@ -11026,38 +11026,38 @@ module.exports = Array.isArray || function (arr) {
           }
           // Return the sentinel `$` character if the parser has reached the end
           // of the source string.
-          return "$";
+          return '$';
         };
 
         // Internal: Parses a JSON `value` token.
         var get = function (value) {
           var results, hasMembers;
-          if (value == "$") {
+          if (value == '$') {
             // Unexpected end of input.
             abort();
           }
-          if (typeof value == "string") {
-            if ((charIndexBuggy ? value.charAt(0) : value[0]) == "@") {
+          if (typeof value == 'string') {
+            if ((charIndexBuggy ? value.charAt(0) : value[0]) == '@') {
               // Remove the sentinel `@` character.
               return value.slice(1);
             }
             // Parse object and array literals.
-            if (value == "[") {
+            if (value == '[') {
               // Parses a JSON array, returning a new JavaScript array.
               results = [];
               for (;; hasMembers || (hasMembers = true)) {
                 value = lex();
                 // A closing square bracket marks the end of the array literal.
-                if (value == "]") {
+                if (value == ']') {
                   break;
                 }
                 // If the array literal contains elements, the current token
                 // should be a comma separating the previous element from the
                 // next.
                 if (hasMembers) {
-                  if (value == ",") {
+                  if (value == ',') {
                     value = lex();
-                    if (value == "]") {
+                    if (value == ']') {
                       // Unexpected trailing `,` in array literal.
                       abort();
                     }
@@ -11067,27 +11067,27 @@ module.exports = Array.isArray || function (arr) {
                   }
                 }
                 // Elisions and leading commas are not permitted.
-                if (value == ",") {
+                if (value == ',') {
                   abort();
                 }
                 results.push(get(value));
               }
               return results;
-            } else if (value == "{") {
+            } else if (value == '{') {
               // Parses a JSON object, returning a new JavaScript object.
               results = {};
               for (;; hasMembers || (hasMembers = true)) {
                 value = lex();
                 // A closing curly brace marks the end of the object literal.
-                if (value == "}") {
+                if (value == '}') {
                   break;
                 }
                 // If the object literal contains members, the current token
                 // should be a comma separator.
                 if (hasMembers) {
-                  if (value == ",") {
+                  if (value == ',') {
                     value = lex();
-                    if (value == "}") {
+                    if (value == '}') {
                       // Unexpected trailing `,` in object literal.
                       abort();
                     }
@@ -11099,7 +11099,7 @@ module.exports = Array.isArray || function (arr) {
                 // Leading commas are not permitted, object property names must be
                 // double-quoted strings, and a `:` must separate each property
                 // name and value.
-                if (value == "," || typeof value != "string" || (charIndexBuggy ? value.charAt(0) : value[0]) != "@" || lex() != ":") {
+                if (value == ',' || typeof value != 'string' || (charIndexBuggy ? value.charAt(0) : value[0]) != '@' || lex() != ':') {
                   abort();
                 }
                 results[value.slice(1)] = get(lex());
@@ -11127,7 +11127,7 @@ module.exports = Array.isArray || function (arr) {
         // `Walk(holder, name)` operation defined in ES 5.1 section 15.12.2.
         var walk = function (source, property, callback) {
           var value = source[property], length;
-          if (typeof value == "object" && value) {
+          if (typeof value == 'object' && value) {
             // `forEach` can't be used to traverse an array in Opera <= 8.54
             // because its `Object#hasOwnProperty` implementation returns `false`
             // for array indices (e.g., `![1, 2, 3].hasOwnProperty("0")`).
@@ -11148,20 +11148,20 @@ module.exports = Array.isArray || function (arr) {
         exports.parse = function (source, callback) {
           var result, value;
           Index = 0;
-          Source = "" + source;
+          Source = '' + source;
           result = get(lex());
           // If a JSON string contains multiple tokens, it is invalid.
-          if (lex() != "$") {
+          if (lex() != '$') {
             abort();
           }
           // Reset the parser state.
           Index = Source = null;
-          return callback && getClass.call(callback) == functionClass ? walk((value = {}, value[""] = result, value), "", callback) : result;
+          return callback && getClass.call(callback) == functionClass ? walk((value = {}, value[''] = result, value), '', callback) : result;
         };
       }
     }
 
-    exports["runInContext"] = runInContext;
+    exports['runInContext'] = runInContext;
     return exports;
   }
 
@@ -11171,17 +11171,17 @@ module.exports = Array.isArray || function (arr) {
   } else {
     // Export for web browsers and JavaScript engines.
     var nativeJSON = root.JSON,
-        previousJSON = root["JSON3"],
+        previousJSON = root['JSON3'],
         isRestored = false;
 
-    var JSON3 = runInContext(root, (root["JSON3"] = {
+    var JSON3 = runInContext(root, (root['JSON3'] = {
       // Public: Restores the original value of the global `JSON` object and
       // returns a reference to the `JSON3` object.
-      "noConflict": function () {
+      'noConflict': function () {
         if (!isRestored) {
           isRestored = true;
           root.JSON = nativeJSON;
-          root["JSON3"] = previousJSON;
+          root['JSON3'] = previousJSON;
           nativeJSON = previousJSON = null;
         }
         return JSON3;
@@ -11189,8 +11189,8 @@ module.exports = Array.isArray || function (arr) {
     }));
 
     root.JSON = {
-      "parse": JSON3.parse,
-      "stringify": JSON3.stringify
+      'parse': JSON3.parse,
+      'stringify': JSON3.stringify
     };
   }
 
@@ -11202,7 +11202,7 @@ module.exports = Array.isArray || function (arr) {
   }
 }).call(this);
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
 },{}],55:[function(require,module,exports){
 /**
  * lodash 3.2.0 (Custom Build) <https://lodash.com/>
@@ -11232,7 +11232,7 @@ function baseAssign(object, source) {
 
 module.exports = baseAssign;
 
-},{"lodash._basecopy":56,"lodash.keys":63}],56:[function(require,module,exports){
+},{'lodash._basecopy':56,'lodash.keys':63}],56:[function(require,module,exports){
 /**
  * lodash 3.0.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -11655,7 +11655,7 @@ function create(prototype, properties, guard) {
 
 module.exports = create;
 
-},{"lodash._baseassign":55,"lodash._basecreate":57,"lodash._isiterateecall":59}],61:[function(require,module,exports){
+},{'lodash._baseassign':55,'lodash._basecreate':57,'lodash._isiterateecall':59}],61:[function(require,module,exports){
 /**
  * lodash (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -12306,7 +12306,7 @@ function keysIn(object) {
 
 module.exports = keys;
 
-},{"lodash._getnative":58,"lodash.isarguments":61,"lodash.isarray":62}],64:[function(require,module,exports){
+},{'lodash._getnative':58,'lodash.isarguments':61,'lodash.isarray':62}],64:[function(require,module,exports){
 (function (process){
 var path = require('path');
 var fs = require('fs');
@@ -12408,7 +12408,7 @@ mkdirP.sync = function sync (p, opts, made) {
 };
 
 }).call(this,require('_process'))
-},{"_process":67,"fs":42,"path":42}],65:[function(require,module,exports){
+},{'_process':67,'fs':42,'path':42}],65:[function(require,module,exports){
 exports.endianness = function () { return 'LE' };
 
 exports.hostname = function () {
@@ -12502,7 +12502,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 }
 
 }).call(this,require('_process'))
-},{"_process":67}],67:[function(require,module,exports){
+},{'_process':67}],67:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -12685,9 +12685,9 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],68:[function(require,module,exports){
-module.exports = require("./lib/_stream_duplex.js")
+module.exports = require('./lib/_stream_duplex.js')
 
-},{"./lib/_stream_duplex.js":69}],69:[function(require,module,exports){
+},{'./lib/_stream_duplex.js':69}],69:[function(require,module,exports){
 // a duplex stream is just a stream that is both readable and writable.
 // Since JS doesn't have multiple prototypal inheritance, this class
 // prototypally inherits from Readable, and then parasitically from
@@ -12763,7 +12763,7 @@ function forEach(xs, f) {
     f(xs[i], i);
   }
 }
-},{"./_stream_readable":71,"./_stream_writable":73,"core-util-is":45,"inherits":51,"process-nextick-args":66}],70:[function(require,module,exports){
+},{'./_stream_readable':71,'./_stream_writable':73,'core-util-is':45,'inherits':51,'process-nextick-args':66}],70:[function(require,module,exports){
 // a passthrough stream.
 // basically just the most minimal sort of Transform stream.
 // Every written chunk gets output as-is.
@@ -12790,7 +12790,7 @@ function PassThrough(options) {
 PassThrough.prototype._transform = function (chunk, encoding, cb) {
   cb(null, chunk);
 };
-},{"./_stream_transform":72,"core-util-is":45,"inherits":51}],71:[function(require,module,exports){
+},{'./_stream_transform':72,'core-util-is':45,'inherits':51}],71:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -13730,7 +13730,7 @@ function indexOf(xs, x) {
   return -1;
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":69,"./internal/streams/BufferList":74,"_process":67,"buffer":44,"buffer-shims":43,"core-util-is":45,"events":48,"inherits":51,"isarray":53,"process-nextick-args":66,"string_decoder/":80,"util":40}],72:[function(require,module,exports){
+},{'./_stream_duplex':69,'./internal/streams/BufferList':74,'_process':67,'buffer':44,'buffer-shims':43,'core-util-is':45,'events':48,'inherits':51,'isarray':53,'process-nextick-args':66,'string_decoder/':80,'util':40}],72:[function(require,module,exports){
 // a transform stream is a readable/writable stream where you do
 // something with the data.  Sometimes it's called a "filter",
 // but that's not a great name for it, since that implies a thing where
@@ -13911,7 +13911,7 @@ function done(stream, er) {
 
   return stream.push(null);
 }
-},{"./_stream_duplex":69,"core-util-is":45,"inherits":51}],73:[function(require,module,exports){
+},{'./_stream_duplex':69,'core-util-is':45,'inherits':51}],73:[function(require,module,exports){
 (function (process){
 // A bit simpler than readable streams.
 // Implement an async ._write(chunk, encoding, cb), and it'll handle all
@@ -14440,7 +14440,7 @@ function CorkedRequest(state) {
   };
 }
 }).call(this,require('_process'))
-},{"./_stream_duplex":69,"_process":67,"buffer":44,"buffer-shims":43,"core-util-is":45,"events":48,"inherits":51,"process-nextick-args":66,"util-deprecate":81}],74:[function(require,module,exports){
+},{'./_stream_duplex':69,'_process':67,'buffer':44,'buffer-shims':43,'core-util-is':45,'events':48,'inherits':51,'process-nextick-args':66,'util-deprecate':81}],74:[function(require,module,exports){
 'use strict';
 
 var Buffer = require('buffer').Buffer;
@@ -14505,10 +14505,10 @@ BufferList.prototype.concat = function (n) {
   }
   return ret;
 };
-},{"buffer":44,"buffer-shims":43}],75:[function(require,module,exports){
-module.exports = require("./lib/_stream_passthrough.js")
+},{'buffer':44,'buffer-shims':43}],75:[function(require,module,exports){
+module.exports = require('./lib/_stream_passthrough.js')
 
-},{"./lib/_stream_passthrough.js":70}],76:[function(require,module,exports){
+},{'./lib/_stream_passthrough.js':70}],76:[function(require,module,exports){
 (function (process){
 var Stream = (function (){
   try {
@@ -14528,13 +14528,13 @@ if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
 }
 
 }).call(this,require('_process'))
-},{"./lib/_stream_duplex.js":69,"./lib/_stream_passthrough.js":70,"./lib/_stream_readable.js":71,"./lib/_stream_transform.js":72,"./lib/_stream_writable.js":73,"_process":67}],77:[function(require,module,exports){
-module.exports = require("./lib/_stream_transform.js")
+},{'./lib/_stream_duplex.js':69,'./lib/_stream_passthrough.js':70,'./lib/_stream_readable.js':71,'./lib/_stream_transform.js':72,'./lib/_stream_writable.js':73,'_process':67}],77:[function(require,module,exports){
+module.exports = require('./lib/_stream_transform.js')
 
-},{"./lib/_stream_transform.js":72}],78:[function(require,module,exports){
-module.exports = require("./lib/_stream_writable.js")
+},{'./lib/_stream_transform.js':72}],78:[function(require,module,exports){
+module.exports = require('./lib/_stream_writable.js')
 
-},{"./lib/_stream_writable.js":73}],79:[function(require,module,exports){
+},{'./lib/_stream_writable.js':73}],79:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -14663,7 +14663,7 @@ Stream.prototype.pipe = function(dest, options) {
   return dest;
 };
 
-},{"events":48,"inherits":51,"readable-stream/duplex.js":68,"readable-stream/passthrough.js":75,"readable-stream/readable.js":76,"readable-stream/transform.js":77,"readable-stream/writable.js":78}],80:[function(require,module,exports){
+},{'events':48,'inherits':51,'readable-stream/duplex.js':68,'readable-stream/passthrough.js':75,'readable-stream/readable.js':76,'readable-stream/transform.js':77,'readable-stream/writable.js':78}],80:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -14886,7 +14886,7 @@ function base64DetectIncompleteChar(buffer) {
   this.charLength = this.charReceived ? 3 : 0;
 }
 
-},{"buffer":44}],81:[function(require,module,exports){
+},{'buffer':44}],81:[function(require,module,exports){
 (function (global){
 
 /**
@@ -14956,10 +14956,10 @@ function config (name) {
   return String(val).toLowerCase() === 'true';
 }
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this,typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
 },{}],82:[function(require,module,exports){
 arguments[4][51][0].apply(exports,arguments)
-},{"dup":51}],83:[function(require,module,exports){
+},{'dup':51}],83:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
@@ -15296,7 +15296,7 @@ function formatPrimitive(ctx, value) {
     return ctx.stylize('undefined', 'undefined');
   if (isString(value)) {
     var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-                                             .replace(/'/g, "\\'")
+                                             .replace(/'/g, '\\\'')
                                              .replace(/\\"/g, '"') + '\'';
     return ctx.stylize(simple, 'string');
   }
@@ -15383,9 +15383,9 @@ function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
       name = name.substr(1, name.length - 2);
       name = ctx.stylize(name, 'name');
     } else {
-      name = name.replace(/'/g, "\\'")
+      name = name.replace(/'/g, '\\\'')
                  .replace(/\\"/g, '"')
-                 .replace(/(^"|"$)/g, "'");
+                 .replace(/(^"|"$)/g, '\'');
       name = ctx.stylize(name, 'string');
     }
   }
@@ -15555,5 +15555,5 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":83,"_process":67,"inherits":82}]},{},[1]);
+}).call(this,require('_process'),typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {})
+},{'./support/isBuffer':83,'_process':67,'inherits':82}]},{},[1]);

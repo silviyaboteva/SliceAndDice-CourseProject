@@ -1,9 +1,9 @@
 define( [
-	"./core",
-	"./manipulation/var/rcheckableType",
-	"./core/init",
-	"./traversing", // filter
-	"./attributes/prop"
+	'./core',
+	'./manipulation/var/rcheckableType',
+	'./core/init',
+	'./traversing', // filter
+	'./attributes/prop'
 ], function( jQuery, rcheckableType ) {
 
 var r20 = /%20/g,
@@ -28,7 +28,7 @@ function buildParams( prefix, obj, traditional, add ) {
 
 				// Item is non-scalar (array or object), encode its numeric index.
 				buildParams(
-					prefix + "[" + ( typeof v === "object" && v != null ? i : "" ) + "]",
+					prefix + '[' + ( typeof v === 'object' && v != null ? i : '' ) + ']',
 					v,
 					traditional,
 					add
@@ -36,11 +36,11 @@ function buildParams( prefix, obj, traditional, add ) {
 			}
 		} );
 
-	} else if ( !traditional && jQuery.type( obj ) === "object" ) {
+	} else if ( !traditional && jQuery.type( obj ) === 'object' ) {
 
 		// Serialize object item.
 		for ( name in obj ) {
-			buildParams( prefix + "[" + name + "]", obj[ name ], traditional, add );
+			buildParams( prefix + '[' + name + ']', obj[ name ], traditional, add );
 		}
 
 	} else {
@@ -58,8 +58,8 @@ jQuery.param = function( a, traditional ) {
 		add = function( key, value ) {
 
 			// If value is a function, invoke it and return its value
-			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
-			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
+			value = jQuery.isFunction( value ) ? value() : ( value == null ? '' : value );
+			s[ s.length ] = encodeURIComponent( key ) + '=' + encodeURIComponent( value );
 		};
 
 	// Set traditional to true for jQuery <= 1.3.2 behavior.
@@ -85,7 +85,7 @@ jQuery.param = function( a, traditional ) {
 	}
 
 	// Return the resulting serialization
-	return s.join( "&" ).replace( r20, "+" );
+	return s.join( '&' ).replace( r20, '+' );
 };
 
 jQuery.fn.extend( {
@@ -96,14 +96,14 @@ jQuery.fn.extend( {
 		return this.map( function() {
 
 			// Can add propHook for "elements" to filter or add form elements
-			var elements = jQuery.prop( this, "elements" );
+			var elements = jQuery.prop( this, 'elements' );
 			return elements ? jQuery.makeArray( elements ) : this;
 		} )
 		.filter( function() {
 			var type = this.type;
 
 			// Use .is( ":disabled" ) so that fieldset[disabled] works
-			return this.name && !jQuery( this ).is( ":disabled" ) &&
+			return this.name && !jQuery( this ).is( ':disabled' ) &&
 				rsubmittable.test( this.nodeName ) && !rsubmitterTypes.test( type ) &&
 				( this.checked || !rcheckableType.test( type ) );
 		} )
@@ -114,9 +114,9 @@ jQuery.fn.extend( {
 				null :
 				jQuery.isArray( val ) ?
 					jQuery.map( val, function( val ) {
-						return { name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+						return { name: elem.name, value: val.replace( rCRLF, '\r\n' ) };
 					} ) :
-					{ name: elem.name, value: val.replace( rCRLF, "\r\n" ) };
+					{ name: elem.name, value: val.replace( rCRLF, '\r\n' ) };
 		} ).get();
 	}
 } );

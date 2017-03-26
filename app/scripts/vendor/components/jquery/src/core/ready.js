@@ -1,8 +1,8 @@
 define( [
-	"../core",
-	"../var/document",
-	"../core/init",
-	"../deferred"
+	'../core',
+	'../var/document',
+	'../core/init',
+	'../deferred'
 ], function( jQuery, document ) {
 
 // The deferred used on DOM ready
@@ -55,8 +55,8 @@ jQuery.extend( {
 
 		// Trigger any bound ready events
 		if ( jQuery.fn.triggerHandler ) {
-			jQuery( document ).triggerHandler( "ready" );
-			jQuery( document ).off( "ready" );
+			jQuery( document ).triggerHandler( 'ready' );
+			jQuery( document ).off( 'ready' );
 		}
 	}
 } );
@@ -65,8 +65,8 @@ jQuery.extend( {
  * The ready event handler and self cleanup method
  */
 function completed() {
-	document.removeEventListener( "DOMContentLoaded", completed );
-	window.removeEventListener( "load", completed );
+	document.removeEventListener( 'DOMContentLoaded', completed );
+	window.removeEventListener( 'load', completed );
 	jQuery.ready();
 }
 
@@ -79,8 +79,8 @@ jQuery.ready.promise = function( obj ) {
 		// after the browser event has already occurred.
 		// Support: IE9-10 only
 		// Older IE sometimes signals "interactive" too soon
-		if ( document.readyState === "complete" ||
-			( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
+		if ( document.readyState === 'complete' ||
+			( document.readyState !== 'loading' && !document.documentElement.doScroll ) ) {
 
 			// Handle it asynchronously to allow scripts the opportunity to delay ready
 			window.setTimeout( jQuery.ready );
@@ -88,10 +88,10 @@ jQuery.ready.promise = function( obj ) {
 		} else {
 
 			// Use the handy event callback
-			document.addEventListener( "DOMContentLoaded", completed );
+			document.addEventListener( 'DOMContentLoaded', completed );
 
 			// A fallback to window.onload, that will always work
-			window.addEventListener( "load", completed );
+			window.addEventListener( 'load', completed );
 		}
 	}
 	return readyList.promise( obj );

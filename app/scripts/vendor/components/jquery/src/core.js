@@ -1,18 +1,18 @@
 define( [
-	"./var/arr",
-	"./var/document",
-	"./var/slice",
-	"./var/concat",
-	"./var/push",
-	"./var/indexOf",
-	"./var/class2type",
-	"./var/toString",
-	"./var/hasOwn",
-	"./var/support"
+	'./var/arr',
+	'./var/document',
+	'./var/slice',
+	'./var/concat',
+	'./var/push',
+	'./var/indexOf',
+	'./var/class2type',
+	'./var/toString',
+	'./var/hasOwn',
+	'./var/support'
 ], function( arr, document, slice, concat, push, indexOf, class2type, toString, hasOwn, support ) {
 
 var
-	version = "@VERSION",
+	version = '@VERSION',
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -43,7 +43,7 @@ jQuery.fn = jQuery.prototype = {
 	constructor: jQuery,
 
 	// Start with an empty selector
-	selector: "",
+	selector: '',
 
 	// The default length of a jQuery object is 0
 	length: 0,
@@ -127,7 +127,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 		deep = false;
 
 	// Handle a deep copy situation
-	if ( typeof target === "boolean" ) {
+	if ( typeof target === 'boolean' ) {
 		deep = target;
 
 		// Skip the boolean and the target
@@ -136,7 +136,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	}
 
 	// Handle case when target is a string or something (possible in deep copy)
-	if ( typeof target !== "object" && !jQuery.isFunction( target ) ) {
+	if ( typeof target !== 'object' && !jQuery.isFunction( target ) ) {
 		target = {};
 	}
 
@@ -191,7 +191,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 jQuery.extend( {
 
 	// Unique for each copy of jQuery on the page
-	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
+	expando: 'jQuery' + ( version + Math.random() ).replace( /\D/g, '' ),
 
 	// Assume jQuery is ready without the ready module
 	isReady: true,
@@ -203,7 +203,7 @@ jQuery.extend( {
 	noop: function() {},
 
 	isFunction: function( obj ) {
-		return jQuery.type( obj ) === "function";
+		return jQuery.type( obj ) === 'function';
 	},
 
 	isArray: Array.isArray,
@@ -229,14 +229,14 @@ jQuery.extend( {
 		// - Any object or value whose internal [[Class]] property is not "[object Object]"
 		// - DOM nodes
 		// - window
-		if ( jQuery.type( obj ) !== "object" || obj.nodeType || jQuery.isWindow( obj ) ) {
+		if ( jQuery.type( obj ) !== 'object' || obj.nodeType || jQuery.isWindow( obj ) ) {
 			return false;
 		}
 
 		// Not own constructor property must be Object
 		if ( obj.constructor &&
-				!hasOwn.call( obj, "constructor" ) &&
-				!hasOwn.call( obj.constructor.prototype || {}, "isPrototypeOf" ) ) {
+				!hasOwn.call( obj, 'constructor' ) &&
+				!hasOwn.call( obj.constructor.prototype || {}, 'isPrototypeOf' ) ) {
 			return false;
 		}
 
@@ -257,12 +257,12 @@ jQuery.extend( {
 
 	type: function( obj ) {
 		if ( obj == null ) {
-			return obj + "";
+			return obj + '';
 		}
 
 		// Support: Android<4.0, iOS<6 (functionish RegExp)
-		return typeof obj === "object" || typeof obj === "function" ?
-			class2type[ toString.call( obj ) ] || "object" :
+		return typeof obj === 'object' || typeof obj === 'function' ?
+			class2type[ toString.call( obj ) ] || 'object' :
 			typeof obj;
 	},
 
@@ -278,8 +278,8 @@ jQuery.extend( {
 			// If the code includes a valid, prologue position
 			// strict mode pragma, execute code by injecting a
 			// script tag into the document.
-			if ( code.indexOf( "use strict" ) === 1 ) {
-				script = document.createElement( "script" );
+			if ( code.indexOf( 'use strict' ) === 1 ) {
+				script = document.createElement( 'script' );
 				script.text = code;
 				document.head.appendChild( script ).parentNode.removeChild( script );
 			} else {
@@ -296,7 +296,7 @@ jQuery.extend( {
 	// Support: IE9-11+
 	// Microsoft forgot to hump their vendor prefix (#9572)
 	camelCase: function( string ) {
-		return string.replace( rmsPrefix, "ms-" ).replace( rdashAlpha, fcamelCase );
+		return string.replace( rmsPrefix, 'ms-' ).replace( rdashAlpha, fcamelCase );
 	},
 
 	nodeName: function( elem, name ) {
@@ -327,8 +327,8 @@ jQuery.extend( {
 	// Support: Android<4.1
 	trim: function( text ) {
 		return text == null ?
-			"" :
-			( text + "" ).replace( rtrim, "" );
+			'' :
+			( text + '' ).replace( rtrim, '' );
 	},
 
 	// results is for internal usage only
@@ -338,7 +338,7 @@ jQuery.extend( {
 		if ( arr != null ) {
 			if ( isArrayLike( Object( arr ) ) ) {
 				jQuery.merge( ret,
-					typeof arr === "string" ?
+					typeof arr === 'string' ?
 					[ arr ] : arr
 				);
 			} else {
@@ -426,7 +426,7 @@ jQuery.extend( {
 	proxy: function( fn, context ) {
 		var tmp, args, proxy;
 
-		if ( typeof context === "string" ) {
+		if ( typeof context === 'string' ) {
 			tmp = fn[ context ];
 			context = fn;
 			fn = tmp;
@@ -462,15 +462,15 @@ jQuery.extend( {
 // unguarded in another place, it seems safer to just disable JSHint for these
 // three lines.
 /* jshint ignore: start */
-if ( typeof Symbol === "function" ) {
+if ( typeof Symbol === 'function' ) {
 	jQuery.fn[ Symbol.iterator ] = arr[ Symbol.iterator ];
 }
 /* jshint ignore: end */
 
 // Populate the class2type map
-jQuery.each( "Boolean Number String Function Array Date RegExp Object Error Symbol".split( " " ),
+jQuery.each( 'Boolean Number String Function Array Date RegExp Object Error Symbol'.split( ' ' ),
 function( i, name ) {
-	class2type[ "[object " + name + "]" ] = name.toLowerCase();
+	class2type[ '[object ' + name + ']' ] = name.toLowerCase();
 } );
 
 function isArrayLike( obj ) {
@@ -479,15 +479,15 @@ function isArrayLike( obj ) {
 	// `in` check used to prevent JIT error (gh-2145)
 	// hasOwn isn't used here due to false negatives
 	// regarding Nodelist length in IE
-	var length = !!obj && "length" in obj && obj.length,
+	var length = !!obj && 'length' in obj && obj.length,
 		type = jQuery.type( obj );
 
-	if ( type === "function" || jQuery.isWindow( obj ) ) {
+	if ( type === 'function' || jQuery.isWindow( obj ) ) {
 		return false;
 	}
 
-	return type === "array" || length === 0 ||
-		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
+	return type === 'array' || length === 0 ||
+		typeof length === 'number' && length > 0 && ( length - 1 ) in obj;
 }
 
 return jQuery;

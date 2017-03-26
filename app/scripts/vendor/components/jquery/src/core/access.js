@@ -1,5 +1,5 @@
 define( [
-	"../core"
+	'../core'
 ], function( jQuery ) {
 
 // Multifunctional method to get and set values of a collection
@@ -10,7 +10,7 @@ var access = function( elems, fn, key, value, chainable, emptyGet, raw ) {
 		bulk = key == null;
 
 	// Sets many values
-	if ( jQuery.type( key ) === "object" ) {
+	if ( jQuery.type( key ) === 'object' ) {
 		chainable = true;
 		for ( i in key ) {
 			access( elems, fn, i, key[ i ], true, emptyGet, raw );

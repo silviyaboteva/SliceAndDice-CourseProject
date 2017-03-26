@@ -1,9 +1,9 @@
 define( [
-	"../core",
-	"../core/access",
-	"./support",
-	"../var/rnotwhite",
-	"../selector"
+	'../core',
+	'../core/access',
+	'./support',
+	'../var/rnotwhite',
+	'../selector'
 ], function( jQuery, access, support, rnotwhite ) {
 
 var boolHook,
@@ -32,7 +32,7 @@ jQuery.extend( {
 		}
 
 		// Fallback to prop when attributes are not supported
-		if ( typeof elem.getAttribute === "undefined" ) {
+		if ( typeof elem.getAttribute === 'undefined' ) {
 			return jQuery.prop( elem, name, value );
 		}
 
@@ -50,16 +50,16 @@ jQuery.extend( {
 				return;
 			}
 
-			if ( hooks && "set" in hooks &&
+			if ( hooks && 'set' in hooks &&
 				( ret = hooks.set( elem, value, name ) ) !== undefined ) {
 				return ret;
 			}
 
-			elem.setAttribute( name, value + "" );
+			elem.setAttribute( name, value + '' );
 			return value;
 		}
 
-		if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
+		if ( hooks && 'get' in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
 			return ret;
 		}
 
@@ -72,10 +72,10 @@ jQuery.extend( {
 	attrHooks: {
 		type: {
 			set: function( elem, value ) {
-				if ( !support.radioValue && value === "radio" &&
-					jQuery.nodeName( elem, "input" ) ) {
+				if ( !support.radioValue && value === 'radio' &&
+					jQuery.nodeName( elem, 'input' ) ) {
 					var val = elem.value;
-					elem.setAttribute( "type", value );
+					elem.setAttribute( 'type', value );
 					if ( val ) {
 						elem.value = val;
 					}

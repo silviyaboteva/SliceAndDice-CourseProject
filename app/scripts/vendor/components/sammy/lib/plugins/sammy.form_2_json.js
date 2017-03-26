@@ -175,7 +175,7 @@
             if (!multiple) return selectNode.value;
 
             var result = [];
-            for (var options = selectNode.getElementsByTagName("option"), i = 0, l = options.length; i < l; i++) {
+            for (var options = selectNode.getElementsByTagName('option'), i = 0, l = options.length; i < l; i++) {
                 if (options[i].selected) result.push(options[i].value);
             }
 

@@ -1,6 +1,6 @@
 define( [
-	"./core",
-	"./var/rnotwhite"
+	'./core',
+	'./var/rnotwhite'
 ], function( jQuery, rnotwhite ) {
 
 // Convert String-formatted options into Object-formatted ones
@@ -38,7 +38,7 @@ jQuery.Callbacks = function( options ) {
 
 	// Convert options from String-formatted to Object-formatted if needed
 	// (we check in cache first)
-	options = typeof options === "string" ?
+	options = typeof options === 'string' ?
 		createOptions( options ) :
 		jQuery.extend( {}, options );
 
@@ -103,7 +103,7 @@ jQuery.Callbacks = function( options ) {
 
 				// Otherwise, this object is spent
 				} else {
-					list = "";
+					list = '';
 				}
 			}
 		},
@@ -127,7 +127,7 @@ jQuery.Callbacks = function( options ) {
 								if ( !options.unique || !self.has( arg ) ) {
 									list.push( arg );
 								}
-							} else if ( arg && arg.length && jQuery.type( arg ) !== "string" ) {
+							} else if ( arg && arg.length && jQuery.type( arg ) !== 'string' ) {
 
 								// Inspect recursively
 								add( arg );
@@ -179,7 +179,7 @@ jQuery.Callbacks = function( options ) {
 			// Clear all callbacks and values
 			disable: function() {
 				locked = queue = [];
-				list = memory = "";
+				list = memory = '';
 				return this;
 			},
 			disabled: function() {
@@ -192,7 +192,7 @@ jQuery.Callbacks = function( options ) {
 			lock: function() {
 				locked = queue = [];
 				if ( !memory ) {
-					list = memory = "";
+					list = memory = '';
 				}
 				return this;
 			},

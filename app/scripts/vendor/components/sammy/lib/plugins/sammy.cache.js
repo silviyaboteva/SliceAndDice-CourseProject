@@ -14,7 +14,7 @@
 
   $.extend(Sammy.MemoryCacheProxy.prototype, {
     exists: function(name) {
-      return (typeof this._cache[name] != "undefined");
+      return (typeof this._cache[name] != 'undefined');
     },
     set: function(name, value) {
       return this._cache[name] = value;
@@ -38,7 +38,7 @@
 
   $.extend(Sammy.DataCacheProxy.prototype, {
     exists: function(name) {
-      return (typeof this.$element.data('cache.' + name) != "undefined");
+      return (typeof this.$element.data('cache.' + name) != 'undefined');
     },
     set: function(name, value) {
       return this.$element.data('cache.' + name, value);

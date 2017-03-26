@@ -40,7 +40,7 @@ define('handlebars/utils',['exports'], function (exports) {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#x27;',
+    '\'': '&#x27;',
     '`': '&#x60;',
     '=': '&#x3D;'
   };
@@ -1047,16 +1047,16 @@ define('handlebars/compiler/ast',['exports', 'module'], function (exports, modul
 });
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2xpYi9oYW5kbGViYXJzL2NvbXBpbGVyL2FzdC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxNQUFJLEdBQUcsR0FBRzs7QUFFUixXQUFPLEVBQUU7Ozs7QUFJUCxzQkFBZ0IsRUFBRSwwQkFBUyxJQUFJLEVBQUU7QUFDL0IsZUFBTyxBQUFDLElBQUksQ0FBQyxJQUFJLEtBQUssZUFBZSxJQUM3QixDQUFDLElBQUksQ0FBQyxJQUFJLEtBQUssbUJBQW1CLElBQUksSUFBSSxDQUFDLElBQUksS0FBSyxnQkFBZ0IsQ0FBQSxJQUNuRSxDQUFDLEVBQUUsQUFBQyxJQUFJLENBQUMsTUFBTSxJQUFJLElBQUksQ0FBQyxNQUFNLENBQUMsTUFBTSxJQUFLLElBQUksQ0FBQyxJQUFJLENBQUEsQUFBQyxBQUFDLENBQUM7T0FDaEU7O0FBRUQsY0FBUSxFQUFFLGtCQUFTLElBQUksRUFBRTtBQUN2QixlQUFPLEFBQUMsYUFBWSxDQUFFLElBQUksQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDO1VBQUM7T0FDM0M7Ozs7QUFJRCxjQUFRLEVBQUUsa0JBQVMsSUFBSSxFQUFFO0FBQ3ZCLGVBQU8sSUFBSSxDQUFDLEtBQUssQ0FBQyxNQUFNLEtBQUssQ0FBQyxJQUFJLENBQUMsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDO09BQzlFO0tBQ0Y7R0FDRixDQUFDOzs7O21CQUthLEdBQUciLCJmaWxlIjoiYXN0LmpzIiwic291cmNlc0NvbnRlbnQiOlsibGV0IEFTVCA9IHtcbiAgLy8gUHVibGljIEFQSSB1c2VkIHRvIGV2YWx1YXRlIGRlcml2ZWQgYXR0cmlidXRlcyByZWdhcmRpbmcgQVNUIG5vZGVzXG4gIGhlbHBlcnM6IHtcbiAgICAvLyBhIG11c3RhY2hlIGlzIGRlZmluaXRlbHkgYSBoZWxwZXIgaWY6XG4gICAgLy8gKiBpdCBpcyBhbiBlbGlnaWJsZSBoZWxwZXIsIGFuZFxuICAgIC8vICogaXQgaGFzIGF0IGxlYXN0IG9uZSBwYXJhbWV0ZXIgb3IgaGFzaCBzZWdtZW50XG4gICAgaGVscGVyRXhwcmVzc2lvbjogZnVuY3Rpb24obm9kZSkge1xuICAgICAgcmV0dXJuIChub2RlLnR5cGUgPT09ICdTdWJFeHByZXNzaW9uJylcbiAgICAgICAgICB8fCAoKG5vZGUudHlwZSA9PT0gJ011c3RhY2hlU3RhdGVtZW50JyB8fCBub2RlLnR5cGUgPT09ICdCbG9ja1N0YXRlbWVudCcpXG4gICAgICAgICAgICAmJiAhISgobm9kZS5wYXJhbXMgJiYgbm9kZS5wYXJhbXMubGVuZ3RoKSB8fCBub2RlLmhhc2gpKTtcbiAgICB9LFxuXG4gICAgc2NvcGVkSWQ6IGZ1bmN0aW9uKHBhdGgpIHtcbiAgICAgIHJldHVybiAoL15cXC58dGhpc1xcYi8pLnRlc3QocGF0aC5vcmlnaW5hbCk7XG4gICAgfSxcblxuICAgIC8vIGFuIElEIGlzIHNpbXBsZSBpZiBpdCBvbmx5IGhhcyBvbmUgcGFydCwgYW5kIHRoYXQgcGFydCBpcyBub3RcbiAgICAvLyBgLi5gIG9yIGB0aGlzYC5cbiAgICBzaW1wbGVJZDogZnVuY3Rpb24ocGF0aCkge1xuICAgICAgcmV0dXJuIHBhdGgucGFydHMubGVuZ3RoID09PSAxICYmICFBU1QuaGVscGVycy5zY29wZWRJZChwYXRoKSAmJiAhcGF0aC5kZXB0aDtcbiAgICB9XG4gIH1cbn07XG5cblxuLy8gTXVzdCBiZSBleHBvcnRlZCBhcyBhbiBvYmplY3QgcmF0aGVyIHRoYW4gdGhlIHJvb3Qgb2YgdGhlIG1vZHVsZSBhcyB0aGUgamlzb24gbGV4ZXJcbi8vIG11c3QgbW9kaWZ5IHRoZSBvYmplY3QgdG8gb3BlcmF0ZSBwcm9wZXJseS5cbmV4cG9ydCBkZWZhdWx0IEFTVDtcbiJdfQ==
 ;
-define('handlebars/compiler/parser',["exports"], function (exports) {
+define('handlebars/compiler/parser',['exports'], function (exports) {
     /* istanbul ignore next */
     /* Jison generated parser */
-    "use strict";
+    'use strict';
 
     var handlebars = (function () {
         var parser = { trace: function trace() {},
             yy: {},
-            symbols_: { "error": 2, "root": 3, "program": 4, "EOF": 5, "program_repetition0": 6, "statement": 7, "mustache": 8, "block": 9, "rawBlock": 10, "partial": 11, "partialBlock": 12, "content": 13, "COMMENT": 14, "CONTENT": 15, "openRawBlock": 16, "rawBlock_repetition_plus0": 17, "END_RAW_BLOCK": 18, "OPEN_RAW_BLOCK": 19, "helperName": 20, "openRawBlock_repetition0": 21, "openRawBlock_option0": 22, "CLOSE_RAW_BLOCK": 23, "openBlock": 24, "block_option0": 25, "closeBlock": 26, "openInverse": 27, "block_option1": 28, "OPEN_BLOCK": 29, "openBlock_repetition0": 30, "openBlock_option0": 31, "openBlock_option1": 32, "CLOSE": 33, "OPEN_INVERSE": 34, "openInverse_repetition0": 35, "openInverse_option0": 36, "openInverse_option1": 37, "openInverseChain": 38, "OPEN_INVERSE_CHAIN": 39, "openInverseChain_repetition0": 40, "openInverseChain_option0": 41, "openInverseChain_option1": 42, "inverseAndProgram": 43, "INVERSE": 44, "inverseChain": 45, "inverseChain_option0": 46, "OPEN_ENDBLOCK": 47, "OPEN": 48, "mustache_repetition0": 49, "mustache_option0": 50, "OPEN_UNESCAPED": 51, "mustache_repetition1": 52, "mustache_option1": 53, "CLOSE_UNESCAPED": 54, "OPEN_PARTIAL": 55, "partialName": 56, "partial_repetition0": 57, "partial_option0": 58, "openPartialBlock": 59, "OPEN_PARTIAL_BLOCK": 60, "openPartialBlock_repetition0": 61, "openPartialBlock_option0": 62, "param": 63, "sexpr": 64, "OPEN_SEXPR": 65, "sexpr_repetition0": 66, "sexpr_option0": 67, "CLOSE_SEXPR": 68, "hash": 69, "hash_repetition_plus0": 70, "hashSegment": 71, "ID": 72, "EQUALS": 73, "blockParams": 74, "OPEN_BLOCK_PARAMS": 75, "blockParams_repetition_plus0": 76, "CLOSE_BLOCK_PARAMS": 77, "path": 78, "dataName": 79, "STRING": 80, "NUMBER": 81, "BOOLEAN": 82, "UNDEFINED": 83, "NULL": 84, "DATA": 85, "pathSegments": 86, "SEP": 87, "$accept": 0, "$end": 1 },
-            terminals_: { 2: "error", 5: "EOF", 14: "COMMENT", 15: "CONTENT", 18: "END_RAW_BLOCK", 19: "OPEN_RAW_BLOCK", 23: "CLOSE_RAW_BLOCK", 29: "OPEN_BLOCK", 33: "CLOSE", 34: "OPEN_INVERSE", 39: "OPEN_INVERSE_CHAIN", 44: "INVERSE", 47: "OPEN_ENDBLOCK", 48: "OPEN", 51: "OPEN_UNESCAPED", 54: "CLOSE_UNESCAPED", 55: "OPEN_PARTIAL", 60: "OPEN_PARTIAL_BLOCK", 65: "OPEN_SEXPR", 68: "CLOSE_SEXPR", 72: "ID", 73: "EQUALS", 75: "OPEN_BLOCK_PARAMS", 77: "CLOSE_BLOCK_PARAMS", 80: "STRING", 81: "NUMBER", 82: "BOOLEAN", 83: "UNDEFINED", 84: "NULL", 85: "DATA", 87: "SEP" },
+            symbols_: { 'error': 2, 'root': 3, 'program': 4, 'EOF': 5, 'program_repetition0': 6, 'statement': 7, 'mustache': 8, 'block': 9, 'rawBlock': 10, 'partial': 11, 'partialBlock': 12, 'content': 13, 'COMMENT': 14, 'CONTENT': 15, 'openRawBlock': 16, 'rawBlock_repetition_plus0': 17, 'END_RAW_BLOCK': 18, 'OPEN_RAW_BLOCK': 19, 'helperName': 20, 'openRawBlock_repetition0': 21, 'openRawBlock_option0': 22, 'CLOSE_RAW_BLOCK': 23, 'openBlock': 24, 'block_option0': 25, 'closeBlock': 26, 'openInverse': 27, 'block_option1': 28, 'OPEN_BLOCK': 29, 'openBlock_repetition0': 30, 'openBlock_option0': 31, 'openBlock_option1': 32, 'CLOSE': 33, 'OPEN_INVERSE': 34, 'openInverse_repetition0': 35, 'openInverse_option0': 36, 'openInverse_option1': 37, 'openInverseChain': 38, 'OPEN_INVERSE_CHAIN': 39, 'openInverseChain_repetition0': 40, 'openInverseChain_option0': 41, 'openInverseChain_option1': 42, 'inverseAndProgram': 43, 'INVERSE': 44, 'inverseChain': 45, 'inverseChain_option0': 46, 'OPEN_ENDBLOCK': 47, 'OPEN': 48, 'mustache_repetition0': 49, 'mustache_option0': 50, 'OPEN_UNESCAPED': 51, 'mustache_repetition1': 52, 'mustache_option1': 53, 'CLOSE_UNESCAPED': 54, 'OPEN_PARTIAL': 55, 'partialName': 56, 'partial_repetition0': 57, 'partial_option0': 58, 'openPartialBlock': 59, 'OPEN_PARTIAL_BLOCK': 60, 'openPartialBlock_repetition0': 61, 'openPartialBlock_option0': 62, 'param': 63, 'sexpr': 64, 'OPEN_SEXPR': 65, 'sexpr_repetition0': 66, 'sexpr_option0': 67, 'CLOSE_SEXPR': 68, 'hash': 69, 'hash_repetition_plus0': 70, 'hashSegment': 71, 'ID': 72, 'EQUALS': 73, 'blockParams': 74, 'OPEN_BLOCK_PARAMS': 75, 'blockParams_repetition_plus0': 76, 'CLOSE_BLOCK_PARAMS': 77, 'path': 78, 'dataName': 79, 'STRING': 80, 'NUMBER': 81, 'BOOLEAN': 82, 'UNDEFINED': 83, 'NULL': 84, 'DATA': 85, 'pathSegments': 86, 'SEP': 87, '$accept': 0, '$end': 1 },
+            terminals_: { 2: 'error', 5: 'EOF', 14: 'COMMENT', 15: 'CONTENT', 18: 'END_RAW_BLOCK', 19: 'OPEN_RAW_BLOCK', 23: 'CLOSE_RAW_BLOCK', 29: 'OPEN_BLOCK', 33: 'CLOSE', 34: 'OPEN_INVERSE', 39: 'OPEN_INVERSE_CHAIN', 44: 'INVERSE', 47: 'OPEN_ENDBLOCK', 48: 'OPEN', 51: 'OPEN_UNESCAPED', 54: 'CLOSE_UNESCAPED', 55: 'OPEN_PARTIAL', 60: 'OPEN_PARTIAL_BLOCK', 65: 'OPEN_SEXPR', 68: 'CLOSE_SEXPR', 72: 'ID', 73: 'EQUALS', 75: 'OPEN_BLOCK_PARAMS', 77: 'CLOSE_BLOCK_PARAMS', 80: 'STRING', 81: 'NUMBER', 82: 'BOOLEAN', 83: 'UNDEFINED', 84: 'NULL', 85: 'DATA', 87: 'SEP' },
             productions_: [0, [3, 2], [4, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [7, 1], [13, 1], [10, 3], [16, 5], [9, 4], [9, 4], [24, 6], [27, 6], [38, 6], [43, 2], [45, 3], [45, 1], [26, 3], [8, 5], [8, 5], [11, 5], [12, 3], [59, 5], [63, 1], [63, 1], [64, 5], [69, 1], [71, 3], [74, 3], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1], [20, 1], [56, 1], [56, 1], [79, 2], [78, 1], [86, 3], [86, 1], [6, 0], [6, 2], [17, 1], [17, 2], [21, 0], [21, 2], [22, 0], [22, 1], [25, 0], [25, 1], [28, 0], [28, 1], [30, 0], [30, 2], [31, 0], [31, 1], [32, 0], [32, 1], [35, 0], [35, 2], [36, 0], [36, 1], [37, 0], [37, 1], [40, 0], [40, 2], [41, 0], [41, 1], [42, 0], [42, 1], [46, 0], [46, 1], [49, 0], [49, 2], [50, 0], [50, 1], [52, 0], [52, 2], [53, 0], [53, 1], [57, 0], [57, 2], [58, 0], [58, 1], [61, 0], [61, 2], [62, 0], [62, 1], [66, 0], [66, 2], [67, 0], [67, 1], [70, 1], [70, 2], [76, 1], [76, 2]],
             performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate, $$, _$
             /**/) {
@@ -1322,7 +1322,7 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                     vstack = [null],
                     lstack = [],
                     table = this.table,
-                    yytext = "",
+                    yytext = '',
                     yylineno = 0,
                     yyleng = 0,
                     recovering = 0,
@@ -1332,11 +1332,11 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                 this.lexer.yy = this.yy;
                 this.yy.lexer = this.lexer;
                 this.yy.parser = this;
-                if (typeof this.lexer.yylloc == "undefined") this.lexer.yylloc = {};
+                if (typeof this.lexer.yylloc == 'undefined') this.lexer.yylloc = {};
                 var yyloc = this.lexer.yylloc;
                 lstack.push(yyloc);
                 var ranges = this.lexer.options && this.lexer.options.ranges;
-                if (typeof this.yy.parseError === "function") this.parseError = this.yy.parseError;
+                if (typeof this.yy.parseError === 'function') this.parseError = this.yy.parseError;
                 function popStack(n) {
                     stack.length = stack.length - 2 * n;
                     vstack.length = vstack.length - n;
@@ -1345,7 +1345,7 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                 function lex() {
                     var token;
                     token = self.lexer.lex() || 1;
-                    if (typeof token !== "number") {
+                    if (typeof token !== 'number') {
                         token = self.symbols_[token] || token;
                     }
                     return token;
@@ -1366,28 +1366,28 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                     if (this.defaultActions[state]) {
                         action = this.defaultActions[state];
                     } else {
-                        if (symbol === null || typeof symbol == "undefined") {
+                        if (symbol === null || typeof symbol == 'undefined') {
                             symbol = lex();
                         }
                         action = table[state] && table[state][symbol];
                     }
-                    if (typeof action === "undefined" || !action.length || !action[0]) {
-                        var errStr = "";
+                    if (typeof action === 'undefined' || !action.length || !action[0]) {
+                        var errStr = '';
                         if (!recovering) {
                             expected = [];
                             for (p in table[state]) if (this.terminals_[p] && p > 2) {
-                                expected.push("'" + this.terminals_[p] + "'");
+                                expected.push('\'' + this.terminals_[p] + '\'');
                             }
                             if (this.lexer.showPosition) {
-                                errStr = "Parse error on line " + (yylineno + 1) + ":\n" + this.lexer.showPosition() + "\nExpecting " + expected.join(", ") + ", got '" + (this.terminals_[symbol] || symbol) + "'";
+                                errStr = 'Parse error on line ' + (yylineno + 1) + ':\n' + this.lexer.showPosition() + '\nExpecting ' + expected.join(', ') + ', got \'' + (this.terminals_[symbol] || symbol) + '\'';
                             } else {
-                                errStr = "Parse error on line " + (yylineno + 1) + ": Unexpected " + (symbol == 1 ? "end of input" : "'" + (this.terminals_[symbol] || symbol) + "'");
+                                errStr = 'Parse error on line ' + (yylineno + 1) + ': Unexpected ' + (symbol == 1 ? 'end of input' : '\'' + (this.terminals_[symbol] || symbol) + '\'');
                             }
                             this.parseError(errStr, { text: this.lexer.match, token: this.terminals_[symbol] || symbol, line: this.lexer.yylineno, loc: yyloc, expected: expected });
                         }
                     }
                     if (action[0] instanceof Array && action.length > 1) {
-                        throw new Error("Parse Error: multiple actions possible at state: " + state + ", token: " + symbol);
+                        throw new Error('Parse Error: multiple actions possible at state: ' + state + ', token: ' + symbol);
                     }
                     switch (action[0]) {
                         case 1:
@@ -1415,7 +1415,7 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                                 yyval._$.range = [lstack[lstack.length - (len || 1)].range[0], lstack[lstack.length - 1].range[1]];
                             }
                             r = this.performAction.call(yyval, yytext, yyleng, yylineno, this.yy, action[1], vstack, lstack);
-                            if (typeof r !== "undefined") {
+                            if (typeof r !== 'undefined') {
                                 return r;
                             }
                             if (len) {
@@ -1511,19 +1511,19 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                 },
                 pastInput: function pastInput() {
                     var past = this.matched.substr(0, this.matched.length - this.match.length);
-                    return (past.length > 20 ? '...' : '') + past.substr(-20).replace(/\n/g, "");
+                    return (past.length > 20 ? '...' : '') + past.substr(-20).replace(/\n/g, '');
                 },
                 upcomingInput: function upcomingInput() {
                     var next = this.match;
                     if (next.length < 20) {
                         next += this._input.substr(0, 20 - next.length);
                     }
-                    return (next.substr(0, 20) + (next.length > 20 ? '...' : '')).replace(/\n/g, "");
+                    return (next.substr(0, 20) + (next.length > 20 ? '...' : '')).replace(/\n/g, '');
                 },
                 showPosition: function showPosition() {
                     var pre = this.pastInput();
-                    var c = new Array(pre.length + 1).join("-");
-                    return pre + this.upcomingInput() + "\n" + c + "^";
+                    var c = new Array(pre.length + 1).join('-');
+                    return pre + this.upcomingInput() + '\n' + c + '^';
                 },
                 next: function next() {
                     if (this.done) {
@@ -1566,10 +1566,10 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                         if (this.done && this._input) this.done = false;
                         if (token) return token;else return;
                     }
-                    if (this._input === "") {
+                    if (this._input === '') {
                         return this.EOF;
                     } else {
-                        return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. Unrecognized text.\n' + this.showPosition(), { text: "", token: null, line: this.yylineno });
+                        return this.parseError('Lexical error on line ' + (this.yylineno + 1) + '. Unrecognized text.\n' + this.showPosition(), { text: '', token: null, line: this.yylineno });
                     }
                 },
                 lex: function lex() {
@@ -1606,14 +1606,14 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                 var YYSTATE = YY_START;
                 switch ($avoiding_name_collisions) {
                     case 0:
-                        if (yy_.yytext.slice(-2) === "\\\\") {
+                        if (yy_.yytext.slice(-2) === '\\\\') {
                             strip(0, 1);
-                            this.begin("mu");
-                        } else if (yy_.yytext.slice(-1) === "\\") {
+                            this.begin('mu');
+                        } else if (yy_.yytext.slice(-1) === '\\') {
                             strip(0, 1);
-                            this.begin("emu");
+                            this.begin('emu');
                         } else {
-                            this.begin("mu");
+                            this.begin('mu');
                         }
                         if (yy_.yytext) return 15;
 
@@ -1734,7 +1734,7 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                         yy_.yytext = strip(1, 2).replace(/\\"/g, '"');return 80;
                         break;
                     case 32:
-                        yy_.yytext = strip(1, 2).replace(/\\'/g, "'");return 80;
+                        yy_.yytext = strip(1, 2).replace(/\\'/g, '\'');return 80;
                         break;
                     case 33:
                         return 85;
@@ -1775,7 +1775,7 @@ define('handlebars/compiler/parser',["exports"], function (exports) {
                 }
             };
             lexer.rules = [/^(?:[^\x00]*?(?=(\{\{)))/, /^(?:[^\x00]+)/, /^(?:[^\x00]{2,}?(?=(\{\{|\\\{\{|\\\\\{\{|$)))/, /^(?:\{\{\{\{(?=[^\/]))/, /^(?:\{\{\{\{\/[^\s!"#%-,\.\/;->@\[-\^`\{-~]+(?=[=}\s\/.])\}\}\}\})/, /^(?:[^\x00]*?(?=(\{\{\{\{)))/, /^(?:[\s\S]*?--(~)?\}\})/, /^(?:\()/, /^(?:\))/, /^(?:\{\{\{\{)/, /^(?:\}\}\}\})/, /^(?:\{\{(~)?>)/, /^(?:\{\{(~)?#>)/, /^(?:\{\{(~)?#\*?)/, /^(?:\{\{(~)?\/)/, /^(?:\{\{(~)?\^\s*(~)?\}\})/, /^(?:\{\{(~)?\s*else\s*(~)?\}\})/, /^(?:\{\{(~)?\^)/, /^(?:\{\{(~)?\s*else\b)/, /^(?:\{\{(~)?\{)/, /^(?:\{\{(~)?&)/, /^(?:\{\{(~)?!--)/, /^(?:\{\{(~)?![\s\S]*?\}\})/, /^(?:\{\{(~)?\*?)/, /^(?:=)/, /^(?:\.\.)/, /^(?:\.(?=([=~}\s\/.)|])))/, /^(?:[\/.])/, /^(?:\s+)/, /^(?:\}(~)?\}\})/, /^(?:(~)?\}\})/, /^(?:"(\\["]|[^"])*")/, /^(?:'(\\[']|[^'])*')/, /^(?:@)/, /^(?:true(?=([~}\s)])))/, /^(?:false(?=([~}\s)])))/, /^(?:undefined(?=([~}\s)])))/, /^(?:null(?=([~}\s)])))/, /^(?:-?[0-9]+(?:\.[0-9]+)?(?=([~}\s)])))/, /^(?:as\s+\|)/, /^(?:\|)/, /^(?:([^\s!"#%-,\.\/;->@\[-\^`\{-~]+(?=([=~}\s\/.)|]))))/, /^(?:\[(\\\]|[^\]])*\])/, /^(?:.)/, /^(?:$)/];
-            lexer.conditions = { "mu": { "rules": [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44], "inclusive": false }, "emu": { "rules": [2], "inclusive": false }, "com": { "rules": [6], "inclusive": false }, "raw": { "rules": [3, 4, 5], "inclusive": false }, "INITIAL": { "rules": [0, 1, 44], "inclusive": true } };
+            lexer.conditions = { 'mu': { 'rules': [7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44], 'inclusive': false }, 'emu': { 'rules': [2], 'inclusive': false }, 'com': { 'rules': [6], 'inclusive': false }, 'raw': { 'rules': [3, 4, 5], 'inclusive': false }, 'INITIAL': { 'rules': [0, 1, 44], 'inclusive': true } };
             return lexer;
         })();
         parser.lexer = lexer;
@@ -2173,7 +2173,7 @@ define('handlebars/compiler/helpers',['exports', '../exception'], function (expo
     if (open.path.original !== close) {
       var errorNode = { loc: open.path.loc };
 
-      throw new _Exception['default'](open.path.original + " doesn't match " + close, errorNode);
+      throw new _Exception['default'](open.path.original + ' doesn\'t match ' + close, errorNode);
     }
   }
 
@@ -3532,7 +3532,7 @@ define('handlebars/compiler/javascript-compiler',['exports', 'module', '../base'
         var local = this.popStack();
         this.pushSource(['if (', local, ' != null) { ', this.appendToBuffer(local, undefined, true), ' }']);
         if (this.environment.isSimple) {
-          this.pushSource(['else { ', this.appendToBuffer("''", undefined, true), ' }']);
+          this.pushSource(['else { ', this.appendToBuffer('\'\'', undefined, true), ' }']);
         }
       }
     },

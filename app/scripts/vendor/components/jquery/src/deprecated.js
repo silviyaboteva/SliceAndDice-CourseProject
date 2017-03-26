@@ -1,5 +1,5 @@
 define( [
-	"./core"
+	'./core'
 ], function( jQuery ) {
 
 jQuery.fn.extend( {
@@ -18,8 +18,8 @@ jQuery.fn.extend( {
 
 		// ( namespace ) or ( selector, types [, fn] )
 		return arguments.length === 1 ?
-			this.off( selector, "**" ) :
-			this.off( types, selector || "**", fn );
+			this.off( selector, '**' ) :
+			this.off( types, selector || '**', fn );
 	},
 	size: function() {
 		return this.length;

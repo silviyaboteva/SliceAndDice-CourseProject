@@ -15,15 +15,15 @@
 })(function($){
 
   var Sammy,
-      PATH_REPLACER = "([^\/]+)",
+      PATH_REPLACER = '([^\/]+)',
       PATH_NAME_MATCHER = /:([\w\d]+)/g,
       QUERY_STRING_MATCHER = /\?([^#]*)?$/,
       // mainly for making `arguments` an Array
       _makeArray = function(nonarray) { return Array.prototype.slice.call(nonarray); },
       // borrowed from jQuery
-      _isFunction = function( obj ) { return Object.prototype.toString.call(obj) === "[object Function]"; },
-      _isArray = function( obj ) { return Object.prototype.toString.call(obj) === "[object Array]"; },
-      _isRegExp = function( obj ) { return Object.prototype.toString.call(obj) === "[object RegExp]"; },
+      _isFunction = function( obj ) { return Object.prototype.toString.call(obj) === '[object Function]'; },
+      _isArray = function( obj ) { return Object.prototype.toString.call(obj) === '[object Array]'; },
+      _isRegExp = function( obj ) { return Object.prototype.toString.call(obj) === '[object RegExp]'; },
       _decode = function( str ) { return decodeURIComponent((str || '').replace(/\+/g, ' ')); },
       _encode = encodeURIComponent,
       _escapeHTML = function(s) {
@@ -100,7 +100,7 @@
   // Also prefixes the arguments with a timestamp.
   Sammy.log = function()  {
     var args = _makeArray(arguments);
-    args.unshift("[" + Date() + "]");
+    args.unshift('[' + Date() + ']');
     $.each(loggers, function(i, logger) {
       logger.apply(Sammy, args);
     });
@@ -161,10 +161,10 @@
     //     //=> '<strong>first_name</strong> Sammy<br /><strong>last_name</strong> Davis Jr.<br />'
     //
     toHTML: function() {
-      var display = "";
+      var display = '';
       $.each(this, function(k, v) {
         if (!_isFunction(v)) {
-          display += "<strong>" + k + "</strong> " + v + "<br />";
+          display += '<strong>' + k + '</strong> ' + v + '<br />';
         }
       });
       return display;
@@ -210,7 +210,7 @@
           s.push('"' + k + '": ' + v.toString());
         }
       });
-      return "Sammy.Object: {" + s.join(',') + "}";
+      return 'Sammy.Object: {' + s.join(',') + '}';
     }
   });
 
@@ -299,7 +299,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
             // Circumvent this problem by creating a new link with given URL and
             // querying that for a hostname.
             hostname = this.hostname ? this.hostname : function (a) {
-              var l = document.createElement("a");
+              var l = document.createElement('a');
               l.href = a.href;
               return l.hostname;
             }(this);
@@ -515,11 +515,11 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
         plugin.apply(this, args);
       } catch(e) {
         if (typeof plugin === 'undefined') {
-          this.error("Plugin Error: called use() but plugin (" + plugin_name.toString() + ") is not defined", e);
+          this.error('Plugin Error: called use() but plugin (' + plugin_name.toString() + ') is not defined', e);
         } else if (!_isFunction(plugin)) {
-          this.error("Plugin Error: called use() but '" + plugin_name.toString() + "' is not a function", e);
+          this.error('Plugin Error: called use() but \'' + plugin_name.toString() + '\' is not a function', e);
         } else {
-          this.error("Plugin Error", e);
+          this.error('Plugin Error', e);
         }
       }
       return this;
@@ -601,7 +601,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
           param_names.push(path_match[1]);
         }
         // replace with the path replacement
-        path = new RegExp(path.replace(PATH_NAME_MATCHER, PATH_REPLACER) + "$");
+        path = new RegExp(path.replace(PATH_NAME_MATCHER, PATH_REPLACER) + '$');
       }
       // lookup callbacks
       $.each(callback,function(i,cb){
@@ -1165,7 +1165,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
           app.last_route = route;
           context.trigger('event-context-before', {context: context});
           // run multiple callbacks
-          if (typeof(route.callback) === "function") {
+          if (typeof(route.callback) === 'function') {
             route.callback = [route.callback];
           }
           if (route.callback && route.callback.length) {
@@ -1174,7 +1174,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
               i++;
               if (route.callback[i]) {
                 returned = route.callback[i].apply(context,callback_args);
-              } else if (app._onComplete && typeof(app._onComplete === "function")) {
+              } else if (app._onComplete && typeof(app._onComplete === 'function')) {
                 app._onComplete(context);
               }
             };
@@ -1426,20 +1426,20 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
     },
 
     _serializeFormParams: function($form) {
-       var queryString = "",
+       var queryString = '',
          fields = $form.serializeArray(),
          i;
        if (fields.length > 0) {
          queryString = this._encodeFormPair(fields[0].name, fields[0].value);
          for (i = 1; i < fields.length; i++) {
-           queryString = queryString + "&" + this._encodeFormPair(fields[i].name, fields[i].value);
+           queryString = queryString + '&' + this._encodeFormPair(fields[i].name, fields[i].value);
          }
        }
        return queryString;
     },
 
     _encodeFormPair: function(name, value){
-      return _encode(name) + "=" + _encode(value);
+      return _encode(name) + '=' + _encode(value);
     },
 
     _parseFormParams: function($form) {
@@ -1460,7 +1460,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
         pairs = parts[1].split('&');
         for (i = 0; i < pairs.length; i++) {
           pair = pairs[i].split('=');
-          params = this._parseParamPair(params, _decode(pair[0]), _decode(pair[1] || ""));
+          params = this._parseParamPair(params, _decode(pair[0]), _decode(pair[1] || ''));
         }
       }
       return params;
@@ -2147,7 +2147,7 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
 
     // //=> Sammy.EventContext: get #/ {}
     toString: function() {
-      return "Sammy.EventContext: " + [this.verb, this.path, this.params].join(' ');
+      return 'Sammy.EventContext: ' + [this.verb, this.path, this.params].join(' ');
     }
 
   });

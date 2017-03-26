@@ -1,12 +1,12 @@
 define( [
-	"./core",
-	"./var/indexOf",
-	"./traversing/var/dir",
-	"./traversing/var/siblings",
-	"./traversing/var/rneedsContext",
-	"./core/init",
-	"./traversing/findFilter",
-	"./selector"
+	'./core',
+	'./var/indexOf',
+	'./traversing/var/dir',
+	'./traversing/var/siblings',
+	'./traversing/var/rneedsContext',
+	'./core/init',
+	'./traversing/findFilter',
+	'./selector'
 ], function( jQuery, indexOf, dir, siblings, rneedsContext ) {
 
 var rparentsprev = /^(?:parents|prev(?:Until|All))/,
@@ -39,7 +39,7 @@ jQuery.fn.extend( {
 			i = 0,
 			l = this.length,
 			matched = [],
-			pos = rneedsContext.test( selectors ) || typeof selectors !== "string" ?
+			pos = rneedsContext.test( selectors ) || typeof selectors !== 'string' ?
 				jQuery( selectors, context || this.context ) :
 				0;
 
@@ -72,7 +72,7 @@ jQuery.fn.extend( {
 		}
 
 		// Index in selector
-		if ( typeof elem === "string" ) {
+		if ( typeof elem === 'string' ) {
 			return indexOf.call( jQuery( elem ), this[ 0 ] );
 		}
 
@@ -110,28 +110,28 @@ jQuery.each( {
 		return parent && parent.nodeType !== 11 ? parent : null;
 	},
 	parents: function( elem ) {
-		return dir( elem, "parentNode" );
+		return dir( elem, 'parentNode' );
 	},
 	parentsUntil: function( elem, i, until ) {
-		return dir( elem, "parentNode", until );
+		return dir( elem, 'parentNode', until );
 	},
 	next: function( elem ) {
-		return sibling( elem, "nextSibling" );
+		return sibling( elem, 'nextSibling' );
 	},
 	prev: function( elem ) {
-		return sibling( elem, "previousSibling" );
+		return sibling( elem, 'previousSibling' );
 	},
 	nextAll: function( elem ) {
-		return dir( elem, "nextSibling" );
+		return dir( elem, 'nextSibling' );
 	},
 	prevAll: function( elem ) {
-		return dir( elem, "previousSibling" );
+		return dir( elem, 'previousSibling' );
 	},
 	nextUntil: function( elem, i, until ) {
-		return dir( elem, "nextSibling", until );
+		return dir( elem, 'nextSibling', until );
 	},
 	prevUntil: function( elem, i, until ) {
-		return dir( elem, "previousSibling", until );
+		return dir( elem, 'previousSibling', until );
 	},
 	siblings: function( elem ) {
 		return siblings( ( elem.parentNode || {} ).firstChild, elem );
@@ -146,11 +146,11 @@ jQuery.each( {
 	jQuery.fn[ name ] = function( until, selector ) {
 		var matched = jQuery.map( this, fn, until );
 
-		if ( name.slice( -5 ) !== "Until" ) {
+		if ( name.slice( -5 ) !== 'Until' ) {
 			selector = until;
 		}
 
-		if ( selector && typeof selector === "string" ) {
+		if ( selector && typeof selector === 'string' ) {
 			matched = jQuery.filter( selector, matched );
 		}
 

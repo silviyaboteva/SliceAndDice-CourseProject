@@ -53,9 +53,22 @@ var router = Sammy('#content', function() {
         productController.loadProductTemplate($content, context, id);
     });
 
-    this.get('#/.*/', function() {
-        //TODO redirect to 404.handlebars
+    this.get('#/products/category/?:category', function(context) {
+        let category = this.params.category;
+        productController.loadCategoryProducts($content, context, category);
     });
+
+    this.get('#/404', function(context) {
+        console.log('here2222');
+        homeController.loadErrorPage($content, context);
+    });
+
+    this.get('/*', function(context) {
+        console.log('here');
+        context.redirect('#/404');
+    });
+
+
 
 
     /* -- Show/Hide li from navigation -- */

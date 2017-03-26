@@ -1,8 +1,8 @@
 define( [
-	"./core",
-	"./data/var/dataPriv",
-	"./deferred",
-	"./callbacks"
+	'./core',
+	'./data/var/dataPriv',
+	'./deferred',
+	'./callbacks'
 ], function( jQuery, dataPriv ) {
 
 jQuery.extend( {
@@ -10,7 +10,7 @@ jQuery.extend( {
 		var queue;
 
 		if ( elem ) {
-			type = ( type || "fx" ) + "queue";
+			type = ( type || 'fx' ) + 'queue';
 			queue = dataPriv.get( elem, type );
 
 			// Speed up dequeue by getting out quickly if this is just a lookup
@@ -26,7 +26,7 @@ jQuery.extend( {
 	},
 
 	dequeue: function( elem, type ) {
-		type = type || "fx";
+		type = type || 'fx';
 
 		var queue = jQuery.queue( elem, type ),
 			startLength = queue.length,
@@ -37,7 +37,7 @@ jQuery.extend( {
 			};
 
 		// If the fx queue is dequeued, always remove the progress sentinel
-		if ( fn === "inprogress" ) {
+		if ( fn === 'inprogress' ) {
 			fn = queue.shift();
 			startLength--;
 		}
@@ -46,8 +46,8 @@ jQuery.extend( {
 
 			// Add a progress sentinel to prevent the fx queue from being
 			// automatically dequeued
-			if ( type === "fx" ) {
-				queue.unshift( "inprogress" );
+			if ( type === 'fx' ) {
+				queue.unshift( 'inprogress' );
 			}
 
 			// Clear up the last queue stop function
@@ -62,10 +62,10 @@ jQuery.extend( {
 
 	// Not public - generate a queueHooks object, or return the current one
 	_queueHooks: function( elem, type ) {
-		var key = type + "queueHooks";
+		var key = type + 'queueHooks';
 		return dataPriv.get( elem, key ) || dataPriv.access( elem, key, {
-			empty: jQuery.Callbacks( "once memory" ).add( function() {
-				dataPriv.remove( elem, [ type + "queue", key ] );
+			empty: jQuery.Callbacks( 'once memory' ).add( function() {
+				dataPriv.remove( elem, [ type + 'queue', key ] );
 			} )
 		} );
 	}
@@ -75,9 +75,9 @@ jQuery.fn.extend( {
 	queue: function( type, data ) {
 		var setter = 2;
 
-		if ( typeof type !== "string" ) {
+		if ( typeof type !== 'string' ) {
 			data = type;
-			type = "fx";
+			type = 'fx';
 			setter--;
 		}
 
@@ -93,7 +93,7 @@ jQuery.fn.extend( {
 				// Ensure a hooks for this queue
 				jQuery._queueHooks( this, type );
 
-				if ( type === "fx" && queue[ 0 ] !== "inprogress" ) {
+				if ( type === 'fx' && queue[ 0 ] !== 'inprogress' ) {
 					jQuery.dequeue( this, type );
 				}
 			} );
@@ -104,7 +104,7 @@ jQuery.fn.extend( {
 		} );
 	},
 	clearQueue: function( type ) {
-		return this.queue( type || "fx", [] );
+		return this.queue( type || 'fx', [] );
 	},
 
 	// Get a promise resolved when queues of a certain type
@@ -121,14 +121,14 @@ jQuery.fn.extend( {
 				}
 			};
 
-		if ( typeof type !== "string" ) {
+		if ( typeof type !== 'string' ) {
 			obj = type;
 			type = undefined;
 		}
-		type = type || "fx";
+		type = type || 'fx';
 
 		while ( i-- ) {
-			tmp = dataPriv.get( elements[ i ], type + "queueHooks" );
+			tmp = dataPriv.get( elements[ i ], type + 'queueHooks' );
 			if ( tmp && tmp.empty ) {
 				count++;
 				tmp.empty.add( resolve );

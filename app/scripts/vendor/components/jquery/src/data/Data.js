@@ -1,7 +1,7 @@
 define( [
-	"../core",
-	"../var/rnotwhite",
-	"./var/acceptData"
+	'../core',
+	'../var/rnotwhite',
+	'./var/acceptData'
 ], function( jQuery, rnotwhite, acceptData ) {
 
 function Data() {
@@ -77,7 +77,7 @@ Data.prototype = {
 			cache = this.cache( owner );
 
 		// Handle: [ owner, key, value ] args
-		if ( typeof data === "string" ) {
+		if ( typeof data === 'string' ) {
 			cache[ data ] = value;
 
 		// Handle: [ owner, { properties } ] args
@@ -110,7 +110,7 @@ Data.prototype = {
 		//   2. The data stored at the key
 		//
 		if ( key === undefined ||
-				( ( key && typeof key === "string" ) && value === undefined ) ) {
+				( ( key && typeof key === 'string' ) && value === undefined ) ) {
 
 			stored = this.get( owner, key );
 

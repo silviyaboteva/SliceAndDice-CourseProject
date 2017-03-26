@@ -1,6 +1,6 @@
 define( [
-	"../core",
-	"../css"
+	'../core',
+	'../css'
 ], function( jQuery ) {
 
 function Tween( elem, options, prop, end, easing ) {
@@ -17,7 +17,7 @@ Tween.prototype = {
 		this.options = options;
 		this.start = this.now = this.cur();
 		this.end = end;
-		this.unit = unit || ( jQuery.cssNumber[ prop ] ? "" : "px" );
+		this.unit = unit || ( jQuery.cssNumber[ prop ] ? '' : 'px' );
 	},
 	cur: function() {
 		var hooks = Tween.propHooks[ this.prop ];
@@ -70,10 +70,10 @@ Tween.propHooks = {
 			// attempt a parseFloat and fallback to a string if the parse fails.
 			// Simple values such as "10px" are parsed to Float;
 			// complex values such as "rotate(1rad)" are returned as-is.
-			result = jQuery.css( tween.elem, tween.prop, "" );
+			result = jQuery.css( tween.elem, tween.prop, '' );
 
 			// Empty strings, null, undefined and "auto" are converted to 0.
-			return !result || result === "auto" ? 0 : result;
+			return !result || result === 'auto' ? 0 : result;
 		},
 		set: function( tween ) {
 
@@ -110,7 +110,7 @@ jQuery.easing = {
 	swing: function( p ) {
 		return 0.5 - Math.cos( p * Math.PI ) / 2;
 	},
-	_default: "swing"
+	_default: 'swing'
 };
 
 jQuery.fx = Tween.prototype.init;

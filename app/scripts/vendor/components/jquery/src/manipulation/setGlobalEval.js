@@ -1,5 +1,5 @@
 define( [
-	"../data/var/dataPriv"
+	'../data/var/dataPriv'
 ], function( dataPriv ) {
 
 // Mark scripts as having already been evaluated
@@ -10,8 +10,8 @@ function setGlobalEval( elems, refElements ) {
 	for ( ; i < l; i++ ) {
 		dataPriv.set(
 			elems[ i ],
-			"globalEval",
-			!refElements || dataPriv.get( refElements[ i ], "globalEval" )
+			'globalEval',
+			!refElements || dataPriv.get( refElements[ i ], 'globalEval' )
 		);
 	}
 }

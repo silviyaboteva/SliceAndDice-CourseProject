@@ -1,10 +1,10 @@
 define( [
-	"../core",
-	"./var/rnumnonpx",
-	"./var/rmargin",
-	"./var/getStyles",
-	"./support",
-	"../selector" // Get jQuery.contains
+	'../core',
+	'./var/rnumnonpx',
+	'./var/rmargin',
+	'./var/getStyles',
+	'./support',
+	'../selector' // Get jQuery.contains
 ], function( jQuery, rnumnonpx, rmargin, getStyles, support ) {
 
 function curCSS( elem, name, computed ) {
@@ -17,7 +17,7 @@ function curCSS( elem, name, computed ) {
 	// Support: Opera 12.1x only
 	// Fall back to style even without computed
 	// computed is undefined for elems on document fragments
-	if ( ( ret === "" || ret === undefined ) && !jQuery.contains( elem.ownerDocument, elem ) ) {
+	if ( ( ret === '' || ret === undefined ) && !jQuery.contains( elem.ownerDocument, elem ) ) {
 		ret = jQuery.style( elem, name );
 	}
 
@@ -52,7 +52,7 @@ function curCSS( elem, name, computed ) {
 
 		// Support: IE9-11+
 		// IE returns zIndex value as an integer.
-		ret + "" :
+		ret + '' :
 		ret;
 }
 

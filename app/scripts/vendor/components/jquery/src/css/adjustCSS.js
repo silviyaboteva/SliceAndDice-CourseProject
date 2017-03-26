@@ -1,6 +1,6 @@
 define( [
-	"../core",
-	"../var/rcssNum"
+	'../core',
+	'../var/rcssNum'
 ], function( jQuery, rcssNum ) {
 
 function adjustCSS( elem, prop, valueParts, tween ) {
@@ -9,12 +9,12 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 		maxIterations = 20,
 		currentValue = tween ?
 			function() { return tween.cur(); } :
-			function() { return jQuery.css( elem, prop, "" ); },
+			function() { return jQuery.css( elem, prop, '' ); },
 		initial = currentValue(),
-		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? "" : "px" ),
+		unit = valueParts && valueParts[ 3 ] || ( jQuery.cssNumber[ prop ] ? '' : 'px' ),
 
 		// Starting value computation is required for potential unit mismatches
-		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== "px" && +initial ) &&
+		initialInUnit = ( jQuery.cssNumber[ prop ] || unit !== 'px' && +initial ) &&
 			rcssNum.exec( jQuery.css( elem, prop ) );
 
 	if ( initialInUnit && initialInUnit[ 3 ] !== unit ) {
@@ -32,7 +32,7 @@ function adjustCSS( elem, prop, valueParts, tween ) {
 
 			// If previous iteration zeroed out, double until we get *something*.
 			// Use string for doubling so we don't accidentally see scale as unchanged below
-			scale = scale || ".5";
+			scale = scale || '.5';
 
 			// Adjust and apply
 			initialInUnit = initialInUnit / scale;

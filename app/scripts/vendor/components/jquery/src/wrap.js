@@ -1,8 +1,8 @@
 define( [
-	"./core",
-	"./core/init",
-	"./manipulation", // clone
-	"./traversing" // parent, contents
+	'./core',
+	'./core/init',
+	'./manipulation', // clone
+	'./traversing' // parent, contents
 ], function( jQuery ) {
 
 jQuery.fn.extend( {
@@ -68,7 +68,7 @@ jQuery.fn.extend( {
 
 	unwrap: function() {
 		return this.parent().each( function() {
-			if ( !jQuery.nodeName( this, "body" ) ) {
+			if ( !jQuery.nodeName( this, 'body' ) ) {
 				jQuery( this ).replaceWith( this.childNodes );
 			}
 		} ).end();

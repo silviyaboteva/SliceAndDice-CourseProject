@@ -25,30 +25,30 @@
       }
       // If options escape_html is false, dont escape the contents by default
       if (options && options.escape_html === false) {
-        escaped_string = "\",$1,\"";
+        escaped_string = '",$1,"';
       } else {
-        escaped_string = "\",h($1),\"";
+        escaped_string = '",h($1),"';
       }
       // Generate a reusable function that will serve as a template
       // generator (and which will be cached).
-      fn = srender_cache[name] = new Function("obj",
-      "var ___$$$___=[],print=function(){___$$$___.push.apply(___$$$___,arguments);};" +
+      fn = srender_cache[name] = new Function('obj',
+      'var ___$$$___=[],print=function(){___$$$___.push.apply(___$$$___,arguments);};' +
 
       // Introduce the data as local variables using with(){}
-      "with(obj){___$$$___.push(\"" +
+      'with(obj){___$$$___.push("' +
 
       // Convert the template into pure JavaScript
       String(template)
-        .replace(/[\r\t\n]/g, " ")
+        .replace(/[\r\t\n]/g, ' ')
         .replace(/\"/g, '\\"')
-        .split("<%").join("\t")
-        .replace(/((^|%>)[^\t]*)/g, "$1\r")
+        .split('<%').join('\t')
+        .replace(/((^|%>)[^\t]*)/g, '$1\r')
         .replace(/\t=(.*?)%>/g, escaped_string)
-        .replace(/\t!(.*?)%>/g, "\",$1,\"")
-        .split("\t").join("\");")
-        .split("%>").join("___$$$___.push(\"")
-        .split("\r").join("")
-        + "\");}return ___$$$___.join('');");
+        .replace(/\t!(.*?)%>/g, '",$1,"')
+        .split('\t').join('");')
+        .split('%>').join('___$$$___.push("')
+        .split('\r').join('')
+        + '");}return ___$$$___.join(\'\');');
     }
 
     if (typeof data != 'undefined') {

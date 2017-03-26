@@ -49,4 +49,15 @@ class HomeController {
                 });
             });
     }
+
+    loadErrorPage(content, context) {
+        var $content = content;
+        var _this = this;
+
+        return this.template.getTemplate('404-template')
+            .then((resultTemplate) => {
+                $content.html(resultTemplate);
+            })
+    }
+
 }

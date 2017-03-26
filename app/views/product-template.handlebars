@@ -3,15 +3,26 @@
       <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i></li>
       <li class="breadcrumb-item"><a href="#/home">Home</a></li>
       <li class="breadcrumb-item"><a href="#/all">All Products</a></li>
+      <li class="breadcrumb-item"><a href="#/products/category/{{product.category}}">{{product.category}}</a></li>
       <li class="breadcrumb-item active">{{product.name}}</li>
     </ol>
 
-    <div class="col col-md-4 col-sm-6 col-12">
-        <a href="#/products/product/{{product.id}}">
-            <img class="responsive-image" src="http://localhost:1337/api/products/image/{{product.image}}">
-        </a>
-        <div>{{product.name}}</div>
-        <div>{{prroduct.price}}</div>
-        <button class="btn btn-theme-default">Add to cart</button>
-    </div>
+    <section class="product-details-section">
+        <div class="row">
+            <div class="col col-md-6 col-sm-6 col-12  detail-image">
+                <a href="#/products/product/{{product.id}}">
+                    <img href="http://localhost:1337/api/products/image/{{product.id}}" class="responsive-image" src="http://localhost:1337/api/products/image/{{product.image}}">
+                </a>
+            </div>
+            <div class="col col-md-6 col-sm-6 col-12">
+                <div class="detail-description">
+                    <h2>{{product.name}}</h2>
+                    <hr/>
+                    <h3>$ {{product.price}}</h3>
+                    <p>{{product.description}}</p>
+                    <button class="btn btn-theme-default">Add to cart<i class="fa fa-plus" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

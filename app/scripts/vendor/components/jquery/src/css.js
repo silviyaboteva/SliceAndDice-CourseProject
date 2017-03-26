@@ -1,25 +1,25 @@
 define( [
-	"./core",
-	"./var/pnum",
-	"./core/access",
-	"./css/var/rmargin",
-	"./var/document",
-	"./var/rcssNum",
-	"./css/var/rnumnonpx",
-	"./css/var/cssExpand",
-	"./css/var/isHidden",
-	"./css/var/getStyles",
-	"./css/var/swap",
-	"./css/curCSS",
-	"./css/adjustCSS",
-	"./css/defaultDisplay",
-	"./css/addGetHookIf",
-	"./css/support",
-	"./data/var/dataPriv",
+	'./core',
+	'./var/pnum',
+	'./core/access',
+	'./css/var/rmargin',
+	'./var/document',
+	'./var/rcssNum',
+	'./css/var/rnumnonpx',
+	'./css/var/cssExpand',
+	'./css/var/isHidden',
+	'./css/var/getStyles',
+	'./css/var/swap',
+	'./css/curCSS',
+	'./css/adjustCSS',
+	'./css/defaultDisplay',
+	'./css/addGetHookIf',
+	'./css/support',
+	'./data/var/dataPriv',
 
-	"./core/init",
-	"./core/ready",
-	"./selector" // contains
+	'./core/init',
+	'./core/ready',
+	'./selector' // contains
 ], function( jQuery, pnum, access, rmargin, document, rcssNum, rnumnonpx, cssExpand, isHidden,
 	getStyles, swap, curCSS, adjustCSS, defaultDisplay, addGetHookIf, support, dataPriv ) {
 
@@ -30,14 +30,14 @@ var
 	// See here for display values: https://developer.mozilla.org/en-US/docs/CSS/display
 	rdisplayswap = /^(none|table(?!-c[ea]).+)/,
 
-	cssShow = { position: "absolute", visibility: "hidden", display: "block" },
+	cssShow = { position: 'absolute', visibility: 'hidden', display: 'block' },
 	cssNormalTransform = {
-		letterSpacing: "0",
-		fontWeight: "400"
+		letterSpacing: '0',
+		fontWeight: '400'
 	},
 
-	cssPrefixes = [ "Webkit", "O", "Moz", "ms" ],
-	emptyStyle = document.createElement( "div" ).style;
+	cssPrefixes = [ 'Webkit', 'O', 'Moz', 'ms' ],
+	emptyStyle = document.createElement( 'div' ).style;
 
 // Return a css property mapped to a potentially vendor prefixed property
 function vendorPropName( name ) {
@@ -67,47 +67,47 @@ function setPositiveNumber( elem, value, subtract ) {
 	return matches ?
 
 		// Guard against undefined "subtract", e.g., when used as in cssHooks
-		Math.max( 0, matches[ 2 ] - ( subtract || 0 ) ) + ( matches[ 3 ] || "px" ) :
+		Math.max( 0, matches[ 2 ] - ( subtract || 0 ) ) + ( matches[ 3 ] || 'px' ) :
 		value;
 }
 
 function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
-	var i = extra === ( isBorderBox ? "border" : "content" ) ?
+	var i = extra === ( isBorderBox ? 'border' : 'content' ) ?
 
 		// If we already have the right measurement, avoid augmentation
 		4 :
 
 		// Otherwise initialize for horizontal or vertical properties
-		name === "width" ? 1 : 0,
+		name === 'width' ? 1 : 0,
 
 		val = 0;
 
 	for ( ; i < 4; i += 2 ) {
 
 		// Both box models exclude margin, so add it if we want it
-		if ( extra === "margin" ) {
+		if ( extra === 'margin' ) {
 			val += jQuery.css( elem, extra + cssExpand[ i ], true, styles );
 		}
 
 		if ( isBorderBox ) {
 
 			// border-box includes padding, so remove it if we want content
-			if ( extra === "content" ) {
-				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+			if ( extra === 'content' ) {
+				val -= jQuery.css( elem, 'padding' + cssExpand[ i ], true, styles );
 			}
 
 			// At this point, extra isn't border nor margin, so remove border
-			if ( extra !== "margin" ) {
-				val -= jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+			if ( extra !== 'margin' ) {
+				val -= jQuery.css( elem, 'border' + cssExpand[ i ] + 'Width', true, styles );
 			}
 		} else {
 
 			// At this point, extra isn't content, so add padding
-			val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
+			val += jQuery.css( elem, 'padding' + cssExpand[ i ], true, styles );
 
 			// At this point, extra isn't content nor padding, so add border
-			if ( extra !== "padding" ) {
-				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
+			if ( extra !== 'padding' ) {
+				val += jQuery.css( elem, 'border' + cssExpand[ i ] + 'Width', true, styles );
 			}
 		}
 	}
@@ -119,9 +119,9 @@ function getWidthOrHeight( elem, name, extra ) {
 
 	// Start with offset property, which is equivalent to the border-box value
 	var valueIsBorderBox = true,
-		val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
+		val = name === 'width' ? elem.offsetWidth : elem.offsetHeight,
 		styles = getStyles( elem ),
-		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
+		isBorderBox = jQuery.css( elem, 'boxSizing', false, styles ) === 'border-box';
 
 	// Some non-html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
@@ -153,11 +153,11 @@ function getWidthOrHeight( elem, name, extra ) {
 		augmentWidthOrHeight(
 			elem,
 			name,
-			extra || ( isBorderBox ? "border" : "content" ),
+			extra || ( isBorderBox ? 'border' : 'content' ),
 			valueIsBorderBox,
 			styles
 		)
-	) + "px";
+	) + 'px';
 }
 
 function showHide( elements, show ) {
@@ -172,34 +172,34 @@ function showHide( elements, show ) {
 			continue;
 		}
 
-		values[ index ] = dataPriv.get( elem, "olddisplay" );
+		values[ index ] = dataPriv.get( elem, 'olddisplay' );
 		display = elem.style.display;
 		if ( show ) {
 
 			// Reset the inline display of this element to learn if it is
 			// being hidden by cascaded rules or not
-			if ( !values[ index ] && display === "none" ) {
-				elem.style.display = "";
+			if ( !values[ index ] && display === 'none' ) {
+				elem.style.display = '';
 			}
 
 			// Set elements which have been overridden with display: none
 			// in a stylesheet to whatever the default browser style is
 			// for such an element
-			if ( elem.style.display === "" && isHidden( elem ) ) {
+			if ( elem.style.display === '' && isHidden( elem ) ) {
 				values[ index ] = dataPriv.access(
 					elem,
-					"olddisplay",
+					'olddisplay',
 					defaultDisplay( elem.nodeName )
 				);
 			}
 		} else {
 			hidden = isHidden( elem );
 
-			if ( display !== "none" || !hidden ) {
+			if ( display !== 'none' || !hidden ) {
 				dataPriv.set(
 					elem,
-					"olddisplay",
-					hidden ? display : jQuery.css( elem, "display" )
+					'olddisplay',
+					hidden ? display : jQuery.css( elem, 'display' )
 				);
 			}
 		}
@@ -212,8 +212,8 @@ function showHide( elements, show ) {
 		if ( !elem.style ) {
 			continue;
 		}
-		if ( !show || elem.style.display === "none" || elem.style.display === "" ) {
-			elem.style.display = show ? values[ index ] || "" : "none";
+		if ( !show || elem.style.display === 'none' || elem.style.display === '' ) {
+			elem.style.display = show ? values[ index ] || '' : 'none';
 		}
 	}
 
@@ -230,8 +230,8 @@ jQuery.extend( {
 				if ( computed ) {
 
 					// We should always get a number back from opacity
-					var ret = curCSS( elem, "opacity" );
-					return ret === "" ? "1" : ret;
+					var ret = curCSS( elem, 'opacity' );
+					return ret === '' ? '1' : ret;
 				}
 			}
 		}
@@ -239,25 +239,25 @@ jQuery.extend( {
 
 	// Don't automatically add "px" to these possibly-unitless properties
 	cssNumber: {
-		"animationIterationCount": true,
-		"columnCount": true,
-		"fillOpacity": true,
-		"flexGrow": true,
-		"flexShrink": true,
-		"fontWeight": true,
-		"lineHeight": true,
-		"opacity": true,
-		"order": true,
-		"orphans": true,
-		"widows": true,
-		"zIndex": true,
-		"zoom": true
+		'animationIterationCount': true,
+		'columnCount': true,
+		'fillOpacity': true,
+		'flexGrow': true,
+		'flexShrink': true,
+		'fontWeight': true,
+		'lineHeight': true,
+		'opacity': true,
+		'order': true,
+		'orphans': true,
+		'widows': true,
+		'zIndex': true,
+		'zoom': true
 	},
 
 	// Add in properties whose names you wish to fix before
 	// setting or getting the value
 	cssProps: {
-		"float": "cssFloat"
+		'float': 'cssFloat'
 	},
 
 	// Get and set the style property on a DOM Node
@@ -284,11 +284,11 @@ jQuery.extend( {
 			type = typeof value;
 
 			// Convert "+=" or "-=" to relative numbers (#7345)
-			if ( type === "string" && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
+			if ( type === 'string' && ( ret = rcssNum.exec( value ) ) && ret[ 1 ] ) {
 				value = adjustCSS( elem, name, ret );
 
 				// Fixes bug #9237
-				type = "number";
+				type = 'number';
 			}
 
 			// Make sure that null and NaN values aren't set (#7116)
@@ -297,18 +297,18 @@ jQuery.extend( {
 			}
 
 			// If a number was passed in, add the unit (except for certain CSS properties)
-			if ( type === "number" ) {
-				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? "" : "px" );
+			if ( type === 'number' ) {
+				value += ret && ret[ 3 ] || ( jQuery.cssNumber[ origName ] ? '' : 'px' );
 			}
 
 			// Support: IE9-11+
 			// background-* props affect original clone's values
-			if ( !support.clearCloneStyle && value === "" && name.indexOf( "background" ) === 0 ) {
-				style[ name ] = "inherit";
+			if ( !support.clearCloneStyle && value === '' && name.indexOf( 'background' ) === 0 ) {
+				style[ name ] = 'inherit';
 			}
 
 			// If a hook was provided, use that value, otherwise just set the specified value
-			if ( !hooks || !( "set" in hooks ) ||
+			if ( !hooks || !( 'set' in hooks ) ||
 				( value = hooks.set( elem, value, extra ) ) !== undefined ) {
 
 				style[ name ] = value;
@@ -317,7 +317,7 @@ jQuery.extend( {
 		} else {
 
 			// If a hook was provided get the non-computed value from there
-			if ( hooks && "get" in hooks &&
+			if ( hooks && 'get' in hooks &&
 				( ret = hooks.get( elem, false, extra ) ) !== undefined ) {
 
 				return ret;
@@ -340,7 +340,7 @@ jQuery.extend( {
 		hooks = jQuery.cssHooks[ name ] || jQuery.cssHooks[ origName ];
 
 		// If a hook was provided get the computed value from there
-		if ( hooks && "get" in hooks ) {
+		if ( hooks && 'get' in hooks ) {
 			val = hooks.get( elem, true, extra );
 		}
 
@@ -350,12 +350,12 @@ jQuery.extend( {
 		}
 
 		// Convert "normal" to computed value
-		if ( val === "normal" && name in cssNormalTransform ) {
+		if ( val === 'normal' && name in cssNormalTransform ) {
 			val = cssNormalTransform[ name ];
 		}
 
 		// Make numeric if forced or a qualifier was provided and val looks numeric
-		if ( extra === "" || extra ) {
+		if ( extra === '' || extra ) {
 			num = parseFloat( val );
 			return extra === true || isFinite( num ) ? num || 0 : val;
 		}
@@ -363,14 +363,14 @@ jQuery.extend( {
 	}
 } );
 
-jQuery.each( [ "height", "width" ], function( i, name ) {
+jQuery.each( [ 'height', 'width' ], function( i, name ) {
 	jQuery.cssHooks[ name ] = {
 		get: function( elem, computed, extra ) {
 			if ( computed ) {
 
 				// Certain elements can have dimension info if we invisibly show them
 				// but it must have a current display style that would benefit
-				return rdisplayswap.test( jQuery.css( elem, "display" ) ) &&
+				return rdisplayswap.test( jQuery.css( elem, 'display' ) ) &&
 					elem.offsetWidth === 0 ?
 						swap( elem, cssShow, function() {
 							return getWidthOrHeight( elem, name, extra );
@@ -386,13 +386,13 @@ jQuery.each( [ "height", "width" ], function( i, name ) {
 					elem,
 					name,
 					extra,
-					jQuery.css( elem, "boxSizing", false, styles ) === "border-box",
+					jQuery.css( elem, 'boxSizing', false, styles ) === 'border-box',
 					styles
 				);
 
 			// Convert to pixels if value adjustment is needed
 			if ( subtract && ( matches = rcssNum.exec( value ) ) &&
-				( matches[ 3 ] || "px" ) !== "px" ) {
+				( matches[ 3 ] || 'px' ) !== 'px' ) {
 
 				elem.style[ name ] = value;
 				value = jQuery.css( elem, name );
@@ -406,12 +406,12 @@ jQuery.each( [ "height", "width" ], function( i, name ) {
 jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
 	function( elem, computed ) {
 		if ( computed ) {
-			return ( parseFloat( curCSS( elem, "marginLeft" ) ) ||
+			return ( parseFloat( curCSS( elem, 'marginLeft' ) ) ||
 				elem.getBoundingClientRect().left -
 					swap( elem, { marginLeft: 0 }, function() {
 						return elem.getBoundingClientRect().left;
 					} )
-				) + "px";
+				) + 'px';
 		}
 	}
 );
@@ -420,17 +420,17 @@ jQuery.cssHooks.marginLeft = addGetHookIf( support.reliableMarginLeft,
 jQuery.cssHooks.marginRight = addGetHookIf( support.reliableMarginRight,
 	function( elem, computed ) {
 		if ( computed ) {
-			return swap( elem, { "display": "inline-block" },
-				curCSS, [ elem, "marginRight" ] );
+			return swap( elem, { 'display': 'inline-block' },
+				curCSS, [ elem, 'marginRight' ] );
 		}
 	}
 );
 
 // These hooks are used by animate to expand properties
 jQuery.each( {
-	margin: "",
-	padding: "",
-	border: "Width"
+	margin: '',
+	padding: '',
+	border: 'Width'
 }, function( prefix, suffix ) {
 	jQuery.cssHooks[ prefix + suffix ] = {
 		expand: function( value ) {
@@ -438,7 +438,7 @@ jQuery.each( {
 				expanded = {},
 
 				// Assumes a single number if not a string
-				parts = typeof value === "string" ? value.split( " " ) : [ value ];
+				parts = typeof value === 'string' ? value.split( ' ' ) : [ value ];
 
 			for ( ; i < 4; i++ ) {
 				expanded[ prefix + cssExpand[ i ] + suffix ] =
@@ -484,7 +484,7 @@ jQuery.fn.extend( {
 		return showHide( this );
 	},
 	toggle: function( state ) {
-		if ( typeof state === "boolean" ) {
+		if ( typeof state === 'boolean' ) {
 			return state ? this.show() : this.hide();
 		}
 

@@ -72,7 +72,7 @@ body {
     font-size: 14px;
     box-shadow: 0 5px 0 0 $theme-color-border;
     &:hover {
-        background-color: #000;
+        background-color: $black-theme-color;
         -webkit-transition: all 350ms ease;
         transition: all 350ms ease;
     }
@@ -82,9 +82,12 @@ body {
     color: #79706D;
 }
 
+.fa-plus {
+    color: $background-theme-color;
+}
+
 .responsive-image {
     width: 100%;
-    height: auto;
 }
 
 
@@ -142,6 +145,47 @@ body {
         &:nth-child(3) {
             transform: rotate(-45deg);
         }
+    }
+}
+
+
+/* Slick slider */
+
+.slick-arrow {
+    background-color: white;
+    border: none;
+}
+
+.slick-prev {
+    position: absolute;
+    top: -45px;
+    right: calc(3*45px);
+    -webkit-transform: translateY(-45);
+    transform: translateY(-45);
+    text-indent: -9999px;
+    width: 45px;
+    height: 45px;
+    z-index: 5;
+    background-image: url("../images/left-arrow.png");
+    &:hover {
+        background-image: url("../images/left-arrow-hovered.png");
+    }
+}
+
+.slick-next {
+    position: absolute;
+    right: calc(2*45px);
+    top: -45px;
+    -webkit-transform: translateY(-45);
+    transform: translateY(-45);
+    text-indent: -9999px;
+    width: 45px;
+    height: 45px;
+    background-color: transparent;
+    z-index: 5;
+    background-image: url("../images/right-arrow.png");
+    &:hover {
+        background-image: url("../images/right-arrow-hovered.png");
     }
 }
 
@@ -526,10 +570,6 @@ $image-url:'../images/VectorSmartObject';
     button {
         vertical-align: inherit;
         box-shadow: 0 5px 0 0 $theme-color-border;
-        .fa {
-            font-size: 16px;
-            color: $background-theme-color;
-        }
     }
 }
 
@@ -584,25 +624,22 @@ $image-url:'../images/VectorSmartObject';
 .products-section {
     .navigation-categories {
         list-style-type: none;
+        background-color: $background-theme-color;
     }
     .item-categories {
         display: inline-block;
-        padding: 20px;
-        span {
-            text-decoration: none;
-            text-transform: uppercase;
-            color: $black-theme-color;
-            font-size: 1.2rem;
-        }
-        &:first-child {
-            background-color: $theme-color;
-            a {
-                color: $background-theme-color;
-            }
-        }
+        padding: 10px;
+        height: 45px;
         &:hover {
             background-color: $theme-color;
-            a {
+            color: $background-theme-color;
+            cursor: pointer;
+        }
+        span {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: $dark-grey-theme-color;
+            &:hover {
                 color: $background-theme-color;
             }
         }
@@ -615,7 +652,17 @@ $image-url:'../images/VectorSmartObject';
 }
 
 .product-item {
-    background-color: $items-background;
+    padding: 20px 0;
+    &-card {
+        background-color: $items-background;
+        margin: 0 20px;
+        &:hover {
+            box-shadow: 3px 5px 20px #888888;
+        }
+    }
+    .btn-theme-default {
+        margin: 5px 0;
+    }
 }
 
 .info-item {
@@ -731,16 +778,32 @@ label {
     font-size: 1rem;
 }
 
-span {
-    font-style: italic;
-    color: $theme-color;
+
+/* -- Start Detailed page template -- */
+
+.detail-image {
+    vertical-align: middle;
+}
+
+.detail-description {
+    margin-top: 50px;
+    p {
+        margin: 15px 0;
+    }
 }
 
 
-/* -- Start Profile template -- */
+/* -- End Dtailed page template -- */
 
 
-/* -- End Profile template -- */
+/* -- Start 404 template -- */
+
+.error-template {
+    text-align: center;
+}
+
+
+/* -- End 404 template -- */
 
 
 /*-- Responsive --*/
@@ -818,6 +881,11 @@ span {
             padding-left: 15px;
         }
     }
+    .footer-top {
+        .columns {
+            margin-top: 20px;
+        }
+    }
     /* -- END HOME PAGE RESPONSIVE -- */
 }
 
@@ -885,6 +953,16 @@ span {
     .category-section {
         display: none;
     }
+    .footer-menu {
+        li {
+            display: block;
+        }
+    }
+    .footer-top {
+        .img-centered {
+            display: none;
+        }
+    }
     /* -- END HOME PAGE RESPONSIVE -- */
     /* -- START Login and Register template RESPONSIVE -- */
     .display-left {
@@ -898,6 +976,10 @@ span {
         text-align: center;
     }
     /* -- END Login and Register template RESPONSIVE -- */
+    .profile-picture {
+        text-align: center;
+        margin-bottom: 40px;
+    }
 }
 
 

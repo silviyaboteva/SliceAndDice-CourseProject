@@ -1,7 +1,7 @@
 define( [
-	"../core",
-	"../var/support",
-	"../ajax"
+	'../core',
+	'../var/support',
+	'../ajax'
 ], function( jQuery, support ) {
 
 jQuery.ajaxSettings.xhr = function() {
@@ -21,7 +21,7 @@ var xhrSuccessStatus = {
 	},
 	xhrSupported = jQuery.ajaxSettings.xhr();
 
-support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
+support.cors = !!xhrSupported && ( 'withCredentials' in xhrSupported );
 support.ajax = xhrSupported = !!xhrSupported;
 
 jQuery.ajaxTransport( function( options ) {
@@ -59,8 +59,8 @@ jQuery.ajaxTransport( function( options ) {
 				// akin to a jigsaw puzzle, we simply never set it to be sure.
 				// (it can always be set on a per-request basis or even using ajaxSetup)
 				// For same-domain requests, won't change header if already provided.
-				if ( !options.crossDomain && !headers[ "X-Requested-With" ] ) {
-					headers[ "X-Requested-With" ] = "XMLHttpRequest";
+				if ( !options.crossDomain && !headers[ 'X-Requested-With' ] ) {
+					headers[ 'X-Requested-With' ] = 'XMLHttpRequest';
 				}
 
 				// Set headers
@@ -75,15 +75,15 @@ jQuery.ajaxTransport( function( options ) {
 							callback = errorCallback = xhr.onload =
 								xhr.onerror = xhr.onabort = xhr.onreadystatechange = null;
 
-							if ( type === "abort" ) {
+							if ( type === 'abort' ) {
 								xhr.abort();
-							} else if ( type === "error" ) {
+							} else if ( type === 'error' ) {
 
 								// Support: IE9
 								// On a manual native abort, IE9 throws
 								// errors on any property access that is not readyState
-								if ( typeof xhr.status !== "number" ) {
-									complete( 0, "error" );
+								if ( typeof xhr.status !== 'number' ) {
+									complete( 0, 'error' );
 								} else {
 									complete(
 
@@ -100,8 +100,8 @@ jQuery.ajaxTransport( function( options ) {
 									// Support: IE9 only
 									// IE9 has no XHR2 but throws on binary (trac-11426)
 									// For XHR2 non-text, let the caller handle it (gh-2498)
-									( xhr.responseType || "text" ) !== "text"  ||
-									typeof xhr.responseText !== "string" ?
+									( xhr.responseType || 'text' ) !== 'text'  ||
+									typeof xhr.responseText !== 'string' ?
 										{ binary: xhr.response } :
 										{ text: xhr.responseText },
 									xhr.getAllResponseHeaders()
@@ -113,7 +113,7 @@ jQuery.ajaxTransport( function( options ) {
 
 				// Listen to events
 				xhr.onload = callback();
-				errorCallback = xhr.onerror = callback( "error" );
+				errorCallback = xhr.onerror = callback( 'error' );
 
 				// Support: IE9
 				// Use onreadystatechange to replace onabort
@@ -140,7 +140,7 @@ jQuery.ajaxTransport( function( options ) {
 				}
 
 				// Create the abort callback
-				callback = callback( "abort" );
+				callback = callback( 'abort' );
 
 				try {
 

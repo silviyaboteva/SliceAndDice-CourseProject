@@ -1,8 +1,8 @@
 define( [
-	"../core",
-	"../core/access",
-	"./support",
-	"../selector"
+	'../core',
+	'../core/access',
+	'./support',
+	'../selector'
 ], function( jQuery, access, support ) {
 
 var rfocusable = /^(?:input|select|textarea|button)$/i,
@@ -38,7 +38,7 @@ jQuery.extend( {
 		}
 
 		if ( value !== undefined ) {
-			if ( hooks && "set" in hooks &&
+			if ( hooks && 'set' in hooks &&
 				( ret = hooks.set( elem, value, name ) ) !== undefined ) {
 				return ret;
 			}
@@ -46,7 +46,7 @@ jQuery.extend( {
 			return ( elem[ name ] = value );
 		}
 
-		if ( hooks && "get" in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
+		if ( hooks && 'get' in hooks && ( ret = hooks.get( elem, name ) ) !== null ) {
 			return ret;
 		}
 
@@ -61,7 +61,7 @@ jQuery.extend( {
 				// correct value when it hasn't been explicitly set
 				// http://fluidproject.org/blog/2008/01/09/getting-setting-and-removing-tabindex-values-with-javascript/
 				// Use proper attribute retrieval(#12072)
-				var tabindex = jQuery.find.attr( elem, "tabindex" );
+				var tabindex = jQuery.find.attr( elem, 'tabindex' );
 
 				return tabindex ?
 					parseInt( tabindex, 10 ) :
@@ -74,8 +74,8 @@ jQuery.extend( {
 	},
 
 	propFix: {
-		"for": "htmlFor",
-		"class": "className"
+		'for': 'htmlFor',
+		'class': 'className'
 	}
 } );
 
@@ -108,16 +108,16 @@ if ( !support.optSelected ) {
 }
 
 jQuery.each( [
-	"tabIndex",
-	"readOnly",
-	"maxLength",
-	"cellSpacing",
-	"cellPadding",
-	"rowSpan",
-	"colSpan",
-	"useMap",
-	"frameBorder",
-	"contentEditable"
+	'tabIndex',
+	'readOnly',
+	'maxLength',
+	'cellSpacing',
+	'cellPadding',
+	'rowSpan',
+	'colSpan',
+	'useMap',
+	'frameBorder',
+	'contentEditable'
 ], function() {
 	jQuery.propFix[ this.toLowerCase() ] = this;
 } );

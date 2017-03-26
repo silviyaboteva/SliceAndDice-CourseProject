@@ -1,10 +1,10 @@
 define( [
-	"../core",
-	"../data/var/dataPriv",
-	"./support",
+	'../core',
+	'../data/var/dataPriv',
+	'./support',
 
-	"../event",
-	"./trigger"
+	'../event',
+	'./trigger'
 ], function( jQuery, dataPriv, support ) {
 
 // Support: Firefox
@@ -16,7 +16,7 @@ define( [
 // which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
 // Related ticket - https://code.google.com/p/chromium/issues/detail?id=449857
 if ( !support.focusin ) {
-	jQuery.each( { focus: "focusin", blur: "focusout" }, function( orig, fix ) {
+	jQuery.each( { focus: 'focusin', blur: 'focusout' }, function( orig, fix ) {
 
 		// Attach a single capturing handler on the document while someone wants focusin/focusout
 		var handler = function( event ) {

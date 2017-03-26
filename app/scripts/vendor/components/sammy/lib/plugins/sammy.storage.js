@@ -284,7 +284,7 @@
   $.extend(Sammy.Store.Memory.prototype, {
     isAvailable: function() { return true; },
     exists: function(key) {
-      return (typeof this.store[key] != "undefined");
+      return (typeof this.store[key] != 'undefined');
     },
     set: function(key, value) {
       return this.store[key] = value;
@@ -383,7 +383,7 @@
     },
     get: function(key) {
       var value = window.sessionStorage.getItem(this._key(key));
-      if (value && typeof value.value != "undefined") { value = value.value }
+      if (value && typeof value.value != 'undefined') { value = value.value }
       return value;
     },
     clear: function(key) {
@@ -431,14 +431,14 @@
       return this._getCookie(key);
     },
     clear: function(key) {
-      this._setCookie(key, "", -1);
+      this._setCookie(key, '', -1);
     },
     _key: function(key) {
       return ['store', this.element, this.name, key].join('.');
     },
     _getCookie: function(key) {
       var escaped = this._key(key).replace(/(\.|\*|\(|\)|\[|\])/g, '\\$1');
-      var match = document.cookie.match("(^|;\\s)" + escaped + "=([^;]*)(;|$)");
+      var match = document.cookie.match('(^|;\\s)' + escaped + '=([^;]*)(;|$)');
       return (match ? match[2] : null);
     },
     _setCookie: function(key, value, expires) {
@@ -446,9 +446,9 @@
       var date = new Date();
       date.setTime(date.getTime() + expires);
       var set_cookie = [
-        this._key(key), "=", value,
-        "; expires=", date.toGMTString(),
-        "; path=", this.path
+        this._key(key), '=', value,
+        '; expires=', date.toGMTString(),
+        '; path=', this.path
       ].join('');
       document.cookie = set_cookie;
     }
@@ -509,7 +509,7 @@
       // if the store has not been initialized
       if (typeof this.stores[name] == 'undefined') {
         // create initialize the store
-        var clear_method_name = "clear" + name.substr(0,1).toUpperCase() + name.substr(1);
+        var clear_method_name = 'clear' + name.substr(0,1).toUpperCase() + name.substr(1);
         this.stores[name] = new Sammy.Store($.extend({
           name: name,
           element: this.element_selector

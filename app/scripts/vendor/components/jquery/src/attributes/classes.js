@@ -1,14 +1,14 @@
 define( [
-	"../core",
-	"../var/rnotwhite",
-	"../data/var/dataPriv",
-	"../core/init"
+	'../core',
+	'../var/rnotwhite',
+	'../data/var/dataPriv',
+	'../core/init'
 ], function( jQuery, rnotwhite, dataPriv ) {
 
 var rclass = /[\t\r\n\f]/g;
 
 function getClass( elem ) {
-	return elem.getAttribute && elem.getAttribute( "class" ) || "";
+	return elem.getAttribute && elem.getAttribute( 'class' ) || '';
 }
 
 jQuery.fn.extend( {
@@ -22,26 +22,26 @@ jQuery.fn.extend( {
 			} );
 		}
 
-		if ( typeof value === "string" && value ) {
+		if ( typeof value === 'string' && value ) {
 			classes = value.match( rnotwhite ) || [];
 
 			while ( ( elem = this[ i++ ] ) ) {
 				curValue = getClass( elem );
 				cur = elem.nodeType === 1 &&
-					( " " + curValue + " " ).replace( rclass, " " );
+					( ' ' + curValue + ' ' ).replace( rclass, ' ' );
 
 				if ( cur ) {
 					j = 0;
 					while ( ( clazz = classes[ j++ ] ) ) {
-						if ( cur.indexOf( " " + clazz + " " ) < 0 ) {
-							cur += clazz + " ";
+						if ( cur.indexOf( ' ' + clazz + ' ' ) < 0 ) {
+							cur += clazz + ' ';
 						}
 					}
 
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = jQuery.trim( cur );
 					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
+						elem.setAttribute( 'class', finalValue );
 					}
 				}
 			}
@@ -61,10 +61,10 @@ jQuery.fn.extend( {
 		}
 
 		if ( !arguments.length ) {
-			return this.attr( "class", "" );
+			return this.attr( 'class', '' );
 		}
 
-		if ( typeof value === "string" && value ) {
+		if ( typeof value === 'string' && value ) {
 			classes = value.match( rnotwhite ) || [];
 
 			while ( ( elem = this[ i++ ] ) ) {
@@ -72,22 +72,22 @@ jQuery.fn.extend( {
 
 				// This expression is here for better compressibility (see addClass)
 				cur = elem.nodeType === 1 &&
-					( " " + curValue + " " ).replace( rclass, " " );
+					( ' ' + curValue + ' ' ).replace( rclass, ' ' );
 
 				if ( cur ) {
 					j = 0;
 					while ( ( clazz = classes[ j++ ] ) ) {
 
 						// Remove *all* instances
-						while ( cur.indexOf( " " + clazz + " " ) > -1 ) {
-							cur = cur.replace( " " + clazz + " ", " " );
+						while ( cur.indexOf( ' ' + clazz + ' ' ) > -1 ) {
+							cur = cur.replace( ' ' + clazz + ' ', ' ' );
 						}
 					}
 
 					// Only assign if different to avoid unneeded rendering.
 					finalValue = jQuery.trim( cur );
 					if ( curValue !== finalValue ) {
-						elem.setAttribute( "class", finalValue );
+						elem.setAttribute( 'class', finalValue );
 					}
 				}
 			}
@@ -99,7 +99,7 @@ jQuery.fn.extend( {
 	toggleClass: function( value, stateVal ) {
 		var type = typeof value;
 
-		if ( typeof stateVal === "boolean" && type === "string" ) {
+		if ( typeof stateVal === 'boolean' && type === 'string' ) {
 			return stateVal ? this.addClass( value ) : this.removeClass( value );
 		}
 
@@ -115,7 +115,7 @@ jQuery.fn.extend( {
 		return this.each( function() {
 			var className, i, self, classNames;
 
-			if ( type === "string" ) {
+			if ( type === 'string' ) {
 
 				// Toggle individual class names
 				i = 0;
@@ -133,12 +133,12 @@ jQuery.fn.extend( {
 				}
 
 			// Toggle whole class name
-			} else if ( value === undefined || type === "boolean" ) {
+			} else if ( value === undefined || type === 'boolean' ) {
 				className = getClass( this );
 				if ( className ) {
 
 					// Store className if set
-					dataPriv.set( this, "__className__", className );
+					dataPriv.set( this, '__className__', className );
 				}
 
 				// If the element has a class name or if we're passed `false`,
@@ -146,10 +146,10 @@ jQuery.fn.extend( {
 				// Otherwise bring back whatever was previously saved (if anything),
 				// falling back to the empty string if nothing was stored.
 				if ( this.setAttribute ) {
-					this.setAttribute( "class",
+					this.setAttribute( 'class',
 						className || value === false ?
-						"" :
-						dataPriv.get( this, "__className__" ) || ""
+						'' :
+						dataPriv.get( this, '__className__' ) || ''
 					);
 				}
 			}
@@ -160,10 +160,10 @@ jQuery.fn.extend( {
 		var className, elem,
 			i = 0;
 
-		className = " " + selector + " ";
+		className = ' ' + selector + ' ';
 		while ( ( elem = this[ i++ ] ) ) {
 			if ( elem.nodeType === 1 &&
-				( " " + getClass( elem ) + " " ).replace( rclass, " " )
+				( ' ' + getClass( elem ) + ' ' ).replace( rclass, ' ' )
 					.indexOf( className ) > -1
 			) {
 				return true;

@@ -16,12 +16,12 @@
         }
       },           
       animenuToggleNav =  function (){        
-        toggleClass(animenuToggle, "animenu__toggle--active");
-        toggleClass(animenuNav, "animenu__nav--open");        
+        toggleClass(animenuToggle, 'animenu__toggle--active');
+        toggleClass(animenuNav, 'animenu__nav--open');        
       }
 
   if (!animenuToggle.addEventListener) {
-      animenuToggle.attachEvent("onclick", animenuToggleNav);
+      animenuToggle.attachEvent('onclick', animenuToggleNav);
   }
   else {
       animenuToggle.addEventListener('click', animenuToggleNav);

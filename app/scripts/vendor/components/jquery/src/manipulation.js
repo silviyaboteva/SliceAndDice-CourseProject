@@ -1,25 +1,25 @@
 define( [
-	"./core",
-	"./var/concat",
-	"./var/push",
-	"./core/access",
-	"./manipulation/var/rcheckableType",
-	"./manipulation/var/rtagName",
-	"./manipulation/var/rscriptType",
-	"./manipulation/wrapMap",
-	"./manipulation/getAll",
-	"./manipulation/setGlobalEval",
-	"./manipulation/buildFragment",
-	"./manipulation/support",
+	'./core',
+	'./var/concat',
+	'./var/push',
+	'./core/access',
+	'./manipulation/var/rcheckableType',
+	'./manipulation/var/rtagName',
+	'./manipulation/var/rscriptType',
+	'./manipulation/wrapMap',
+	'./manipulation/getAll',
+	'./manipulation/setGlobalEval',
+	'./manipulation/buildFragment',
+	'./manipulation/support',
 
-	"./data/var/dataPriv",
-	"./data/var/dataUser",
-	"./data/var/acceptData",
+	'./data/var/dataPriv',
+	'./data/var/dataUser',
+	'./data/var/acceptData',
 
-	"./core/init",
-	"./traversing",
-	"./selector",
-	"./event"
+	'./core/init',
+	'./traversing',
+	'./selector',
+	'./event'
 ], function( jQuery, concat, push, access,
 	rcheckableType, rtagName, rscriptType,
 	wrapMap, getAll, setGlobalEval, buildFragment, support,
@@ -40,17 +40,17 @@ var
 
 // Manipulating tables requires a tbody
 function manipulationTarget( elem, content ) {
-	return jQuery.nodeName( elem, "table" ) &&
-		jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ?
+	return jQuery.nodeName( elem, 'table' ) &&
+		jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, 'tr' ) ?
 
-		elem.getElementsByTagName( "tbody" )[ 0 ] ||
-			elem.appendChild( elem.ownerDocument.createElement( "tbody" ) ) :
+		elem.getElementsByTagName( 'tbody' )[ 0 ] ||
+			elem.appendChild( elem.ownerDocument.createElement( 'tbody' ) ) :
 		elem;
 }
 
 // Replace/restore the type attribute of script elements for safe DOM manipulation
 function disableScript( elem ) {
-	elem.type = ( elem.getAttribute( "type" ) !== null ) + "/" + elem.type;
+	elem.type = ( elem.getAttribute( 'type' ) !== null ) + '/' + elem.type;
 	return elem;
 }
 function restoreScript( elem ) {
@@ -59,7 +59,7 @@ function restoreScript( elem ) {
 	if ( match ) {
 		elem.type = match[ 1 ];
 	} else {
-		elem.removeAttribute( "type" );
+		elem.removeAttribute( 'type' );
 	}
 
 	return elem;
@@ -104,11 +104,11 @@ function fixInput( src, dest ) {
 	var nodeName = dest.nodeName.toLowerCase();
 
 	// Fails to persist the checked state of a cloned checkbox or radio button.
-	if ( nodeName === "input" && rcheckableType.test( src.type ) ) {
+	if ( nodeName === 'input' && rcheckableType.test( src.type ) ) {
 		dest.checked = src.checked;
 
 	// Fails to return the selected option to the default selected state when cloning options
-	} else if ( nodeName === "input" || nodeName === "textarea" ) {
+	} else if ( nodeName === 'input' || nodeName === 'textarea' ) {
 		dest.defaultValue = src.defaultValue;
 	}
 }
@@ -127,7 +127,7 @@ function domManip( collection, args, callback, ignored ) {
 
 	// We can't cloneNode fragments that contain checked, in WebKit
 	if ( isFunction ||
-			( l > 1 && typeof value === "string" &&
+			( l > 1 && typeof value === 'string' &&
 				!support.checkClone && rchecked.test( value ) ) ) {
 		return collection.each( function( index ) {
 			var self = collection.eq( index );
@@ -148,7 +148,7 @@ function domManip( collection, args, callback, ignored ) {
 
 		// Require either new content or an interest in ignored elements to invoke the callback
 		if ( first || ignored ) {
-			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
+			scripts = jQuery.map( getAll( fragment, 'script' ), disableScript );
 			hasScripts = scripts.length;
 
 			// Use the original fragment for the last item
@@ -165,7 +165,7 @@ function domManip( collection, args, callback, ignored ) {
 
 						// Support: Android<4.1, PhantomJS<2
 						// push.apply(_, arraylike) throws on ancient WebKit
-						jQuery.merge( scripts, getAll( node, "script" ) );
+						jQuery.merge( scripts, getAll( node, 'script' ) );
 					}
 				}
 
@@ -181,8 +181,8 @@ function domManip( collection, args, callback, ignored ) {
 				// Evaluate executable scripts on first document insertion
 				for ( i = 0; i < hasScripts; i++ ) {
 					node = scripts[ i ];
-					if ( rscriptType.test( node.type || "" ) &&
-						!dataPriv.access( node, "globalEval" ) &&
+					if ( rscriptType.test( node.type || '' ) &&
+						!dataPriv.access( node, 'globalEval' ) &&
 						jQuery.contains( doc, node ) ) {
 
 						if ( node.src ) {
@@ -192,7 +192,7 @@ function domManip( collection, args, callback, ignored ) {
 								jQuery._evalUrl( node.src );
 							}
 						} else {
-							jQuery.globalEval( node.textContent.replace( rcleanScript, "" ) );
+							jQuery.globalEval( node.textContent.replace( rcleanScript, '' ) );
 						}
 					}
 				}
@@ -215,7 +215,7 @@ function remove( elem, selector, keepData ) {
 
 		if ( node.parentNode ) {
 			if ( keepData && jQuery.contains( node.ownerDocument, node ) ) {
-				setGlobalEval( getAll( node, "script" ) );
+				setGlobalEval( getAll( node, 'script' ) );
 			}
 			node.parentNode.removeChild( node );
 		}
@@ -226,7 +226,7 @@ function remove( elem, selector, keepData ) {
 
 jQuery.extend( {
 	htmlPrefilter: function( html ) {
-		return html.replace( rxhtmlTag, "<$1></$2>" );
+		return html.replace( rxhtmlTag, '<$1></$2>' );
 	},
 
 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
@@ -262,9 +262,9 @@ jQuery.extend( {
 		}
 
 		// Preserve script evaluation history
-		destElements = getAll( clone, "script" );
+		destElements = getAll( clone, 'script' );
 		if ( destElements.length > 0 ) {
-			setGlobalEval( destElements, !inPage && getAll( elem, "script" ) );
+			setGlobalEval( destElements, !inPage && getAll( elem, 'script' ) );
 		}
 
 		// Return the cloned set
@@ -376,7 +376,7 @@ jQuery.fn.extend( {
 				jQuery.cleanData( getAll( elem, false ) );
 
 				// Remove any remaining nodes
-				elem.textContent = "";
+				elem.textContent = '';
 			}
 		}
 
@@ -403,8 +403,8 @@ jQuery.fn.extend( {
 			}
 
 			// See if we can take a shortcut and just use innerHTML
-			if ( typeof value === "string" && !rnoInnerhtml.test( value ) &&
-				!wrapMap[ ( rtagName.exec( value ) || [ "", "" ] )[ 1 ].toLowerCase() ] ) {
+			if ( typeof value === 'string' && !rnoInnerhtml.test( value ) &&
+				!wrapMap[ ( rtagName.exec( value ) || [ '', '' ] )[ 1 ].toLowerCase() ] ) {
 
 				value = jQuery.htmlPrefilter( value );
 
@@ -451,11 +451,11 @@ jQuery.fn.extend( {
 } );
 
 jQuery.each( {
-	appendTo: "append",
-	prependTo: "prepend",
-	insertBefore: "before",
-	insertAfter: "after",
-	replaceAll: "replaceWith"
+	appendTo: 'append',
+	prependTo: 'prepend',
+	insertBefore: 'before',
+	insertAfter: 'after',
+	replaceAll: 'replaceWith'
 }, function( name, original ) {
 	jQuery.fn[ name ] = function( selector ) {
 		var elems,
