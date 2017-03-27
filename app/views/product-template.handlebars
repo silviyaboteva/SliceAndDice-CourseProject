@@ -9,20 +9,58 @@
 
     <section class="product-details-section">
         <div class="row">
-            <div class="col col-md-6 col-sm-6 col-12  detail-image">
+            <div class="col col-md-5 col-sm-12 col-12  detail-image">
                 <a href="#/products/product/{{product.id}}">
                     <img href="http://localhost:1337/api/products/image/{{product.id}}" class="responsive-image" src="http://localhost:1337/api/products/image/{{product.image}}">
                 </a>
             </div>
-            <div class="col col-md-6 col-sm-6 col-12">
+            <div class="col col-md-7 col-sm-12 col-12">
                 <div class="detail-description">
-                    <h2>{{product.name}}</h2>
+                    <div class="navigation-back"> 
+                        <i class="fa fa-angle-left" aria-hidden="true"></i> Back to 
+                        <a href="#/products/category/{{product.category}}">{{product.category}}'s clothing</a>
+                    </div>
                     <hr/>
-                    <h3>$ {{product.price}}</h3>
-                    <p>{{product.description}}</p>
-                    <button class="btn btn-theme-default">Add to cart<i class="fa fa-plus" aria-hidden="true"></i></button>
+                    <h2 class="product-name">{{product.name}}</h2>
+                    <h3 class="product-price">$ {{product.price}}</h3>
+                    <p class="product-description">{{product.description}}</p>
+                    <hr/>
+                    <button class="btn btn-theme-default">Add to cart <i class="fa fa-plus" aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
     </section>
 </div>
+<section class="search-social-section">
+  <div class="container">
+    <div class="row">
+      <div class="col col-md-8 col-sm-12 col-12">
+        <p>Stay updated</p>
+        <input type="text" class="input-theme-default" placeholder="Your email address">
+        <button class="btn btn-theme-default" type="submit">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>   
+      </div>
+      <div class="col col-md-4 col-sm-12 col-12">
+        <div class="display-left">
+          <p>Find us here</p>
+          <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+   {{!--$(document).ready(function(){
+    $('.zoom').hover(function() {
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
+    });
+});--}}
+</script>

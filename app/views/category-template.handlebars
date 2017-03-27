@@ -1,1 +1,28 @@
-<div>HELLO CATEGORY</div>
+<div class="container">   
+    <ol class="breadcrumb breadcumb-custom">
+      <li class="breadcrumb-item"><i class="fa fa-home" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+      <li class="breadcrumb-item"><a href="#/all">All Products</a></li>
+    </ol>
+  <div class="row">
+        <div class="col col-md-12">
+            <section class="products-list">
+                    <div class="row">
+                        {{#each products}}
+                        <div class="col col-md-4 col-sm-6 col-12">
+                                <div class="product-card">
+                                    <a href="#/products/product/{{this._id}}">
+                                        <img class="responsive-image" src="http://localhost:1337/api/products/image/{{this.image}}">
+                                    </a>
+                                    <div class="info-item">
+                                        <p class="info-item-name">{{this.name}}</p>
+                                        <p class="info-item-price">$ {{this.price}}</p>
+                                        <button class="btn btn-theme-default">Add to cart <i class="fa fa-plus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+            </section>
+        </div>
+</section>
