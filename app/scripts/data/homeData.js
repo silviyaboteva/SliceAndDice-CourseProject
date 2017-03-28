@@ -1,6 +1,6 @@
 'use strict';
 
-const REQUEST_URL = 'http://localhost:1337';
+const REQUEST_URL = 'https://glacial-stream-31964.herokuapp.com';
 
 class HomeData {
     constructor(requester) {
